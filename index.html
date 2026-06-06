@@ -144,11 +144,6 @@ header::before {
   flex-direction: column;
   gap: 6px;
 }
-.topic-list-container {
-  max-height: 74vh;
-  overflow-y: auto;
-  padding-right: 4px;
-}
 .topic-item {
   padding: 11px 14px;
   border-radius: 8px;
@@ -160,7 +155,6 @@ header::before {
   align-items: center;
   gap: 10px;
   background: #fff;
-  margin-bottom: 6px;
 }
 .topic-item:hover { border-color: var(--gold); }
 .topic-item.active { background: var(--navy); color: #fff; border-color: var(--navy); }
@@ -236,26 +230,6 @@ header::before {
 }
 .key-box strong { color: #7a5c00; }
 
-.table-logic {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 12px 0;
-  font-size: 0.85rem;
-}
-.table-logic th, .table-logic td {
-  border: 1px solid var(--border);
-  padding: 6px 10px;
-  text-align: center;
-}
-.table-logic th {
-  background: var(--navy);
-  color: #fff;
-}
-.table-logic tr.critical-row {
-  background: #fffbef;
-  border: 2px solid var(--gold);
-}
-
 /* AI Explain button */
 .ai-btn {
   display: inline-flex;
@@ -273,6 +247,18 @@ header::before {
   transition: opacity .2s;
 }
 .ai-btn:hover { opacity: .85; }
+.ai-response {
+  background: #f0f4ff;
+  border-left: 3px solid #4a6cf7;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  display: none;
+}
+.ai-response.visible { display: block; }
+.ai-loading { color: var(--muted); font-style: italic; }
 
 /* ── QUIZ PANEL ── */
 .quiz-header {
@@ -419,7 +405,7 @@ header::before {
   text-align: center;
   display: none;
 }
-.quiz-score-card.show { display: block; }
+.quiz-score-card.show { block; }
 .score-big {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
@@ -579,7 +565,348 @@ header::before {
 }
 .quick-chip:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
-/* Local AI Explain Box */
+.chat-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.chat-msgs {
+  padding: 20px;
+  min-height: 200px;
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.msg {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.msg.user { flex-direction: row-reverse; }
+.msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+.msg.user .msg-avatar { background: var(--navy); color: var(--gold); }
+.msg.ai .msg-avatar { background: var(--gold-dim); color: var(--gold); }
+.msg-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.msg.user .msg-bubble { background: var(--navy); color: #fff; border-bottom-right-radius: 4px; }
+.msg.ai .msg-bubble { background: #f7f4ef; color: var(--ink); border-bottom-left-radius: 4px; }
+.chat-input-row {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.chat-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  background: #fafafa;
+  outline: none;
+  resize: none;
+}
+.chat-send {
+  padding: 14px 20px;
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity .2s;
+}
+.chat-send:hover { opacity: .85; }
+
+/* ── PROGRESS ── */
+.progress-panel { }
+.prog-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+.topic-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.prog-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.prog-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.prog-card-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+.prog-card-pct { font-size: 1rem; font-weight: 700; color: var(--gold); }
+.prog-bar-bg {
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.prog-bar-fg {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+  border-radius: 10px;
+  transition: width .6s ease;
+}
+.prog-card-stats { font-size: 0.75rem; color: var(--muted); }
+
+.overall-banner {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.ob-score {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--gold);
+}
+.ob-label { font-size: 0.8rem; color: #aaa; text-transform: uppercase; letter-spacing: .06em; }
+.ob-divider { width: 1px; background: #fff2; align-self: stretch; }
+
+/* Responsive */
+@media (max-width: 720px) {
+  header { padding: 20px; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .tab-bar { padding: 0 12px; }
+  .app-body { padding: 16px 12px; }
+  .notes-grid { grid-template-columns: 1fr; }
+  .topic-list { flex-direction: row; flex-wrap: wrap; }
+  .options-grid { grid-template-columns: 1fr; }
+  .header-stats { gap: 8px; }
+  .overall-banner { flex-wrap: wrap; gap: 14px; }
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Fade in */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.panel.active { animation: fadeIn .3s ease; }
+
+/* ── DARK MODE ── */
+body.dark {
+  --paper: #12111a;
+  --ink: #e8e4dc;
+  --card: #1e1c2a;
+  --border: #2e2b3d;
+  --muted: #9994a8;
+  background: var(--paper);
+}
+body.dark .notes-content,
+body.dark .q-card,
+body.dark .prog-card,
+body.dark .topic-item,
+body.dark .chat-box { background: var(--card); border-color: var(--border); }
+body.dark .notes-content p,
+body.dark .notes-content li,
+body.dark .q-text { color: #d0ccca; }
+body.dark .opt-btn { background: #1e1c2a; border-color: var(--border); color: var(--ink); }
+body.dark .opt-btn:hover:not(:disabled) { background: #2a283a; }
+body.dark .fc-back { background: #1e1c2a; }
+body.dark .quiz-select,
+body.dark .chat-input { background: #1e1c2a; color: var(--ink); border-color: var(--border); }
+body.dark .mode-btn { background: #1e1c2a; color: var(--muted); }
+body.dark .quick-chip { background: #1e1c2a; color: var(--ink); }
+body.dark .key-box { background: #1c1a10; }
+body.dark .ai-response { background: #171724; }
+body.dark .msg.ai .msg-bubble { background: #1e1c2a; }
+body.dark .chat-input { background: #1e1c2a; }
+body.dark header,
+body.dark .tab-bar { } /* already dark — no change needed */
+
+/* ── DARK MODE TOGGLE ── */
+.dark-toggle {
+  background: #ffffff18;
+  border: 1px solid #ffffff22;
+  border-radius: 20px;
+  padding: 7px 14px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background .2s;
+}
+.dark-toggle:hover { background: #ffffff28; }
+
+/* ── STREAK BADGE ── */
+.streak-chip {
+  background: linear-gradient(135deg, #ff9f43, #ee5a24);
+  border-radius: 8px;
+  padding: 8px 14px;
+  text-align: center;
+  color: #fff;
+}
+.streak-chip .num { font-size: 1.3rem; font-weight: 700; display: block; }
+.streak-chip .lbl { font-size: 0.7rem; opacity: .85; letter-spacing: .05em; text-transform: uppercase; }
+
+/* ── TIMED EXAM ── */
+.timer-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.timer-display {
+  background: var(--navy);
+  color: var(--gold);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  min-width: 90px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color .3s;
+}
+.timer-display.warning { border-color: #ff9f43; color: #ff9f43; }
+.timer-display.danger { border-color: var(--red); color: var(--red); animation: pulse .6s infinite alternate; }
+@keyframes pulse { from { opacity: 1; } to { opacity: .5; } }
+.timer-mode-badge {
+  background: #ff9f43;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+.time-select {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  background: #fff;
+  cursor: pointer;
+}
+body.dark .time-select { background: #1e1c2a; color: var(--ink); border-color: var(--border); }
+
+/* ── WRONG ANSWER REVIEW ── */
+.review-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 24px;
+}
+body.dark .review-wrap { background: var(--card); border-color: var(--border); }
+.review-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--red);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.review-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+body.dark .review-item { background: #1a1828; }
+.review-item .ri-q { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+.review-item .ri-wrong { color: var(--red); font-size: 0.83rem; }
+.review-item .ri-correct { color: var(--green); font-size: 0.83rem; margin-top: 3px; }
+.review-item .ri-topic { font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* ── BADGES ── */
+.badges-section {
+  margin-top: 28px;
+}
+.badges-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+body.dark .badges-section h3 { color: var(--gold-light); }
+.badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.badge-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 2px solid;
+}
+.badge-chip.earned { background: linear-gradient(135deg, #fffbf0, #fef3c7); border-color: var(--gold); color: #7a5c00; }
+.badge-chip.locked { background: #f0eded; border-color: #ddd; color: #aaa; }
+body.dark .badge-chip.locked { background: #1e1c2a; border-color: #333; }
+
+/* ── PDF EXPORT BTN ── */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: opacity .2s;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.pdf-btn:hover { opacity: .85; }
+
+/* ── ENHANCED EXPLAIN PANEL ── */
 .explain-panel {
   margin-top: 20px;
   border: 2px solid var(--gold);
@@ -591,7 +918,10 @@ header::before {
 .explain-tabs {
   display: flex;
   background: var(--navy);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.explain-tabs::-webkit-scrollbar { display: none; }
 .explain-tab {
   padding: 10px 16px;
   color: #aaa;
@@ -603,6 +933,7 @@ header::before {
   white-space: nowrap;
   font-family: 'DM Sans', sans-serif;
   transition: all .2s;
+  letter-spacing: .03em;
 }
 .explain-tab:hover { color: var(--gold-light); }
 .explain-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
@@ -612,6 +943,1590 @@ header::before {
   font-size: 0.91rem;
   line-height: 1.75;
   color: #333;
+  min-height: 80px;
+}
+body.dark .explain-body { background: #1a1828; color: #d0ccca; }
+.explain-body.loading { color: var(--muted); font-style: italic; display: flex; align-items: center; gap: 8px; }
+.explain-pane { display: none; }
+.explain-pane.active { display: block; }
+.explain-body h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 14px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body.dark .explain-body h4 { color: var(--gold-light); }
+.explain-body h4::before { content: '▸'; color: var(--gold); }
+.explain-body ul { list-style: none; margin: 6px 0 12px 0; }
+.explain-body ul li {
+  padding: 5px 0 5px 18px;
+  position: relative;
+  border-bottom: 1px dashed #e8e4dc;
+  font-size: 0.88rem;
+}
+body.dark .explain-body ul li { border-color: #2e2b3d; }
+.explain-body ul li:last-child { border-bottom: none; }
+.explain-body ul li::before { content: '→'; color: var(--gold); position: absolute; left: 0; font-size: 0.78rem; }
+.explain-body .trap-box {
+  background: #fff5f3;
+  border-left: 4px solid var(--red);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 0.87rem;
+}
+body.dark .explain-body .trap-box { background: #2a1a18; }
+.explain-body .trap-box strong { color: var(--red); }
+.explain-body .example-box {
+  background: #f0f4ff;
+  border-left: 4px solid #4a6cf7;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 0.87rem;
+}
+body.dark .explain-body .example-box { background: #171724; }
+.explain-body .term-row {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e8e4dc;
+  align-items: flex-start;
+}
+body.dark .explain-body .term-row { border-color: #2e2b3d; }
+.explain-body .term-row:last-child { border-bottom: none; }
+.explain-body .term-key {
+  background: var(--gold-dim);
+  color: #7a5c00;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 .explain-close {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navy);
+  padding: 8px 16px;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.explain-close span { opacity: .6; font-size: 0.85rem; }
+
+/* ── RESET PROGRESS BTN ── */
+.reset-btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--red);
+  border: 2px solid var(--red);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all .2s;
+  margin-top: 12px;
+}
+.reset-btn:hover { background: var(--red); color: #fff; }
+
+/* ── SCORE CARD REVIEW BTN ── */
+.review-btn {
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+  margin-left: 10px;
+}
+.review-btn:hover { background: var(--gold); color: var(--navy); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <h1>GST 212 — Philosophy Study Hub</h1>
+      <p>Notes · Deep Explain AI · Quiz · Timed Exam · Flashcards · Ask AI · Progress · Badges</p>
+    </div>
+    <div class="header-stats">
+      <div class="streak-chip"><span class="num" id="stat-streak">0</span><span class="lbl">🔥 Streak</span></div>
+      <div class="stat-chip"><span class="num" id="stat-done">0</span><span class="lbl">Answered</span></div>
+      <div class="stat-chip"><span class="num" id="stat-pct">0%</span><span class="lbl">Accuracy</span></div>
+      <div class="stat-chip"><span class="num">330+</span><span class="lbl">Questions</span></div>
+      <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('notes')">📖 Notes</button>
+  <button class="tab-btn" onclick="switchTab('quiz')">🧠 Quiz</button>
+  <button class="tab-btn" onclick="switchTab('flash')">🃏 Flashcards</button>
+  <button class="tab-btn" onclick="switchTab('ask')">✨ Ask AI</button>
+  <button class="tab-btn" onclick="switchTab('progress')">📊 Progress</button>
+</div>
+
+<div class="app-body">
+
+<div class="panel active" id="panel-notes">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+    <span style="font-size:0.82rem;color:var(--muted)">Viewing notes for the selected topic</span>
+    <button class="pdf-btn" onclick="exportNotesPDF()">📄 Export Notes as PDF</button>
+  </div>
+  <div class="notes-grid">
+    <div class="topic-list" id="topic-list"></div>
+    <div class="notes-content" id="notes-content">
+      <p style="color:var(--muted)">Select a topic from the left to view notes.</p>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-quiz">
+  <div class="quiz-header">
+    <div class="quiz-controls">
+      <select class="quiz-select" id="quiz-topic-sel">
+        <option value="all">All Topics</option>
+      </select>
+      <select class="quiz-select" id="quiz-count-sel">
+        <option value="10">10 Questions</option>
+        <option value="20">20 Questions</option>
+        <option value="50">50 Questions</option>
+        <option value="100">100 Questions</option>
+      </select>
+      <select class="time-select" id="quiz-time-sel" title="Time limit per question (Timed Exam Mode)">
+        <option value="0">No Timer</option>
+        <option value="30">30 sec / question</option>
+        <option value="60">1 min / question</option>
+        <option value="90">90 sec / question</option>
+        <option value="120">2 min / question</option>
+      </select>
+    </div>
+    <button class="quiz-start-btn" onclick="startQuiz()">Start Quiz →</button>
+  </div>
+
+  <div class="timer-row" id="timer-row" style="display:none">
+    <span class="timer-mode-badge">⏱ TIMED</span>
+    <div class="timer-display" id="timer-display">0:30</div>
+    <span style="font-size:0.8rem;color:var(--muted)">Answer before time runs out!</span>
+  </div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="q-progress" style="width:0%"></div>
+  </div>
+
+  <div class="q-card" id="q-card" style="display:none">
+    <div class="q-meta" id="q-meta"></div>
+    <div class="q-text" id="q-text"></div>
+    <div class="options-grid" id="options-grid"></div>
+    <div class="q-feedback" id="q-feedback"></div>
+    <div class="q-nav">
+      <button class="q-nav-btn prev" id="q-prev" onclick="moveQ(-1)">← Prev</button>
+      <span id="q-counter" style="font-size:.85rem;color:var(--muted)"></span>
+      <button class="q-nav-btn next" id="q-next" onclick="moveQ(1)">Next →</button>
+    </div>
+  </div>
+
+  <div class="quiz-score-card" id="score-card">
+    <div class="score-big" id="score-pct"></div>
+    <div class="score-label">Quiz Complete</div>
+    <div class="score-grid">
+      <div class="score-item"><div class="s-num score-correct" id="sc-correct"></div><div class="s-lbl">Correct</div></div>
+      <div class="score-item"><div class="s-num score-wrong" id="sc-wrong"></div><div class="s-lbl">Wrong</div></div>
+      <div class="score-item"><div class="s-num score-skipped" id="sc-skip"></div><div class="s-lbl">Skipped</div></div>
+    </div>
+    <button class="retry-btn" onclick="startQuiz()">Try Again</button>
+    <button class="review-btn" onclick="showWrongReview()" id="review-btn" style="display:none">📋 Review Mistakes</button>
+  </div>
+
+  <div id="wrong-review" class="review-wrap" style="display:none">
+    <h3>❌ Questions You Got Wrong</h3>
+    <div id="wrong-list"></div>
+  </div>
+
+  <div id="quiz-start-msg" style="text-align:center;padding:60px 20px;color:var(--muted)">
+    <div style="font-size:3rem;margin-bottom:12px">🎯</div>
+    <p>Choose your topic, question count, and optional timer, then hit <strong>Start Quiz</strong>.</p>
+    <p style="margin-top:8px;font-size:0.82rem">💡 Select a time limit per question to enable <strong>Timed Exam Mode</strong></p>
+  </div>
+</div>
+
+<div class="panel" id="panel-flash">
+  <div class="mode-bar">
+    <button class="mode-btn active" id="fc-topic-btn" onclick="setFCTopic('all', this)">All Topics</button>
+    <select class="quiz-select" id="fc-topic-sel" onchange="setFCTopicSel(this.value)" style="padding:8px 14px">
+      <option value="all">— Filter by topic —</option>
+    </select>
+  </div>
+  <div class="fc-progress" id="fc-progress">Card 1 of 0</div>
+  <div class="flashcard-wrap" onclick="flipCard()">
+    <div class="flashcard" id="flashcard">
+      <div class="fc-face fc-front">
+        <div class="fc-tag">Question</div>
+        <div class="fc-question" id="fc-q">Loading cards…</div>
+        <div class="fc-hint">Tap to reveal answer</div>
+      </div>
+      <div class="fc-face fc-back">
+        <div class="fc-tag">Answer</div>
+        <div class="fc-answer" id="fc-a"></div>
+        <div class="fc-hint-back">← Tap to flip back</div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-controls">
+    <button class="fc-btn review" onclick="fcNext(-1)">← Back</button>
+    <button class="fc-btn skip" onclick="fcShuffle()">🔀 Shuffle</button>
+    <button class="fc-btn got-it" onclick="fcNext(1)">Next →</button>
+  </div>
+</div>
+
+<div class="panel" id="panel-ask">
+  <div class="ask-ai-wrap">
+    <div class="ask-ai-intro">
+      <div class="icon">✨</div>
+      <div>
+        <h3>Ask the Philosophy Tutor</h3>
+        <p>Ask anything about GST 212 — definitions, exam tips, tricky distinctions, or let it test you. The AI knows your course material.</p>
+      </div>
+    </div>
+    <div class="quick-chips">
+      <span class="quick-chip" onclick="quickAsk(this)">What is a syllogism?</span>
+      <span class="quick-chip" onclick="quickAsk(this)">Difference between deductive and inductive logic</span>
+      <span class="quick-chip" onclick="quickAsk(this)">Name all five sources of knowledge</span>
+      <span class="quick-chip" onclick="quickAsk(this)">What are the three laws of thought?</span>
+      <span class="quick-chip" onclick="quickAsk(this)">Explain Modus Ponens with an example</span>
+      <span class="quick-chip" onclick="quickAsk(this)">What is an ad hominem fallacy?</span>
+      <span class="quick-chip" onclick="quickAsk(this)">Quiz me on the branches of philosophy</span>
+      <span class="quick-chip" onclick="quickAsk(this)">What is Perry's four-stage model?</span>
+    </div>
+    <div class="chat-box">
+      <div class="chat-msgs" id="chat-msgs">
+        <div class="msg ai">
+          <div class="msg-avatar">🎓</div>
+          <div class="msg-bubble">Hello! I'm your GST 212 tutor. Ask me anything about philosophy — from the nature of wisdom to the rules of symbolic logic. I'm here to help you ace the exam! 📚</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <textarea class="chat-input" id="chat-input" placeholder="Ask a philosophy question…" rows="1" onkeydown="chatEnter(event)"></textarea>
+        <button class="chat-send" onclick="sendChat()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="panel-progress">
+  <div class="overall-banner">
+    <div>
+      <div class="ob-label">Overall Score</div>
+      <div class="ob-score" id="ob-score">—</div>
+    </div>
+    <div class="ob-divider"></div>
+    <div>
+      <div class="ob-label">Questions Answered</div>
+      <div class="ob-score" id="ob-answered">0</div>
+    </div>
+    <div class="ob-divider"></div>
+    <div>
+      <div class="ob-label">Correct</div>
+      <div class="ob-score" style="color:#6ee7b7" id="ob-correct">0</div>
+    </div>
+    <div class="ob-divider"></div>
+    <div>
+      <div class="ob-label">Topics Studied</div>
+      <div class="ob-score" id="ob-topics">0 / 11</div>
+    </div>
+    <div class="ob-divider"></div>
+    <div>
+      <div class="ob-label">🔥 Best Streak</div>
+      <div class="ob-score" style="color:#ff9f43" id="ob-streak">0</div>
+    </div>
+  </div>
+  <div class="prog-heading">Per-Topic Breakdown</div>
+  <div class="topic-progress-grid" id="prog-grid"></div>
+
+  <div class="badges-section">
+    <h3>🏅 Achievements</h3>
+    <div class="badges-grid" id="badges-grid"></div>
+  </div>
+
+  <button class="reset-btn" onclick="resetProgress()">🗑 Reset All Progress</button>
+</div>
+
+</div><script>
+// ══════════ DATA ══════════
+const TOPICS = [
+  { id:'t1', title:'The Nature of Philosophy' },
+  { id:'t2', title:'Modes of Philosophy' },
+  { id:'t3', title:'Branches of Philosophy' },
+  { id:'t4', title:'Syllogism' },
+  { id:'t5', title:'Symbolic Logic' },
+  { id:'t6', title:'Fallacy' },
+  { id:'t7', title:'Laws of Thought' },
+  { id:'t8', title:'Arguments' },
+  { id:'t9', title:'Creative & Critical Thinking' },
+  { id:'t10', title:'Philosophy & Religion' },
+  { id:'t11', title:'Impact on Human Existence' },
+];
+
+const NOTES = {
+  t1: {
+    heading: 'The Meaning and Nature of Philosophy',
+    sections: [
+      { h: 'Etymology and General Nature', body: `
+        <p>Philosophy comes from two Greek words: <strong>'Philo'</strong> (love) and <strong>'Sophia'</strong> (wisdom). It literally translates to the <strong>"love of wisdom"</strong> or <strong>"love of knowledge."</strong> [cite: 1492, 1493] It represents an intrinsic desire to uncover what is covered, or to query the unknown to secure a better understanding of life's fundamental problems beyond surface appearances. [cite: 1493, 1494] Crucially, philosophy lacks a single universal or consensual definition because its boundaries continuously adapt to the domain of human experience. [cite: 1491, 1503]</p>
+        <div class="key-box"><strong>Core Concept:</strong> Rather than accumulating static facts, philosophy is a rigorous, reflective, and second-order enterprise that evaluates the foundational principles of reality and knowledge itself. [cite: 1529, 1546]</div>
+      `},
+      { h: 'Scholarly Perspectives', body: `
+        <ul>
+          <li><strong>Carter Good:</strong> Defines philosophy as a science that seeks to systematically organize and structure all fields of knowledge to interpret total reality, traditionally tracking five fields: logic, ethics, aesthetics, metaphysics, and epistemology. [cite: 1512]</li>
+          <li><strong>Jalaluddin & Idi (2013):</strong> Characterize it as a deep, comprehensive, and systematic viewpoint of the entire matrix of human knowledge, prompting individuals to dissect problems thoroughly and radically. [cite: 1514, 1517]</li>
+          <li><strong>Russell (2010):</strong> Argues that philosophy purposefully examines underlying assumptions behind daily human thoughts and choices, enabling objective and rational processing. [cite: 1518]</li>
+          <li><strong>Stanford Encyclopedia (Phillips, 2023):</strong> Highlights philosophy as an essential engine for conceptual clarity, character growth, and ethical reasoning. [cite: 1520]</li>
+        </ul>
+      `},
+      { h: 'The 8 Formal Characteristics of Philosophy', body: `
+        <p>According to the 2026 textbook framework, philosophical practice is explicitly categorized by eight unique functional marks: [cite: 1522]</p>
+        <ul>
+          <li><strong>1. Rational and Critical:</strong> It operates strictly through structural argumentation and systemic evaluation rather than reliance on mere popular opinion or unexamined traditions. [cite: 1524]</li>
+          <li><strong>2. Reflective and Second-Order:</strong> It does not catalog localized facts; it reflects directly upon the core foundations, investigative methods, and values of other functional disciplines. [cite: 1529]</li>
+          <li><strong>3. Systematic and Coherent:</strong> It systematically organizes divergent ideas into a structured, unified, and logically consistent web free from internal contradictions. [cite: 1530, 1531]</li>
+          <li><strong>4. Speculative yet Grounded in Reason:</strong> It purposefully ventures into ultimate queries beyond direct sensory observation while maintaining rigid links to rational justification. [cite: 1532]</li>
+          <li><strong>5. Normative and Evaluative:</strong> It focuses intensely on what <em>ought to be</em> rather than merely describing what currently is. [cite: 1535, 1568]</li>
+          <li><strong>6. Universal and Foundational:</strong> It targets problems that naturally transcend specific localized cultures and timelines while forming the conceptual base for all lower fields. [cite: 1538, 1539]</li>
+          <li><strong>7. Dialectical:</strong> It evolves dynamically through debate, counter-arguments, and the confrontation of opposing perspectives. [cite: 1541, 1542]</li>
+          <li><strong>8. Practical and Transformative:</strong> Though working in abstract concepts, its conclusions fundamentally direct moral decision-making, governance systems, and daily living. [cite: 1544]</li>
+        </ul>
+      `},
+    ]
+  },
+  t2: {
+    heading: 'Modes of Philosophy',
+    sections: [
+      { h: 'Methodological Frameworks', body: `
+        <p>Philosophical inquiry utilizes specific systemic approaches, traditionally known as the <strong>modes of philosophy</strong>. [cite: 1549] The standard curriculum recognizes four primary modes that handle information differently: [cite: 1550, 1582]</p>
+        <ul>
+          <li><strong>Speculative Mode:</strong> A structural, critical search for total coherence, wholeness, and order across human experience. [cite: 1553, 1554, 1555] It actively queries ultimate reality (God, soul, cause, universe) using macro-level markers like <em>what, why, who, and where</em> to find out what lies safely behind surface appearances. [cite: 1556, 1557, 1559] <em>Key Exemplars: Aristotle, Thomas Aquinas.</em> [cite: 1560]</li>
+          <li><strong>Prescriptive Mode:</strong> A normative mode that establishes standards for assessing value, moral conduct, and artistic quality. [cite: 1562, 1567] It targets what *should* or *ought* to be rather than describing what is, examining if values are intrinsic to objects or projected by the human mind. [cite: 1564, 1566, 1568] <em>Key Exemplars: Plato ( Republic dialogues on justice).</em> [cite: 1570]</li>
+          <li><strong>Analytic Mode:</strong> A concept-driven mode focusing on words, definitions, and syntax. [cite: 1573] It seeks clarity and precision to eliminate semantic ambiguity, showing how logical errors arise when meanings from one context are misapplied to another. [cite: 1574, 1578, 1579] <em>Key Exemplars: Bertrand Russell.</em> [cite: 1581]</li>
+          <li><strong>Dialectical Mode:</strong> A dynamic mode wherein truth emerges through structural dialogue, rigorous questioning, and the active synthesis of thesis and antithesis. [cite: 1583, 1584] <em>Key Exemplars: Socrates.</em> [cite: 1585]</li>
+        </ul>
+        <div class="key-box"><strong>Syllabus Note:</strong> The modes prevent dogmatism, provide practical moral guidance, and allow philosophy to stay comprehensive and progressive. [cite: 1588, 1590, 1591, 1592]</div>
+      `},
+    ]
+  },
+  t3: {
+    heading: 'Branches of Philosophy',
+    sections: [
+      { h: 'The Fundamental Structures', body: `
+        <p>The field is divided into four major programmatic branches, often referred to as the components or core structural problems of philosophy: [cite: 1594]</p>
+        <h3>1. Metaphysics</h3>
+        <p>Derived from Greek <em>'Meta'</em> (after/beyond) and <em>'Physika'</em> (nature). [cite: 1597] It investigates absolute, ultimate reality beyond physical reach or everyday sensory validation. [cite: 1598, 1599, 1602] It is divided into four structural sub-pillars: [cite: 1608]</p>
+        <ul>
+          <li><strong>Ontology:</strong> The formal study of being and existence, categorizing mental and physical entities, and questioning if basic reality resides in physical matter or spirit energy. [cite: 1609, 1610, 1613]</li>
+          <li><strong>Cosmology:</strong> The structural study of theories tracing the origin, nature, and systemic development of the universe as an orderly macro-system. [cite: 1615, 1616]</li>
+          <li><strong>Causality:</strong> The examination of universal principles governing cause and effect. [cite: 1613]</li>
+          <li><strong>Theology:</strong> The structural component of religious theory dealing with conceptions of God, His attributes, and the existential paradox of the Problem of Evil. [cite: 1618, 1619]</li>
+        </ul>
+
+        <h3>2. Epistemology</h3>
+        <p>Derived from Greek <em>'Episteme'</em> (knowledge/understanding) and <em>'Logos'</em> (study of). [cite: 1622] Known as the <strong>theory of knowledge</strong>, it monitors the source, limits, and validity of knowledge claims. [cite: 1621, 1623] It highlights critical positions like <strong>Skepticism</strong> (asserting reliable knowledge is unachievable) and <strong>Agnosticism</strong> (ignorance of God's existence). [cite: 1628, 1629, 1632] The curriculum tracks 5 exact knowledge sources: [cite: 1639]</p>
+        <ul>
+          <li><strong>Revelation Source:</strong> Gained from a deity; absolute, supernatural communication that bypasses the natural order and must be accepted strictly by faith as it cannot be verified empirically. [cite: 1640, 1641, 1644, 1645]</li>
+          <li><strong>Empirical Source:</strong> Acquired via systematic observation and human perception verified by the five physical senses. [cite: 1646, 1647]</li>
+          <li><strong>Authoritative Source:</strong> Accepted on the basis of experts, historical tradition, tables, or textbooks. [cite: 1651, 1652]</li>
+          <li><strong>Rational Source:</strong> Independent processing achieved via the internal human reasoning faculty and formal logic. [cite: 1655, 1658]</li>
+          <li><strong>Intuition Source:</strong> A sudden, direct flash of insight arriving without any conscious linear step-by-step calculation. [cite: 1659, 1660]</li>
+        </ul>
+
+        <h3>3. Axiology</h3>
+        <p>Derived from Greek <em>'Axios'</em> (worth/value) and <em>'Logos'</em> (theory). [cite: 1666] The programmatic study of value judgments, split cleanly into two functional arms: [cite: 1667, 1677]</p>
+        <ul>
+          <li><strong>Ethics:</strong> The structural evaluation of human habits, moral conduct, voluntary choice, and character to map right from wrong actions. [cite: 1678, 1679, 1680]</li>
+          <li><strong>Aesthetics:</strong> The structural examination of principles governing the creation, perception, and systematic appreciation of beauty and art. [cite: 1694, 1697]</li>
+        </ul>
+
+        <h3>4. Logic</h3>
+        <p>The branch concerned with framing valid reasoning systems and separating correct reasoning pathways from flawed ones. [cite: 1702] It tracks two clean divisions: [cite: 1716]</p>
+        <ul>
+          <li><strong>Deductive Logic:</strong> Moves from the universal/general down to a localized, particular instance, asserting absolute, certain necessity. [cite: 1717, 1718, 1719]</li>
+          <li><strong>Inductive Logic:</strong> Begins at specific factual observations and generalizes outward to a universal conclusion, working with high probability instead of absolute certainty. [cite: 1729, 1730, 1742]</li>
+        </ul>
+      `},
+    ]
+  },
+  t4: {
+    heading: 'Syllogism',
+    sections: [
+      { h: 'Structural Elements and Mechanics', body: `
+        <p>A <strong>syllogism</strong> is a formal three-step deductive reasoning method used to establish structural logical truths. [cite: 1745, 1749] It resolves hidden relationships by positioning exactly three categorical statements: [cite: 1748, 1752, 1807]</p>
+        <ul>
+          <li><strong>1. Major Premise:</strong> An absolute assumption or baseline general statement taken as fact, containing the Major Term (predicate of the ultimate conclusion). [cite: 1746]</li>
+          <li><strong>2. Minor Premise:</strong> A localized fact that serves to substantiate the Major Premise, containing the Minor Term (subject of the ultimate conclusion). [cite: 1747]</li>
+          <li><strong>3. Conclusion:</strong> The final statement derived directly by linking the unique elements of the premises and removing the shared middle term. [cite: 1748, 1755, 1759]</li>
+        </ul>
+        <div class="key-box"><strong>The Golden Middle Term Rule:</strong> The middle term must appear clearly in both premises to form the logical bridge, but must *never* enter the final conclusion statement. Committing a violation results in an undistributed middle or invalid form. [cite: 1775]</div>
+      `},
+      { h: 'The Four Figures of Syllogism', body: `
+        <p>The precise structural figure of a syllogism is determined solely by the position of the middle term within the premises. The syllabus tracks four distinct structural figures: [cite: 1792, 1795, 1799, 1803]</p>
+        <ul>
+          <li><strong>Figure 1:</strong> The middle term stands as the Subject in the major premise and the Predicate in the minor premise. [cite: 1792]</li>
+          <li><strong>Figure 2:</strong> The middle term is positioned as the Predicate in *both* premises. [cite: 1795]</li>
+          <li><strong>Figure 3:</strong> The middle term acts as the Subject in *both* premises. [cite: 1799]</li>
+          <li><strong>Figure 4:</strong> The middle term stands as the Predicate in the major premise and the Subject in the minor premise. [cite: 1803]</li>
+        </ul>
+      `},
+    ]
+  },
+  t5: {
+    heading: 'Symbolic Logic & Rules of Inference',
+    sections: [
+      { h: 'The Valid Formal Transformations', body: `
+        <p>In propositional proofs, formal rules act as "legal moves in a game of logic" where rule compliance guarantees a true conclusion if the starting inputs are true. [cite: 1811, 1812, 1813] The core syllabus explicitly tracks the standard rules and their exact linguistic behavior:</p>
+        <ul>
+          <li><strong>1. Modus Ponens (M.P.):</strong> Given a conditional implication ($P \rightarrow Q$) and a confirmed antecedent ($P$), you validly deduce the consequent ($Q$). [cite: 1817, 1825, 1826, 1827]</li>
+          <li><strong>2. Modus Tollens (M.T.):</strong> Given a conditional implication ($P \rightarrow Q$) and a falsified or denied consequent ($\sim Q$), you validly deny the antecedent ($\sim P$). [cite: 1818, 1832, 1833, 1834]</li>
+          <li><strong>3. Hypothetical Syllogism (H.S.):</strong> The transitive chain rule ($P \rightarrow Q, Q \rightarrow R \therefore P \rightarrow R$). If statement one links to statement two, and two links to three, then one links directly to three. [cite: 1819, 1837, 1838]</li>
+          <li><strong>4. Disjunctive Syllogism (D.S.):</strong> The elimination rule. Given an "either/or" disjunction ($P \vee Q$) and a falsification of one path ($\sim P$), the remaining path must stand ($Q$). [cite: 1820, 1840, 1841]</li>
+          <li><strong>5. Constructive Dilemma (C.D.):</strong> Links two conditionals via a disjunction ($[P \rightarrow Q] \wedge [R \rightarrow S], P \vee R \therefore Q \vee S$). [cite: 1821, 1843, 1844]</li>
+          <li><strong>6. Absorption (Abs.):</strong> A structural bundling mechanic that preserves meaning while duplicating terms ($P \rightarrow Q \therefore P \rightarrow [P \wedge Q]$). It rolls the original cause directly into the effect matrix for subsequent deductive utility. [cite: 1847, 1853, 1858, 1869]</li>
+          <li><strong>7. Simplification (Simp.):</strong> Pulls a single truth safely out from a joint conjunction ($P \wedge Q \therefore P$). If both statements are structurally true, each is true on its own. [cite: 1822, 1871, 1873, 1880]</li>
+          <li><strong>8. Conjunction (Conj.):</strong> Joins two separately verified independent truths into a single unified compound statement using "and" ($P, Q \therefore P \wedge Q$). [cite: 1823, 1890, 1891]</li>
+          <li><strong>9. Addition (Add.):</strong> Generates a disjunction by appending any random statement to an already verified true claim ($P \therefore P \vee Q$). [cite: 1824, 1898, 1899]</li>
+        </ul>
+      `},
+    ]
+  },
+  t6: {
+    heading: 'Fallacy',
+    sections: [
+      { h: 'Deceptive Reasoning Structures', body: `
+        <p>A <strong>fallacy</strong> is a structural flaw or error in an argument framework that makes it invalid, deceptive, or structurally unsound while appearing authentic or superficially persuasive. [cite: 1919, 1923] Fallacies are divided into two primary structural blocks: [cite: 1927]</p>
+        <h3>Formal Fallacies</h3>
+        <p>Pure structural errors detectable simply by mapping the abstract logical pattern without knowing word meanings. [cite: 1932, 1935, 1937] Classic systemic patterns include:</p>
+        <ul>
+          <li><strong>Affirming the Consequent:</strong> An invalid pattern ($P \rightarrow Q, Q \therefore P$). Mistakenly assumes an effect can only have one structural cause (e.g., wet streets must mean rain, ignoring water tankers). [cite: 1933, 1938, 1941, 1942]</li>
+          <li><strong>Denying the Antecedent:</strong> An invalid modification ($P \rightarrow Q, \sim P \therefore \sim Q$). Structural structural error in deduction. [cite: 1933, 1943]</li>
+        </ul>
+        <h3>Informal Fallacies</h3>
+        <p>Errors embedded within the actual contextual content, relevance, or language ambiguity of an argument: [cite: 1927, 1929]</p>
+        <ul>
+          <li><strong>Ad Hominem:</strong> Directly attacking personal traits or irrelevant life flaws of the person rather than dismantling the argument. [cite: 1928, 1957]</li>
+          <li><strong>Red Herring:</strong> Intentionally inserting completely irrelevant data to distract attention away from the core issue. [cite: 1928, 1959]</li>
+          <li><strong>Straw Man:</strong> Grossly exaggerating or misrepresenting an opponent's true baseline position to make it easier to attack. [cite: 1928, 1960]</li>
+          <li><strong>False Dilemma:</strong> Artificially forcing a restrictive binary choice (either/or) when other valid options exist. [cite: 1929, 1962]</li>
+          <li><strong>Ad Populum (Bandwagon):</strong> Claiming an assertion must be absolutely true simply because a massive majority of citizens believe it. [cite: 1963]</li>
+          <li><strong>Circular Reasoning (Begging the Question):</strong> Sneaking the conclusion directly into the premise as an unproved assumption. [cite: 1929, 1967, 2449]</li>
+          <li><strong>Post Hoc (False Cause):</strong> Improperly claiming that event A caused event B solely because event A happened first chronologically. [cite: 1968]</li>
+        </ul>
+      `},
+    ]
+  },
+  t7: {
+    heading: 'Classical Laws of Thought',
+    sections: [
+      { h: 'The Core Regulative Axioms', body: `
+        <p>The baseline rules directing rational thought and structural validation are non-empirical, normative principles tracing back to Aristotle. [cite: 1971, 1983, 2060] They dictate how human reasoning *should* progress to prevent chaos, rather than describing how people think in casual real life: [cite: 1972, 1982]</p>
+        <ul>
+          <li><strong>1. The Law of Identity:</strong> Expressed as $A = A$ or $P \rightarrow P$. It dictates that an entity or statement is identical to itself, securing conceptual clarity and removing context-shifting ambiguity. [cite: 1989, 1990, 1991]</li>
+          <li><strong>2. The Law of Non-Contradiction:</strong> Expressed symbolically as $\sim(A \wedge \sim A)$. It rules that a statement and its direct negation cannot coexist as simultaneously true in the exact same way and context. It is the core anchor of rational speech. [cite: 1991, 1992]</li>
+          <li><strong>3. The Law of Excluded Middle:</strong> Expressed as $A \vee \sim A$. It enforces that any given proposition must be decisively true or false, eliminating intermediate truth values. [cite: 1993, 1994]</li>
+        </ul>
+        <div class="key-box"><strong>The Great Mathematical Dispute:</strong> The Law of Excluded Middle is rejected by a distinct school known as the <strong>Intuitionists</strong>. They argue it is a flawed tool because it permits proofs of existence for infinite mathematical items without requiring their physical or structural construction. [cite: 2407]</div>
+      `},
+    ]
+  },
+  t8: {
+    heading: 'Arguments & Truth Tables',
+    sections: [
+      { h: 'Validity vs. Soundness', body: `
+        <p>In logic, an <strong>argument</strong> tracks the structural connection between static premises and a conclusion, serving as a platform to test reasoning quality. [cite: 2084, 2086] It must never be confused with casual human fights. [cite: 2083] The core curriculum differentiates terms: [cite: 2135, 2315]</p>
+        <ul>
+          <li><strong>Validity:</strong> Concerns structural form only. An argument is valid if its premises and conclusion are tied such that it is logically impossible for the premises to be true while the conclusion is false. [cite: 2153, 2315] An argument can be valid even if every single statement inside it is factually false (e.g., "All men are monkeys"). [cite: 2188, 2189]</li>
+          <li><strong>Truth:</strong> Refers strictly to whether individual declarative statements correspond to objective real-world facts. [cite: 2315]</li>
+          <li><strong>Soundness:</strong> Achieved only when an argument has a perfectly valid structure *and* all of its premises are factually true in reality. [cite: 2203]</li>
+          <li><strong>Cogency:</strong> The inductive equivalent. An argument is cogent if it has a strong structure and all supporting factual premises are accurate. [cite: 2204]</li>
+        </ul>
+      `},
+      { h: 'Method of Truth Table Validation', body: `
+        <p>To explicitly verify deductive validity, the syllabus enforces a exact three-step algorithmic truth-table procedure: [cite: 2223]</p>
+        <ul>
+          <li><strong>Step 1:</strong> Identify all premises and the final conclusion, assigning variable symbols. [cite: 2224]</li>
+          <li><strong>Step 2:</strong> Map out a truth table tracking every possible truth value configuration. [cite: 2225]</li>
+          <li><strong>Step 3:</strong> Isolate all rows where *all* premises are concurrently true. These are designated as <strong>Critical Rows</strong>. [cite: 2227]</li>
+        </ul>
+        <p>If you locate even a single critical row where the premises are true but the conclusion falls to false, the entire argument is certified as <strong>invalid</strong>. If the conclusion is true in every single critical row, the argument is certified as <strong>valid</strong>. [cite: 2228, 2229]</p>
+      `},
+    ]
+  },
+  t9: {
+    heading: 'Creative & Critical Thinking',
+    sections: [
+      { h: 'Divergent vs. Convergent Processing', body: `
+        <p>Effective problem-solving requires combining two distinct cognitive functions rather than operating them as a single uniform action: [cite: 2494, 2495]</p>
+        <ul>
+          <li><strong>Creative Thinking (Divergent/Lateral):</strong> The capacity to break conventional boundaries and generate a broad pool of original ideas or unexpected solutions. [cite: 2480, 2481, 2484] It operates with high ambiguity tolerance, intentionally challenges standard rules, and treats failure as discovery data (e.g., brainstorming 20 distinct local plants like moringa or papaya leaves for cheap poultry feed). [cite: 2499, 2500]</li>
+          <li><strong>Critical Thinking (Convergent/Linear):</strong> The systematic ability to analyze, verify, filter, and evaluate existing information to select the single best solution. [cite: 2486, 2491, 2499] It uses linear logic, reduces error risk, and checks structural implementation constraints (e.g., calculating precise nutritional value models for the selected poultry feed ingredients). [cite: 2499, 2519]</li>
+        </ul>
+      `},
+      { h: 'William Perry’s 4 Cognitive Development Stages', body: `
+        <p>University students progress systematically through four cognitive evolutionary phases: [cite: 2539]</p>
+        <ul>
+          <li><strong>Stage 1 - Dualistic Thinking:</strong> Simplistic, rigid, binary grouping. Information is viewed in black-and-white (right vs. wrong). The learner relies heavily on authority figures (teachers, textbooks) for absolute answers and experiences high discomfort with ambiguity. [cite: 2541, 2546, 2548]</li>
+          <li><strong>Stage 2 - Multiplicity Thinking:</strong> The student recognizes that different viewpoints exist and that some complex questions lack simple definitive answers. All personal opinions feel temporarily equal. [cite: 2550, 2551, 2556]</li>
+          <li><strong>Stage 3 - Relativism Thinking:</strong> Information is no longer accepted blindly. The thinker systematically evaluates sources, maps contextual perspective shifts, tracks who established the claims, and challenges dogmatic authority using evidence. [cite: 2560, 2561, 2565, 2568]</li>
+          <li><strong>Stage 4 - Commitment within Relativism:</strong> The final advanced phase. The learner synthesizes personal experience with research data to make an authentic commitment to a position, while remaining actively open to revising beliefs if new facts appear. [cite: 2570, 2571, 2575]</li>
+        </ul>
+      `},
+    ]
+  },
+  t10: {
+    heading: 'Philosophy & Religion',
+    sections: [
+      { h: 'Methodological Clashes and Differences', body: `
+        <p>Both disciplines target universal queries regarding human existence, morality, and purpose, but utilize opposite methodologies: [cite: 2624, 2637]</p>
+        <ul>
+          <li><strong>Philosophy</strong> acts as a system reasoning upward from human thought, relying strictly on logical tools, argumentation, and systemic skepticism without static earthly or spiritual authority. [cite: 2627, 2633, 2634]</li>
+          <li><strong>Religion</strong> functions as a system claiming revelation downward, relying primarily on baseline faith, sacred texts, divinely anchored scriptural commands, and transcendent supernatural reality breaking into the natural order. [cite: 2638, 2640, 2641]</li>
+        </ul>
+      `},
+      { h: 'Comparative Religious Worldviews', body: `
+        <p>The syllabus charts specific technical sub-divisions and structural arguments within the two dominant religious matrixes: [cite: 2681, 2682]</p>
+        <ul>
+          <li><strong>Islamic Philosophy Structure:</strong> split etymologically into two competing historical streams. [cite: 2648] <strong>Falsafa</strong> covers secular disciplines like logic, physics, and metaphysics adopted from Greek translations during the Golden Age (led by Al-Kindi, Ibn Sina, Ibn Rushd). [cite: 2649, 2651, 2652, 2653] <strong>Kalam</strong> represents defensive scholastic theology using dialectic logic to defend specific Islamic doctrines like <em>Tawhid</em> (Oneness of God) and divine attributes. [cite: 2657, 2658, 2659, 2674]</li>
+          <li><strong>The Core Islamic Debate:</strong> Al-Ghazali's landmark critique (<em>The Incoherence of the Philosophers</em>) warned that unbridled rationalism could trigger heresy, asserting revelation always wins. [cite: 2691, 2699] Ibn Rushd responded with a counter-defense (<em>The Incoherence of the Incoherence</em>), arguing that properly executed rational philosophy cannot contradict revelation; it deepens faith. [cite: 2655, 2665]</li>
+          <li><strong>Christian Philosophical Structure:</strong> Built on the structural baseline of God as a Trinity and Christ as the literal <strong>Logos</strong> incarnate, anchoring all wisdom inside a personal relational model. [cite: 2647, 2686, 2711] It historically balances two classic streams: <strong>Augustine of Hippo</strong> (who adapted Plato to structure theology) and <strong>Thomas Aquinas</strong> (who integrated Aristotle to build systematic theology, famously asserting that divine grace does not destroy nature but perfects it). [cite: 2693, 2699, 2700]</li>
+        </ul>
+      `},
+    ]
+  },
+  t11: {
+    heading: 'Impact of Philosophy on Human Existence',
+    sections: [
+      { h: 'The 7 Structural Elements of Personhood', body: `
+        <p>The 2026 curriculum outlines exactly 7 interwoven components and factors that constitute human presence on earth: [cite: 2767, 2824]</p>
+        <ul>
+          <li><strong>1. Physical Body:</strong> The core biological matrix containing organs, neural brain paths, hormonal triggers, survival functions, and DNA evolutionary drives. [cite: 2774, 2775, 2776, 2778]</li>
+          <li><strong>2. Mind:</strong> The locus of cognitive operations, sensory perception, memory, and reasoning. [cite: 2779, 2785] It acts as an operational bridge between biological urges and social rules. [cite: 2786]</li>
+          <li><strong>3. Spirit or Soul:</strong> The non-physical seat of raw personal identity and morality, often linked to spiritual transcendence or immortality. [cite: 2789, 2791, 2792]</li>
+          <li><strong>4. Emotions:</strong> Internal human feelings (love, fear, sadness). Existentialists view emotions like <em>anxiety</em> as a core indicator of personal human freedom. [cite: 2796, 2798]</li>
+          <li><strong>5. Social Connections:</strong> Relational ties (family, community, status) that actively shape personal identity and institutional survival. [cite: 2801, 2845]</li>
+          <li><strong>6. Consciousness:</strong> The foundational awareness theater where perception and experience are continuously played out. [cite: 2814, 2815]</li>
+          <li><strong>7. Self-Awareness:</strong> The specialized cognitive ability to reflect on one's internal thoughts, choices, and terminal mortality. [cite: 2817, 2819]</li>
+        </ul>
+      `},
+      { h: 'School Matrix and Analytical Perspectives', body: `
+        <p>Different philosophical schools prioritize and interpret these seven dimensions through divergent lenses: [cite: 2824]</p>
+        <ul>
+          <li><strong>Materialists:</strong> Reduce all components of consciousness and internal emotional feelings down to physical neural brain firings. [cite: 2825]</li>
+          <li><strong>Existentialists:</strong> Focus strictly on consciousness as absolute personal freedom and responsibility, forcing humans to create meaningful worlds without pre-defined essences. [cite: 2760, 2827, 2837]</li>
+          <li><strong>Marxists:</strong> Argue human essence is anchored in physical productive labor, shaping and being shaped by surrounding economic material conditions. [cite: 2764]</li>
+          <li><strong>African Philosophy:</strong> Prioritizes community relationality, stating a person is a person strictly through other persons via communal bonds. [cite: 2762, 2763]</li>
+        </ul>
+      `},
+      { h: 'Practical Institutional Impact', body: `
+        <p>Philosophy acts as an active survival tool shaping macro structures: [cite: 2506, 2804]</p>
+        <ul>
+          <li><strong>Education:</strong> Dewey's experiential learning models repositioned education as active participation, and philosophy provides tools for teachers to challenge dogmatism. [cite: 2895, 2896, 2958]</li>
+          <li><strong>Politics:</strong> Social contract theories (Hobbes, Locke, Rousseau) explain the origin and limits of governance authority. [cite: 2808] Locke's work on natural rights (life, liberty, property) forms the backbone of modern constitutional democracy. [cite: 2809]</li>
+          <li><strong>Ethics:</strong> Utilizes distinct frameworks: <strong>Virtue Ethics</strong> (Aristotle: character development through moderation), <strong>Utilitarianism</strong> (Bentham/Mill: actions judged by maximizing net happiness outcomes), and <strong>Deontology</strong> (Kant: duty-bound respect for absolute human dignity). [cite: 2851, 2881, 2884, 2887]</li>
+        </ul>
+      `},
+    ]
+  },
+};
+
+// ══════════ MCQ BANK (EXPANDED TO TRACK 330+ CAPACITY TARGETS) ══════════
+const MCQ = {
+  t1: [
+    {q:"The word 'philosophy' is derived from which language?", o:["Latin","Greek","Hebrew","Arabic"], a:1},
+    {q:"'Philo' in Greek means:", o:["Knowledge","Wisdom","Love","Truth"], a:2},
+    {q:"'Sophia' in Greek means:", o:["Love","Wisdom","Reason","Enquiry"], a:1},
+    {q:"The literal meaning of philosophy is:", o:["Study of science","Love of wisdom","Search for God","Knowledge of nature"], a:1},
+    {q:"According to Carter Good, philosophy is a science that seeks to:", o:["Prove God's existence","Organise and systematise all fields of knowledge","Study physical phenomena","Teach moral values only"], a:1},
+    {q:"Which is NOT a component of philosophy listed by Carter Good?", o:["Logic","Aesthetics","Theology","Metaphysics"], a:2},
+    {q:"Russell (2010) argues philosophy enables individuals to:", o:["Follow traditions blindly","Think clearly and rationally","Accept religious doctrines","Avoid questioning beliefs"], a:1},
+    {q:"Jalaluddin & Idi describe philosophy as:", o:["A narrow study","A comprehensive and systematic view","An empirical science only","A study of language only"], a:1},
+    {q:"Philosophy fosters critical thinking, ethical reasoning, and conceptual clarity — according to:", o:["Russell","Carter Good","Stanford Encyclopedia of Philosophy","Aristotle"], a:2},
+    {q:"Philosophy proceeds through argumentation and logical evaluation rather than:", o:["Evidence","Mere opinion or tradition","Critical analysis","Systematic thinking"], a:1},
+    {q:"The characteristic of philosophy concerned with 'what ought to be' is:", o:["Speculative","Dialectical","Normative and evaluative","Reflective"], a:2},
+    {q:"Philosophy's 'second-order' characteristic means it:", o:["Studies science directly","Reflects on the foundations of other disciplines","Only deals with second-hand knowledge","Is less important than other disciplines"], a:1},
+    {q:"The dialectical characteristic of philosophy means it progresses through:", o:["Individual thought alone","Sacred texts","Dialogue, debate and confrontation of opposing views","Laboratory experiments"], a:2},
+    {q:"'Speculative yet grounded' means philosophy:", o:["Makes guesses without reason","Ventures beyond observation while anchored in reason","Relies only on empirical evidence","Ignores reality"], a:1},
+    {q:"Which characteristic shows philosophy transcends particular cultures?", o:["Normative","Universal and foundational","Dialectical","Reflective"], a:1},
+    {q:"Philosophy is 'practical and transformative' because it:", o:["Only concerns abstract theory","Shapes human life and moral decision-making","Is limited to academia","Deals only with ancient problems"], a:1},
+    {q:"Philosophy asks fundamental questions such as:", o:["How fast does light travel?","What is the chemical formula of water?","What is knowledge and how can we know?","How many planets are in the solar system?"], a:2},
+    {q:"The fact that philosophy has no single universal definition implies it:", o:["Is unimportant","Tends to elude consensual definition","Is only for experts","Should be abandoned"], a:1},
+    {q:"Philosophy involves the use of all EXCEPT:", o:["Logic","Language analysis","Blind faith","Critical analysis"], a:2},
+    {q:"'Coherent reasoning' in philosophy means reasoning that is:", o:["Scattered and inconsistent","Logical, consistent and well-structured","Based only on feelings","Traditional and unchanging"], a:1},
+    {q:"Philosophy is called 'second-order' because it:", o:["Is less important than science","Studies the methods and foundations of other disciplines","Only studies secondary sources","Came after other subjects historically"], a:1},
+    {q:"Which philosopher said the unexamined life is not worth living?", o:["Aristotle","Plato","Socrates","Kant"], a:2},
+    {q:"The 'normative' characteristic of philosophy means it:", o:["Describes facts only","Prescribes standards of what ought to be","Avoids value judgements","Only studies language"], a:1},
+    {q:"Philosophy's 'foundational' role means it:", o:["Was the first academic subject","Provides the basic concepts and assumptions underlying all other fields","Is the most difficult subject","Deals only with ancient ideas"], a:1},
+    {q:"Which of these is NOT a component Carter Good lists for philosophy?", o:["Logic","Mathematics","Ethics","Aesthetics"], a:1},
+    {q:"The dialectical nature of philosophy means it advances through:", o:["Single thinkers working alone","Sacred texts and authority","Opposing positions and dialogue","Laboratory experiments"], a:2},
+    {q:"Why can't philosophy be reduced to a single universal definition?", o:["Philosophers are lazy","Its scope encompasses all fundamental questions — it continually evolves","It is not a real subject","Only experts can define it"], a:1},
+    {q:"'Speculative yet grounded' means philosophy:", o:["Is mere speculation without basis","Ventures beyond direct observation but is still anchored in reason","Only guesses","Contradicts science"], a:1},
+    {q:"According to Russell, philosophy helps people:", o:["Accept all traditions","Think clearly and rationally, questioning underlying assumptions","Avoid hard questions","Memorise important facts"], a:1},
+    {q:"Amaele (2002) outlines that philosophy acts as a means to simplify what?", o:["Physical labs","Complex ideas and statements about life experiences","Political elections","Mathematical calculators"], a:1}
+  ],
+  t2: [
+    {q:"The four modes of philosophy are:", o:["Deductive, inductive, abductive, analogical","Speculative, prescriptive, analytic, critical","Metaphysical, logical, ethical, aesthetic","Empirical, rational, intuitive, authoritative"], a:1},
+    {q:"The speculative mode of philosophy is associated with:", o:["Plato","Kant","Aristotle","Wittgenstein"], a:2},
+    {q:"The prescriptive mode of philosophy is associated with:", o:["Aristotle","Immanuel Kant","Descartes","Wittgenstein"], a:1},
+    {q:"The analytic mode of philosophy is associated with:", o:["Aristotle","Kant","Wittgenstein","Plato"], a:2},
+    {q:"The critical mode of philosophy is associated with:", o:["Wittgenstein","Aristotle","Immanuel Kant","Socrates"], a:2},
+    {q:"The speculative mode offers:", o:["Only ethical norms","The most general and comprehensive view of the universe","A narrow analysis of language","A critique of science only"], a:1},
+    {q:"The prescriptive mode prescribes:", o:["What the universe is made of","How human behaviour should be and provides norms and standards","How to analyse language","How to prove mathematical theorems"], a:1},
+    {q:"The analytic mode is concerned with:", o:["The origin of the universe","Moral standards","Clarifying meaning, definition, and language","Religious doctrines"], a:2},
+    {q:"The critical mode examines:", o:["Only logical fallacies","Foundations and presuppositions of claims in science, morality, religion","The beauty of language","God's existence alone"], a:1},
+    {q:"Kant's 'Critique of Pure Reason' is associated with which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:3},
+    {q:"Which mode includes ethics and philosophy of education?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"Aristotle called speculative philosophy:", o:["First philosophy","Pure logic","Philosophy of mind","Second-order philosophy"], a:0},
+    {q:"The analytic mode focuses on:", o:["Comprehensive worldviews","Prescribing moral norms","Meaning, definition, and verifiability","Religious experience"], a:2},
+    {q:"'What can I know?' best describes the question of which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:3},
+    {q:"'What should I do?' best describes the question of which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"'What is the totality of being?' best describes which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:0},
+    {q:"'What does this concept mean?' best describes which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:2},
+    {q:"Philosophy of education belongs to which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"Social philosophy belongs to which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"Which mode questions the basis of scientific knowledge?", o:["Speculative","Prescriptive","Analytic","Critical"], a:3},
+    {q:"Kant's work is associated with which TWO modes?", o:["Speculative and Analytic","Prescriptive and Critical","Speculative and Critical","Analytic and Prescriptive"], a:1},
+    {q:"'What is real?' is a question most typical of which mode?", o:["Prescriptive","Analytic","Speculative","Critical"], a:2},
+    {q:"Philosophy of law belongs to which mode?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"Which mode uses conceptual analysis as its primary tool?", o:["Speculative","Prescriptive","Analytic","Critical"], a:2},
+    {q:"The analytic mode was pioneered largely by:", o:["Aristotle","Kant","Wittgenstein and the Vienna Circle","Plato"], a:2},
+    {q:"'What norms should govern human conduct?' belongs to:", o:["Speculative mode","Prescriptive mode","Analytic mode","Critical mode"], a:1},
+    {q:"The speculative mode is sometimes called:", o:["Normative philosophy","First philosophy / metaphysics","Language philosophy","Critical theory"], a:1},
+    {q:"The critical mode examines the PRESUPPOSITIONS of:", o:["Only logic","Science, morality, and religion","Only language","Only art"], a:1},
+    {q:"Philosophy of language most naturally belongs to:", o:["Speculative mode","Prescriptive mode","Analytic mode","Critical mode"], a:2},
+    {q:"According to Akinpelu (1981), prescriptive philosophy seeks to recommend what?", o:["Laboratory procedures","Principles for describing what actions are worthwhile and why","Voting records","Tax brackets"], a:1}
+  ],
+  t3: [
+    {q:"The four major branches of philosophy are:", o:["Science, religion, art, history","Metaphysics, epistemology, logic, and axiology","Politics, economics, sociology, psychology","Grammar, rhetoric, arithmetic, geometry"], a:1},
+    {q:"The Greek root 'Meta' in Metaphysics means:", o:["Love","After or beyond","Knowledge","Being"], a:1},
+    {q:"The sub-branch of metaphysics that studies 'being and existence' is:", o:["Cosmology","Theology","Ontology","Epistemology"], a:2},
+    {q:"Ontology is described as the:", o:["Study of values","Science of being","Theory of knowledge","Study of art"], a:1},
+    {q:"Cosmology deals with:", o:["Conceptions of God","Theories about the origin and development of the universe","The study of moral values","Language analysis"], a:1},
+    {q:"Theology as part of metaphysics deals with:", o:["Political systems","Conceptions of and about God","The beauty of nature","Rules of reasoning"], a:1},
+    {q:"Epistemology is the:", o:["Theory of value","Theory of knowledge","Theory of beauty","Theory of being"], a:1},
+    {q:"The Greek word 'episteme' means:", o:["Value","Being","Knowledge / understanding","Beauty"], a:2},
+    {q:"Skepticism asserts that:", o:["Knowledge is always absolute","People cannot acquire reliable knowledge","The senses are perfectly reliable","Authority is the best source of knowledge"], a:1},
+    {q:"'Axios' in Greek means:", o:["Knowledge","Worth or value","Reasoning","Being"], a:1},
+    {q:"The two main branches of axiology are:", o:["Logic and metaphysics","Ethics and aesthetics","Ontology and cosmology","Epistemology and logic"], a:1},
+    {q:"Ethics is described as the study of:", o:["What is beautiful","What makes actions right or wrong","The origin of the universe","The rules of valid argument"], a:1},
+    {q:"Aesthetics is the study of:", o:["What is morally right","What is beautiful, enjoyable, or tasteful","How we acquire knowledge","What ultimately exists"], a:1},
+    {q:"Logic is the branch of philosophy concerned with:", o:["The nature of God","Reasoning and distinguishing good from bad reasoning","The study of values","The theory of knowledge"], a:1},
+    {q:"Deductive logic proceeds from:", o:["Specific to general","General to specific (universal to particular)","Major to minor premise","Conclusion to premise"], a:1},
+    {q:"Inductive logic proceeds from:", o:["General to specific","Specific to general (particular to universal)","Major to minor premise","Conclusion to premise"], a:1},
+    {q:"'Every man is mortal; Socrates is a man; therefore Socrates is mortal' is an example of:", o:["Inductive logic","Deductive logic","Intuition","Empirical reasoning"], a:1},
+    {q:"Revelation as a source of knowledge:", o:["Can be proved empirically","Must be accepted by faith","Is based on the five senses","Comes from rational reasoning only"], a:1},
+    {q:"Empirical knowledge is derived from:", o:["God","Human perception and the five senses","Authority figures","Sudden insight"], a:1},
+    {q:"Intuition as a source of knowledge comes:", o:["Through a long process of reasoning","Suddenly and directly without reasoning","From authority","From the five senses"], a:1},
+    {q:"Which branch of philosophy asks 'What is beauty?'", o:["Epistemology","Metaphysics","Axiology (Aesthetics)","Logic"], a:2},
+    {q:"Ontology is sometimes called:", o:["The science of beauty","The science of being","The theory of knowledge","The study of morality"], a:1},
+    {q:"'Axios' is the Greek root of which branch?", o:["Metaphysics","Epistemology","Axiology","Logic"], a:2},
+    {q:"Which sub-branch of metaphysics deals with cause and effect?", o:["Ontology","Cosmology","Causality","Theology"], a:2},
+    {q:"The study of God's nature and existence falls under which sub-branch of metaphysics?", o:["Ontology","Causality","Cosmology","Theology"], a:3},
+    {q:"Scepticism challenges which branch of philosophy?", o:["Axiology","Logic","Epistemology","Metaphysics"], a:2},
+    {q:"'How do we distinguish valid from invalid reasoning?' is a question for:", o:["Epistemology","Metaphysics","Axiology","Logic"], a:3},
+    {q:"Authoritative knowledge comes from:", o:["Direct sensory experience","God or divine revelation","Experts, tradition, and textbooks","Sudden insight"], a:2},
+    {q:"Which branch of philosophy most directly addresses 'How should I behave?'", o:["Metaphysics","Epistemology","Ethics (Axiology)","Logic"], a:2},
+    {q:"Which Greek Sophist asserted that nothing exists, and if it did, we could not know it?", o:["Socrates","Plato","Gorgias","Aristotle"], a:2}
+  ],
+  t4: [
+    {q:"A syllogism is a deductive argument consisting of:", o:["One premise and a conclusion","Three premises only","Two premises and a conclusion","Multiple conclusions"], a:2},
+    {q:"The three parts of a standard syllogism are:", o:["Subject, predicate, copula","Major premise, minor premise, conclusion","Antecedent, consequent, negation","Hypothesis, evidence, result"], a:1},
+    {q:"In a categorical syllogism, the major premise contains:", o:["The minor term","The major term (predicate of the conclusion)","The middle term only","The conclusion"], a:1},
+    {q:"The middle term in a syllogism:", o:["Appears in the conclusion","Appears in both premises but not the conclusion","Appears only in the minor premise","Appears only in the conclusion"], a:1},
+    {q:"A categorical proposition is a statement that:", o:["Uses if-then form","Affirms or denies something about all or part of a category","Uses either-or form","Contains a contradiction"], a:1},
+    {q:"'All S are P' is which type of categorical proposition?", o:["E (Universal Negative)","I (Particular Affirmative)","A (Universal Affirmative)","O (Particular Negative)"], a:2},
+    {q:"'No S are P' is which type of categorical proposition?", o:["A","E","I","O"], a:1},
+    {q:"'Some S are P' is which type of categorical proposition?", o:["A","E","I","O"], a:2},
+    {q:"'Some S are not P' is which type of categorical proposition?", o:["A","E","I","O"], a:3},
+    {q:"In Figure 1 of a syllogism, the middle term is:", o:["Predicate in both premises","Subject in major, predicate in minor","Subject in both premises","Predicate in major, subject in minor"], a:1},
+    {q:"In Figure 2, the middle term is:", o:["Subject in both","Predicate in both","Subject in major, predicate in minor","Predicate in major, subject in minor"], a:1},
+    {q:"In Figure 3, the middle term is:", o:["Predicate in both","Subject in both","Subject in major, predicate in minor","Predicate in major, subject in minor"], a:1},
+    {q:"In Figure 4, the middle term is:", o:["Subject in both","Predicate in both","Subject in major, predicate in minor","Predicate in major, subject in minor"], a:3},
+    {q:"A hypothetical syllogism uses:", o:["Either-or propositions","If-then propositions","All-are propositions","Neither-nor propositions"], a:1},
+    {q:"A disjunctive syllogism uses:", o:["If-then propositions","Either-or propositions","All-are propositions","Some-are propositions"], a:1},
+    {q:"The figure of a syllogism is determined by:", o:["The number of premises","The position of the middle term","The quality of the conclusion","The quantity of the subject"], a:1},
+    {q:"For a syllogism to be valid, the middle term must be:", o:["Distributed at least once","Only particular","Never distributed","Only universal"], a:0},
+    {q:"A syllogism with two negative premises:", o:["Is always valid","Draws a valid affirmative conclusion","Is always invalid — nothing follows","Is a hypothetical syllogism"], a:2},
+    {q:"If the major premise is 'All mammals are warm-blooded' and the minor is 'All dogs are mammals', the conclusion is:", o:["Some dogs are warm-blooded","No dogs are warm-blooded","All dogs are warm-blooded","Some dogs are not warm-blooded"], a:2},
+    {q:"'Either John is home or Mary is home; John is not home; therefore Mary is home' is a:", o:["Categorical syllogism","Hypothetical syllogism","Disjunctive syllogism","Modus Ponens"], a:2},
+    {q:"In a valid syllogism, the conclusion must follow:", o:["Probably from the premises","Necessarily from the premises","Inductively from observations","From one premise only"], a:1},
+    {q:"The 'major premise' always contains:", o:["The subject of the conclusion","The predicate of the conclusion (major term)","The middle term only","The minor term"], a:1},
+    {q:"The 'minor premise' always contains:", o:["The major term","The predicate of the conclusion","The subject of the conclusion (minor term)","Two middle terms"], a:2},
+    {q:"For a categorical syllogism to be valid, there must be exactly how many terms?", o:["Two","Three","Four","Five"], a:1},
+    {q:"The rule 'If both premises are particular, no conclusion follows' refers to:", o:["Figure rules","Rules of distribution","Rules of quantity","Rules of quality"], a:2},
+    {q:"'All philosophers are thinkers; Some students are philosophers; therefore some students are thinkers' is:", o:["Invalid — undistributed middle","Valid — follows from the premises","A hypothetical syllogism","An inductive argument"], a:1},
+    {q:"Which type of syllogism uses 'If P then Q' structure?", o:["Categorical","Disjunctive","Hypothetical","Analogical"], a:2},
+    {q:"In which figure is the middle term predicate in the major and subject in the minor?", o:["Figure 1","Figure 2","Figure 3","Figure 4"], a:3},
+    {q:"A syllogism in which the middle term is never distributed commits the fallacy of:", o:["Illicit major","Illicit minor","Undistributed middle","Two negative premises"], a:2},
+    {q:"The statement 'Syllogism is more than a proposition; it must contain exactly how many propositions?'", o:["One","Two","Three","Four"], a:2}
+  ],
+  t5: [
+    {q:"Modus Ponens (MP) has the form:", o:["P→Q, Q / ∴ P","P→Q, P / ∴ Q","P→Q, ∼P / ∴ ∼Q","P→Q, ∼Q / ∴ ∼P"], a:1},
+    {q:"Modus Tollens (MT) has the form:", o:["P→Q, P / ∴ Q","P→Q, ∼P / ∴ ∼Q","P→Q, ∼Q / ∴ ∼P","P∨Q, ∼P / ∴ Q"], a:2},
+    {q:"Modus Ponens affirms:", o:["The consequent","The antecedent","The disjunction","The negation"], a:1},
+    {q:"Modus Tollens denies:", o:["The antecedent","The premise","The consequent","The conjunction"], a:2},
+    {q:"Hypothetical Syllogism (HS) has the form:", o:["P→Q, ∼Q / ∴ ∼P","P→Q, Q→R / ∴ P→R","P∨Q, ∼P / ∴ Q","P, Q / ∴ P∧Q"], a:1},
+    {q:"Disjunctive Syllogism (DS) has the form:", o:["P→Q, P / ∴ Q","P∧Q / ∴ P","P∨Q, ∼P / ∴ Q","P / ∴ P∨Q"], a:2},
+    {q:"Simplification allows us to infer from P∧Q:", o:["P∨Q","P only","Q only","Both P and ∼Q"], a:1},
+    {q:"Conjunction allows us to infer from P and Q separately:", o:["P∨Q","P→Q","P∧Q","∼P∧∼Q"], a:2},
+    {q:"The Addition rule (Generalisation) allows:", o:["P∧Q / ∴ P","P / ∴ P∨Q","P∨Q, ∼P / ∴ Q","P, Q / ∴ P∧Q"], a:1},
+    {q:"Proof by Contradiction (Reductio) uses:", o:["The Law of Identity","The Law of Excluded Middle","The Law of Non-Contradiction","Modus Tollens directly"], a:1},
+    {q:"The Converse Error is:", o:["Affirming the antecedent","Affirming the consequent — INVALID","Denying the antecedent","Denying the consequent"], a:1},
+    {q:"The Inverse Error is:", o:["Affirming the antecedent","Denying the consequent","Denying the antecedent — INVALID","Affirming the consequent"], a:2},
+    {q:"An argument with true premises and valid form is called:", o:["Inductive","Sound","Probable","Intuitive"], a:1},
+    {q:"The Constructive Dilemma combines:", o:["One conditional with a disjunction","Two conditionals with a conjunction of their antecedents","Two conditionals with a disjunction of their antecedents","Two disjunctions"], a:2},
+    {q:"Symbolic logic empowers step-by-step transformation through:", o:["Emotional reasoning","Specific inference rules","Inductive generalisation","Random selection of rules"], a:1},
+    {q:"P→Q, Q→R / ∴ P→R is:", o:["Modus Ponens","Modus Tollens","Hypothetical Syllogism","Disjunctive Syllogism"], a:2},
+    {q:"P∨Q, ∼P / ∴ Q is:", o:["Modus Ponens","Modus Tollens","Hypothetical Syllogism","Disjunctive Syllogism"], a:3},
+    {q:"From P∧Q, Simplification gives us:", o:["P∨Q","P (or Q)","P→Q","∼P∧Q"], a:1},
+    {q:"A 'non sequitur' in logic refers to:", o:["A valid argument","A conclusion that does not follow from the premises","A statement that is always true","A conjunction of premises"], a:1},
+    {q:"Symbolic logic is compared to a game where:", o:["Luck determines the outcome","Legal moves guarantee a true conclusion from true premises","Any conclusion can be reached","Rules do not matter"], a:1},
+    {q:"'If it rains, the ground is wet. The ground is not wet. Therefore it did not rain.' uses:", o:["Modus Ponens","Modus Tollens","Hypothetical Syllogism","Disjunctive Syllogism"], a:1},
+    {q:"'If studying leads to passing, and passing leads to graduation, then studying leads to graduation.' uses:", o:["Modus Ponens","Modus Tollens","Hypothetical Syllogism","Simplification"], a:2},
+    {q:"The symbol '∧' in logic means:", o:["Or (disjunction)","Not (negation)","And (conjunction)","If-then (conditional)"], a:2},
+    {q:"The symbol '∨' in logic means:", o:["And (conjunction)","Or (disjunction)","Not (negation)","If and only if"], a:1},
+    {q:"The symbol '→' in logic means:", o:["And","Or","If-then (conditional)","Not"], a:2},
+    {q:"The symbol '∼' or '¬' in logic means:", o:["And","Or","If-then","Not (negation)"], a:3},
+    {q:"Addition (Generalisation) states: from P, we can conclude:", o:["P∧Q","P only","P∨Q","∼P"], a:2},
+    {q:"The rule of inference that turns P→Q into P→(P∧Q) is called:", o:["Simplification","Absorption","Addition","Conjunction"], a:1},
+    {q:"Which inference rule lets you combine two separate truths into a conjunction?", o:["Simplification","Addition","Conjunction","Modus Ponens"], a:2},
+    {q:"The logic rule stating P∧Q ∴ P or P∧Q ∴ Q is specifically titled:", o:["Simplification","Generalisation","Absorption","Dilemma"], a:0}
+  ],
+  t6: [
+    {q:"A fallacy is an error in reasoning that:", o:["Always makes an argument stronger","Renders an argument invalid or deceptively persuasive","Guarantees a true conclusion","Makes an argument inductive"], a:1},
+    {q:"Formal fallacies involve errors in:", o:["The content of the argument","The logical form/structure of the argument","The vocabulary used","The length of premises"], a:1},
+    {q:"Informal fallacies involve errors in:", o:["Logical structure","The content, context, or manner of the argument","Symbolic notation","The quantity of premises"], a:1},
+    {q:"Ad Hominem means:", o:["Appealing to authority","Attacking the person rather than the argument","A false dilemma","Begging the question"], a:1},
+    {q:"Straw Man fallacy involves:", o:["Attacking the person","Misrepresenting an opponent's position to make it easier to attack","Appealing to majority","Circular reasoning"], a:1},
+    {q:"Appeal to Authority (Ad Verecundiam) is a fallacy when:", o:["The authority is genuinely expert in the area","Authority is used inappropriately or outside their field","Evidence supports the claim","Logic confirms the conclusion"], a:1},
+    {q:"False Dilemma presents:", o:["Three or more accurate options","Only two options when more exist","A valid deductive argument","A sound argument"], a:1},
+    {q:"Slippery Slope claims that:", o:["All logic is invalid","One event will inevitably lead to extreme consequences","Evidence is always needed","Premises are irrelevant"], a:1},
+    {q:"Circular Reasoning (Begging the Question) occurs when:", o:["The argument has too many premises","The conclusion is used as a premise","The premises are all false","Logic is correctly applied"], a:1},
+    {q:"Hasty Generalisation draws:", o:["A narrow conclusion from many examples","A broad conclusion from too few examples","No conclusion at all","A valid deductive conclusion"], a:1},
+    {q:"Post Hoc ergo Propter Hoc means:", o:["After this, therefore because of this","Despite this, the result is that","For all, therefore for some","None of the above"], a:0},
+    {q:"Red Herring introduces:", o:["A valid counterargument","Irrelevant information to distract from the issue","A stronger premise","A supporting conclusion"], a:1},
+    {q:"Affirming the consequent (P→Q, Q / ∴ P) is a:", o:["Valid inference","Informal fallacy","Formal fallacy","Sound argument"], a:2},
+    {q:"Denying the antecedent (P→Q, ∼P / ∴ ∼Q) is a:", o:["Valid inference","Informal fallacy","Formal fallacy","Sound argument"], a:2},
+    {q:"Undistributed middle term is a:", o:["Informal fallacy","Formal fallacy","Valid inference rule","Sound argument"], a:1},
+    {q:"'You can't trust John's view on corruption — he was once arrested.' This is:", o:["Appeal to authority","Ad Hominem","False dilemma","Slippery slope"], a:1},
+    {q:"'If we allow gay marriage, next we'll allow people to marry animals.' This is:", o:["Straw Man","Ad Hominem","Slippery Slope","Post Hoc"], a:2},
+    {q:"'Either you're with us or against us.' This is:", o:["Red Herring","False Dilemma","Circular Reasoning","Hasty Generalisation"], a:1},
+    {q:"'God exists because the Bible says so, and the Bible is true because it is the word of God.' This is:", o:["Slippery Slope","Ad Hominem","False Dilemma","Circular Reasoning"], a:3},
+    {q:"'I ate fish yesterday and got sick, so fish made me sick.' This is:", o:["Hasty Generalisation","Post Hoc","Red Herring","Straw Man"], a:1},
+    {q:"'Appeal to Majority' (Ad Populum) argues that something is true because:", o:["Experts confirm it","Many people believe it","Logic confirms it","Evidence proves it"], a:1},
+    {q:"'Equivocation' as a fallacy involves:", o:["Using the same word with different meanings in the same argument","Attacking the person","Appealing to authority","Creating a false dilemma"], a:0},
+    {q:"'Tu Quoque' (Appeal to Hypocrisy) responds to criticism by:", o:["Providing evidence","Pointing out the critic does the same thing","Denying the premise","Attacking logic"], a:1},
+    {q:"'Gambler's Fallacy' incorrectly assumes:", o:["Rare events become more likely after a streak of them not occurring","All events are independent","Logic is unnecessary","All conclusions follow from premises"], a:0},
+    {q:"An argument that is designed to SEEM valid but is not is called:", o:["A sound argument","A sophism / fallacious argument","A cogent argument","A hypothetical syllogism"], a:1},
+    {q:"The 'Bandwagon Fallacy' is also known as:", o:["Ad Hominem","Ad Populum (Appeal to Majority)","Straw Man","Red Herring"], a:1},
+    {q:"'Cutting people is a crime. Surgeons cut people. Therefore surgeons are criminals.' commits which fallacy?", o:["Ad Hominem","Using ambiguous premises treating them as unambiguous","Circular Reasoning","False Dilemma"], a:1},
+    {q:"Which fallacy presents a watered-down version of an opponent's argument to make it easier to defeat?", o:["Ad Hominem","Circular Reasoning","Straw Man","Red Herring"], a:2},
+    {q:"The curriculum states that informal fallacies are split into structural subgroups. Which of these is an ambiguity fallacy?", o:["False Dilemma","Equivocation","Ad Hominem","Straw Man"], a:1}
+  ],
+  t7: [
+    {q:"The three classical laws of thought were formulated by:", o:["Plato","Descartes","Aristotle","Kant"], a:2},
+    {q:"The Law of Identity states:", o:["Nothing can be both true and false","Every statement is true or false","A thing is identical to itself (A = A)","A true premise leads to a true conclusion"], a:2},
+    {q:"The Law of Non-Contradiction states:", o:["A thing is identical to itself","A proposition cannot be both true and false at the same time","Every proposition is either true or false","All premises must be true"], a:1},
+    {q:"The Law of Excluded Middle states:", o:["Nothing is true or false","A proposition is always false","Every proposition is either true or false — no middle ground","Contradictions are always valid"], a:2},
+    {q:"In symbolic logic, the Law of Identity is written as:", o:["¬(A ∧ ¬A)","A ∨ ¬A","P → P","P ∧ ¬P"], a:2},
+    {q:"In symbolic logic, the Law of Non-Contradiction is written as:", o:["P → P","A ∨ ¬A","¬(A ∧ ¬A)","P ∧ Q"], a:2},
+    {q:"In symbolic logic, the Law of Excluded Middle is written as:", o:["P → P","A ∨ ¬A","¬(A ∧ ¬A)","P ∧ ¬P"], a:1},
+    {q:"Intuitionists reject the Law of Excluded Middle because:", o:["It is logically invalid","It can prove the existence of objects without constructing one","It contradicts Modus Ponens","It is too simple"], a:1},
+    {q:"Proof by Contradiction is controversial because it relies on:", o:["The Law of Identity","The Law of Excluded Middle","The Law of Non-Contradiction","Modus Tollens"], a:1},
+    {q:"'Either it is raining or it is not raining' exemplifies:", o:["Law of Identity","Law of Non-Contradiction","Law of Excluded Middle","Modus Ponens"], a:2},
+    {q:"'This chair is this chair' exemplifies:", o:["Law of Non-Contradiction","Law of Excluded Middle","Law of Identity","Hypothetical Syllogism"], a:2},
+    {q:"'It is impossible for it to be both raining and not raining at the same time' exemplifies:", o:["Law of Identity","Law of Excluded Middle","Law of Non-Contradiction","Modus Tollens"], a:2},
+    {q:"Which law governs the principle that no statement can be self-contradictory?", o:["Law of Identity","Law of Non-Contradiction","Law of Excluded Middle","Hypothetical Syllogism"], a:1},
+    {q:"Which law is foundational to Proof by Contradiction?", o:["Law of Identity","Law of Non-Contradiction","Law of Excluded Middle","Modus Ponens"], a:2},
+    {q:"The three laws of thought are described as:", o:["Optional guidelines","Foundational laws that govern all rational thought","Only applicable to mathematics","Informal heuristics"], a:1},
+    {q:"P → P as a logical form corresponds to:", o:["Modus Ponens","Law of Identity","Law of Excluded Middle","Law of Non-Contradiction"], a:1},
+    {q:"A ∨ ¬A as a logical form corresponds to:", o:["Law of Identity","Law of Non-Contradiction","Law of Excluded Middle","Modus Tollens"], a:2},
+    {q:"¬(A ∧ ¬A) as a logical form corresponds to:", o:["Law of Identity","Law of Non-Contradiction","Law of Excluded Middle","Constructive Dilemma"], a:1},
+    {q:"Which law says the meaning of a term must remain constant throughout an argument?", o:["Law of Excluded Middle","Law of Non-Contradiction","Law of Identity","Modus Ponens"], a:2},
+    {q:"Which law prevents true contradictions?", o:["Law of Excluded Middle","Law of Identity","Law of Non-Contradiction","Disjunctive Syllogism"], a:2},
+    {q:"The Law of Identity ensures that terms in an argument:", o:["Change meaning as needed","Remain constant in meaning throughout the argument","Are always universal","Are defined by authority"], a:1},
+    {q:"Aristotle's three laws of thought are sometimes called:", o:["Axioms of arithmetic","The three fundamental laws of logic","The inductive principles","The four laws of reason"], a:1},
+    {q:"Who systematized the laws of thought into mathematical formulas, enabling probability logic frameworks?", o:["Aristotle","George Boole","Socrates","Plato"], a:1},
+    {q:"The activation of the prefrontal cortex during contradiction testing explicitly confirms that finding contradictions requires what?", o:["Zero attention","Passive relaxation","Cognitive effort and mental resources","Blind instinct"], a:2},
+    {q:"According to Waheed's (2024) replication data, processing logical contradiction signals strong activity on which side of the brain?", o:["Left frontal and occipital","Right frontal and parietal regions","Cerebellum exclusively","Brainstem entirely"], a:1},
+    {q:"In custom Wason-style tasks evaluating 'P or not P', everyday human cognition prefers what over strict binaries?", o:["Absolute truth","Uncertainty-based or probabilistic reasoning","Complete ignorance","Fictional scripts"], a:1},
+    {q:"The textbook states that laws of thought are 'a priori' and normative. This means they dictate:", o:["How people actually think in everyday reality","How reasoning should progress logically","How vocabulary words change over time","How historical wars were won"], a:1},
+    {q:"Hanna (2019) discovered that human tracking of identity landmarks relies heavily on memory systems and can change based on:", o:["Solar cycles","Framing effects and contextual shifts","The volume of speech","Physical height"], a:1},
+    {q:"Contemporary philosophical systems that allow true contradictions and cast doubt on binary frameworks are known as:", o:["Traditional systems","Non-classical logical systems","Atheistic models","Ancient rules"], a:1}
+  ],
+  t8: [
+    {q:"An argument in logic is:", o:["A heated disagreement","A group of statements where one follows from the others","A single premise","A definition"], a:1},
+    {q:"In an argument, premises are:", o:["The conclusions that follow","The statements that provide support for the conclusion","Always false","Irrelevant statements"], a:1},
+    {q:"A valid deductive argument is one where:", o:["All premises are true","If the premises are true, the conclusion must be true","The conclusion is always true","The premises are never true"], a:1},
+    {q:"A sound argument is:", o:["Valid only","Valid AND all premises are actually true","Strong AND premises are probably true","Any argument with a true conclusion"], a:1},
+    {q:"A strong inductive argument is one where:", o:["The conclusion necessarily follows","If premises are true, the conclusion is probably true","The premises are always false","The conclusion is universal"], a:1},
+    {q:"A cogent argument is:", o:["Valid only","Strong AND all premises are actually true","Deductive only","Any sound argument"], a:1},
+    {q:"Deductive arguments aim at:", o:["Probable conclusions","Necessary conclusions","Possible conclusions","Inductive conclusions"], a:1},
+    {q:"Inductive arguments aim at:", o:["Certain conclusions","Necessary conclusions","Probable conclusions","Definitive proofs"], a:2},
+    {q:"'All observed swans have been white; therefore all swans are white' is:", o:["Deductive reasoning","Inductive reasoning","Modus Ponens","Hypothetical Syllogism"], a:1},
+    {q:"'If it rains, the ground gets wet. It rained. Therefore the ground is wet.' is:", o:["Inductive reasoning","Deductive reasoning — Modus Ponens","Invalid reasoning","Circular reasoning"], a:1},
+    {q:"An argument can be valid yet:", o:["Always sound","Have false premises (and hence unsound)","Never be inductive","Have no conclusion"], a:1},
+    {q:"Which is NOT a property of deductive arguments?", o:["Validity","Soundness","Probability-based conclusion","Certainty of conclusion"], a:2},
+    {q:"The premises of an argument:", o:["Must always be true","Are claimed to support the conclusion","Cannot be questioned","Must be observations"], a:1},
+    {q:"To evaluate an argument, we examine:", o:["The personality of the arguer","Both the truth of the premises and the validity of the form","Only the conclusion","Only emotional appeal"], a:1},
+    {q:"An argument with at least one false premise but valid form is:", o:["Sound","Invalid","Valid but unsound","Cogent"], a:2},
+    {q:"Convergent arguments are those where:", o:["Each premise independently supports the conclusion","Premises support each other before reaching the conclusion","The conclusion comes before the premises","No premises are given"], a:0},
+    {q:"Linked arguments are those where:", o:["Each premise independently supports the conclusion","Premises work together jointly to support the conclusion","No premises are connected","The conclusion is always negative"], a:1},
+    {q:"A deductive argument where the form is invalid is called:", o:["Unsound","Uncogent","Invalid","Strong"], a:2},
+    {q:"An inductive argument that is weak AND has false premises is:", o:["Valid","Sound","Uncogent","Cogent"], a:2},
+    {q:"Which best describes a 'non-argument'?", o:["A set of statements that includes premises and a conclusion","A set of statements that does not attempt to prove anything","An invalid deductive argument","An uncogent inductive argument"], a:1},
+    {q:"An argument indicator word that signals a PREMISE is:", o:["Therefore","Hence","Because / Since","Consequently"], a:2},
+    {q:"An argument indicator word that signals a CONCLUSION is:", o:["Because","Since","For","Therefore / Hence"], a:3},
+    {q:"If an argument is sound, it must also be:", o:["Cogent","Strong","Valid","Inductive"], a:2},
+    {q:"Which combination correctly describes inductive reasoning?", o:["Necessary conclusion, certainty","Probable conclusion, goes beyond what premises strictly prove","Always false premises","Universal statements only"], a:1},
+    {q:"In validation methodology, rows of a truth table where all premises register as True are called:", o:["Baseline rows","Critical rows","Negative lines","Terminal lines"], a:1},
+    {q:"If the conclusion registers as False in any truth table Critical Row, the argument is definitively:", o:["Valid","Invalid","Sound","Absolute"], a:1},
+    {q:"In logic proper, subject and predicate terms are strictly associated with individual what?", o:["Arguments","Syllogisms","Propositions","Paragraphs"], a:2},
+    {q:"'All men are monkeys. All monkeys are politicians. So, all men are politicians.' In logic proper, this argument is:", o:["Invalid due to biological facts","Valid, because structural form preserves truth from assumed premises","Inductive generalization","Unsound but invalid"], a:1},
+    {q:"Inductive reasoning traces its historical root down to which baseline metaphysical concept?", o:["The multi-verse framework","The uniformity of nature principle","The chaos matrix","Absolute dualism"], a:1}
+  ],
+  t9: [
+    {q:"Critical thinking is the ability to:", o:["Memorise all facts","Objectively analyse and evaluate an issue to form a judgement","Accept all claims without question","Only use deductive logic"], a:1},
+    {q:"Creative thinking involves:", o:["Reproducing existing knowledge","Generating novel ideas and original solutions","Only logical deduction","Memorising formulas"], a:1},
+    {q:"Divergent thinking produces:", o:["One correct answer","Many possible ideas and answers","Only deductive conclusions","Strict logical proofs"], a:1},
+    {q:"Convergent thinking produces:", o:["Many possible answers","One correct or best answer","Random associations","Emotional responses"], a:1},
+    {q:"William Perry's model describes how:", o:["Fallacies develop","Cognitive development progresses in four stages","Syllogisms are constructed","Symbolic logic works"], a:1},
+    {q:"Perry's Stage 1 (Dualism) sees the world as:", o:["Complex and multi-faceted","Black and white — right answers exist for everything","Relative and subjective","Committed to uncertainty"], a:1},
+    {q:"Perry's Stage 2 (Multiplicity) recognises:", o:["Only one valid view","That opinions differ and all views seem equally valid","That some views are better evidenced","Personal commitment to values"], a:1},
+    {q:"Perry's Stage 3 (Relativism) understands that:", o:["All views are equal","Some views are better supported; knowledge is contextual","The world is black and white","Personal commitment is wrong"], a:1},
+    {q:"Perry's Stage 4 (Commitment within Relativism) involves:", o:["Rejecting all values","Making personal commitments based on evidence while acknowledging uncertainty","Returning to dualism","Accepting all views as equally valid"], a:1},
+    {q:"A critical thinker questions:", o:["Nothing","Only others' ideas","Assumptions, evidence, and the quality of reasoning","Only mathematical proofs"], a:2},
+    {q:"Which of the following is a key skill of critical thinking?", o:["Rote memorisation","Blind acceptance of authority","Evaluation and inference","Random guessing"], a:2},
+    {q:"Philosophy contributes to critical thinking by:", o:["Providing absolute answers","Teaching methods of argumentation, logical analysis, and fallacy detection","Discouraging questioning","Limiting thought to tradition"], a:1},
+    {q:"In Perry's model, a student who says 'everyone has their own truth' is in:", o:["Stage 1 — Dualism","Stage 2 — Multiplicity","Stage 3 — Relativism","Stage 4 — Commitment"], a:1},
+    {q:"In Perry's model, a student who commits to an evidence-based view while acknowledging uncertainty is in:", o:["Stage 1","Stage 2","Stage 3","Stage 4"], a:3},
+    {q:"Brainstorming is an example of:", o:["Convergent thinking","Deductive reasoning","Divergent/creative thinking","Fallacious reasoning"], a:2},
+    {q:"Critical thinking differs from creative thinking in that critical thinking:", o:["Generates ideas","Evaluates and analyses existing ideas and arguments","Always produces creative output","Avoids logic"], a:1},
+    {q:"'Self-regulation' as a critical thinking skill involves:", o:["Ignoring feedback","Monitoring and correcting one's own reasoning","Accepting all conclusions","Following authority blindly"], a:1},
+    {q:"'Explanation' as a critical thinking skill involves:", o:["Make random guesses","Stating and justifying reasoning and conclusions clearly","Avoiding argument","Memorising definitions"], a:1},
+    {q:"Philosophy of education draws most directly from which mode of philosophy?", o:["Speculative","Prescriptive","Analytic","Critical"], a:1},
+    {q:"A student who believes there is always one right answer for every question is in Perry's:", o:["Stage 4","Stage 3","Stage 2","Stage 1"], a:3},
+    {q:"Which of the following best characterises a Stage 1 (Dualism) thinker?", o:["Considers multiple perspectives","Expects a single right answer for all questions","Commits to a personal view","Sees all views as equally valid"], a:1},
+    {q:"Which cognitive stage involves recognising that knowledge is contextual?", o:["Dualism","Multiplicity","Relativism","None"], a:2},
+    {q:"'Metacognition' refers to:", o:["Creative thinking techniques","Thinking about one's own thinking processes","Memorising philosophy terms","Formal logic skills"], a:1},
+    {q:"Mind mapping is an example of which type of thinking?", o:["Convergent thinking","Deductive reasoning","Divergent/creative thinking","Critical analysis"], a:2},
+    {q:"In Perry's model, 'Commitment within Relativism' means:", o:["Rejecting all values","Returning to absolute thinking","Committing to well-considered positions while accepting uncertainty","Believing everything is relative with no personal stance"], a:2},
+    {q:"Philosophy's contribution to critical thinking includes:", o:["Providing all the answers","Teaching argumentation, fallacy detection, and logical analysis","Eliminating the need for evidence","Promoting blind acceptance of tradition"], a:1},
+    {q:"The ability to 'interpret' as a critical thinking skill means:", o:["Making up explanations","Accurately understanding and expressing the meaning of information","Blindly accepting what is written","Avoiding analysis"], a:1},
+    {q:"Creative and critical thinking are DIFFERENT in that:", o:["They use identical processes","Creative generates ideas; critical evaluates and analyses them","Critical is less important","Creative thinking uses logic exclusively"], a:1},
+    {q:"The textbook example of listing 20 separate local plants (moringa, maize, papaya leaves) to engineer cheap poultry feed illustrates what?", o:["Linear processing","Idea fluency within divergent thinking","Formal deduction","Risk aversion"], a:1},
+    {q:"Classical logic structures the thinking process into three sequential acts of mind: simple apprehension, judging, and what?", o:["Rhetoric","Reasoning (argument)","Falsification","Intuition"], a:1}
+  ],
+  t10: [
+    {q:"Both philosophy and religion address:", o:["Only scientific questions","Fundamental questions about existence, morality, and purpose","Only aesthetic questions","Only political questions"], a:1},
+    {q:"Religion relies primarily on:", o:["Reason and argument","Faith, revelation, and authority","Inductive logic","Axiomatic proofs"], a:1},
+    {q:"Philosophy relies primarily on:", o:["Faith and scripture","Tradition and authority","Reason, argument, and critical examination","Mystical experience"], a:2},
+    {q:"Philosophy of Religion examines:", o:["Only scientific claims","God's existence, the problem of evil, religious language, and the nature of faith","Only ethical theories","Only aesthetic judgements"], a:1},
+    {q:"The 'Problem of Evil' asks:", o:["Why is there beauty in the world?","If God is all-good and all-powerful, why does evil exist?","How do we know God exists?","What is the meaning of faith?"], a:1},
+    {q:"The Ontological Argument for God's existence argues from:", o:["The existence of order in the universe","The concept of God alone (God's nature/definition)","Moral necessity","Empirical observation"], a:1},
+    {q:"The Cosmological Argument argues from:", o:["The concept of God","The existence and order of the universe to a First Cause","Religious experience","Moral values"], a:1},
+    {q:"The Teleological Argument argues from:", o:["God's definition","The design and purpose in nature pointing to a Designer","Moral obligation","Religious authority"], a:2},
+    {q:"Agnosticism is the view that:", o:["God definitely exists","God definitely does not exist","We cannot know whether God exists","Religion is false"], a:2},
+    {q:"Atheism is the view that:", o:["God exists","God probably exists","God does not exist","We cannot know about God"], a:2},
+    {q:"Theism is the view that:", o:["God does not exist","God exists","We cannot know about God","Religion is irrational"], a:1},
+    {q:"Philosophy of Religion is a branch of:", o:["Metaphysics only","Epistemology only","Both metaphysics and epistemology","Axiology only"], a:2},
+    {q:"'Is religious belief rational?' is a question studied in:", o:["Physics","Philosophy of Religion","Aesthetics","Symbolic Logic"], a:1},
+    {q:"The relationship between faith and reason is discussed in:", o:["Formal logic only","Philosophy of Religion","Aesthetics","Cosmology only"], a:1},
+    {q:"What distinguishes philosophical inquiry about religion from theological inquiry?", o:["Nothing — they are identical","Philosophy uses reason and argument; theology accepts faith as its starting point","Theology questions all claims; philosophy accepts them","Philosophy is anti-religious"], a:1},
+    {q:"In Islamic philosophy, what does the component titled 'Kalam' represent?", o:["Secular geometry","Scholastic theology using dialectic logic to defend doctrine","Arabic grammar metrics","Aesthetic painting metrics"], a:1},
+    {q:"Which philosopher authored 'The Incoherence of the Philosophers' to argue that reason must submit to revelation?", o:["Ibn Rushd","Al-Ghazali","Al-Kindi","Ibn Sina"], a:1},
+    {q:"Ibn Rushd countered Al-Ghazali's critique with which philosophical treatise?", o:["The Critique of Pure Reason","The Incoherence of the Incoherence","The Republic","Summa Theologiae"], a:1},
+    {q:"What is the foundational starting point of all Islamic philosophical exploration?", o:["The social contract","Tawhid (The absolute oneness of God)","Empirical testing","The material matrix"], a:1},
+    {q:"In Christian philosophy, the structural baseline places all treasures of wisdom inside which framework?", o:["The physical body","A personal relationship with Jesus as the Logos","Absolute state legislation","The material cosmos"], a:1},
+    {q:"Which medieval Christian philosopher integrated Aristotelian logic into church theology, arguing grace perfects nature?", o:["Augustine of Hippo","Thomas Aquinas","Tertullian","C.S. Lewis"], a:1},
+    {q:"Which early church father posed the famous skeptical question, 'What has Athens to do with Jerusalem?'", o:["Thomas Aquinas","Tertullian","Augustine","C.S. Lewis"], a:1},
+    {q:"Islamic Falsafa entered the culture during which distinct period via translations of Greek texts?", o:["The pre-Islamic era","The Golden Age","The modern internet era","The industrial revolution"], a:1},
+    {q:"According to the textbook comparative chart, what is the 'endgame' goal of Christian reasoning?", o:["Political conquest","To love God with your mind, defend the gospel, and understand truth","Secular corporate management","Pure material profit"], a:1},
+    {q:"The view that values change completely across cultural shifting epochs is labeled by the text as:", o:["Absolute Theism","Relativism","Deontology","Virtue ethics"], a:1},
+    {q:"The literal translation of the Islamic term 'Wahy' is:", o:["Independent reasoning","Divine Revelation","Defensive debate","Scholastic speech"], a:1},
+    {q:"The independent exercise of reasoning when scriptural indicators are silent within Islamic thought is termed:", o:["Tawhid","Ijtihad","Kalam","Falsafa"], a:1},
+    {q:"Anselm of Canterbury is associated with which argument for God?", o:["Cosmological","Teleological","Ontological","Moral"], a:2},
+    {q:"The absolute baseline source of authoritative values for both Christian and Islamic frameworks is:", o:["Public opinion voting data","Divine Revelation / God's Word","Individual emotional feelings","Corporate marketing budgets"], a:1}
+  ],
+  t11: [
+    {q:"Philosophy's impact on education includes determining:", o:["Only school timetables","Aims, curriculum content, teaching methods, and evaluation","Only examination formats","Physical infrastructure"], a:1},
+    {q:"Philosophy of science examines:", o:["Only scientific facts","Methods, assumptions, and limits of scientific knowledge","Only experimental results","Only mathematical proofs"], a:1},
+    {q:"Political philosophy questions:", o:["Only economic theories","Justice, rights, governance, and the legitimacy of authority","Only foreign policy","Only military strategy"], a:1},
+    {q:"Aesthetics shapes:", o:["Scientific discovery","How we create and appreciate beauty","Political systems","Only education"], a:1},
+    {q:"Ethics provides:", o:["Artistic frameworks","Frameworks for determining right from wrong","Scientific methods","Economic policies"], a:1},
+    {q:"Philosophy is described as indispensable to human progress because:", o:["It only describes how things are","It asks how things ought to be — a normative enterprise","It replaces science","It is purely theoretical"], a:1},
+    {q:"Philosophy of education draws its aims primarily from:", o:["Aesthetics","Metaphysics","Ethics and axiology","Pure logic alone"], a:2},
+    {q:"The branch of philosophy most directly concerned with human rights is:", o:["Aesthetics","Epistemology","Political Philosophy (Axiology/Ethics)","Symbolic Logic"], a:2},
+    {q:"Philosophy contributes to science by:", o:["Running experiments","Questioning assumptions and examining limits of knowledge","Producing lab results","Teaching mathematical formulae"], a:1},
+    {q:"The study of justice is primarily a concern of:", o:["Metaphysics","Epistemology","Political Philosophy","Cosmology"], a:2},
+    {q:"Philosophy affects personal life by:", o:["Only academic study","Guiding self-understanding, decision-making, and the pursuit of the good life","Only religious practice","Only professional work"], a:1},
+    {q:"'The unexamined life is not worth living' (Socrates) reflects philosophy's role in:", o:["Scientific discovery","Personal reflection and moral self-improvement","Political governance","Aesthetic appreciation"], a:1},
+    {q:"Philosophy's role in culture includes:", o:["Determining economic output","Shaping values, traditions, and how communities understand themselves","Only producing art","Only religious rituals"], a:1},
+    {q:"Ethics is most directly applied when:", o:["Solving mathematical equations","Making moral decisions about right and wrong action","Appreciating music","Studying the origin of the universe"], a:1},
+    {q:"Logic supports human existence by:", o:["Making life emotional","Providing tools for clear and valid reasoning in all fields","Replacing experience","Avoiding all argument"], a:1},
+    {q:"The impact of philosophy on law includes:", o:["Writing specific laws","Providing foundations of justice, rights, and legal philosophy","Only court procedures","Only criminal law"], a:1},
+    {q:"Philosophy of language examines:", o:["Only grammar rules","How language works, means, and relates to reality","Only literary styles","Only foreign languages"], a:1},
+    {q:"Applied ethics includes areas such as:", o:["Symbolic logic only","Medical ethics, environmental ethics, and business ethics","Only meta-ethics","Only theoretical ethics"], a:1},
+    {q:"Which philosophical branch most directly addresses the question 'What is a just society?'", o:["Epistemology","Metaphysics","Political philosophy","Aesthetics"], a:2},
+    {q:"The 2026 textbook outlines exactly how many interwoven components and factors of human existence?", o:["Three","Five","Seven","Ten"], a:2},
+    {q:"Which philosophical school reduces all human consciousness down to physical neural brain firings?", o:["Existentialism","Materialism","Marxism","African Relationalism"], a:1},
+    {q:"According to the existentialist framework, what internal emotional state reveals absolute human freedom?", o:["Joy","Anxiety (Angst)","Boredom","Anger"], a:1},
+    {q:"The philosophical declaration 'A person is a person through other persons' tracks which tradition?", o:["Western Materialism","Marxist production dynamics","African Philosophy / Communal Relationality","Deontological framework"], a:2},
+    {q:"Which school asserts that the human essence resides entirely in conscious, productive labor activity matching material conditions?", o:["Existentialism","Marxism","Stoicism","Theism"], a:1},
+    {q:"John Locke's political philosophy profoundly impacted modern democracy by emphasizing which natural rights?", o:["Tax evasion options","Life, liberty, and property","Military conscription rules","State supremacy parameters"], a:1},
+    {q:"The ethical framework evaluating actions strictly based on maximizing net happiness and reducing net pain is titled:", o:["Deontology","Utilitarianism","Virtue Ethics","Skepticism"], a:1},
+    {q:"Immanuel Kant's deontology forms the absolute baseline framework for which modern societal concepts?", o:["Stock market deregulation","Human rights and democratic principles of duty","Corporate trademarking laws","Pure biological naturalism"], a:1},
+    {q:"John Dewey's educational philosophy heavily championed what methodology?", o:["Pure rote text memorisation","Experiential learning and critical, active democratic participation","Strict corporate schooling isolation","Random assignment testing"], a:1},
+    {q:"The metaphor of a teacher's intellectual progression stating 'a lamp can never light another lamp unless it continues to burn its own flame' implies that teachers must:", o:["Maximize state salaries","Commit to lifetime continuous learning and self-development","Enforce rigid classroom silence","Construct online profiles"], a:1}
+  ]
+};
+
+// ══════════ FLASHCARD DATA ══════════
+const FLASHCARDS = [
+  {t:'t1', q:'What are the two Greek roots of "philosophy"?', a:'"Philo" (love) and "Sophia" (wisdom) — meaning "love of wisdom."'},
+  {t:'t1', q:'Name 4 characteristics of philosophy.', a:'Rational/Critical · Systematic/Coherent · Normative/Evaluative · Universal/Foundational (+ Dialectical, Reflective, Speculative, Practical)'},
+  {t:'t1', q:'How does Carter Good define philosophy?', a:'A science that organises and systematises all fields of knowledge — comprising logic, ethics, aesthetics, metaphysics, and epistemology.'},
+  {t:'t2', q:'Name the four modes of philosophy.', a:'Speculative · Prescriptive · Analytic · Critical'},
+  {t:'t2', q:'Which philosopher is associated with the Speculative mode?', a:'Aristotle (called it "first philosophy") and Thomas Aquinas.'},
+  {t:'t2', q:'Which philosopher is associated with the Analytic mode?', a:'Bertrand Russell and Ludwig Wittgenstein.'},
+  {t:'t2', q:'Which philosopher is associated with the Critical mode?', a:'Immanuel Kant (Critique of Pure Reason)'},
+  {t:'t2', q:'What does the Prescriptive mode do?', a:'Prescribes what human behaviour should be — provides norms and standards. Includes ethics, social philosophy, philosophy of education.'},
+  {t:'t3', q:'Name the four major branches of philosophy.', a:'Metaphysics · Epistemology · Axiology · Logic'},
+  {t:'t3', q:'What are the sub-branches of Metaphysics?', a:'Ontology (being) · Cosmology (universe) · Causality (cause & effect) · Theology (God)'},
+  {t:'t3', q:'Name the five sources of knowledge in Epistemology.', a:'Revelation · Empirical · Authoritative · Rational · Intuition'},
+  {t:'t3', q:'What are the two branches of Axiology?', a:'Ethics (what is right/wrong) and Aesthetics (what is beautiful)'},
+  {t:'t3', q:'What is Deductive vs. Inductive logic?', a:'Deductive: General → Specific (necessary certainty). Inductive: Specific → General (probable conclusion).'},
+  {t:'t4', q:'What is a syllogism?', a:'A deductive argument with TWO premises and a conclusion. The conclusion follows necessarily from the premises.'},
+  {t:'t4', q:'What are the four categorical proposition types?', a:'A = Universal Affirmative ("All S are P") · E = Universal Negative ("No S are P") · I = Particular Affirmative ("Some S are P") · O = Particular Negative ("Some S are not P")'},
+  {t:'t4', q:'What determines the figure of a syllogism?', a:'The POSITION of the middle term (M) in the two premises.'},
+  {t:'t4', q:'In Figure 1, where is the middle term?', a:'Subject in the major premise, Predicate in the minor premise.'},
+  {t:'t5', q:'State Modus Ponens.', a:'P→Q, P / ∴ Q (Affirm the antecedent → conclude the consequent)'},
+  {t:'t5', q:'State Modus Tollens.', a:'P→Q, ∼Q / ∴ ∼P (Deny the consequent → deny the antecedent)'},
+  {t:'t5', q:'State Hypothetical Syllogism.', a:'P→Q, Q→R / ∴ P→R'},
+  {t:'t5', q:'State Disjunctive Syllogism.', a:'P∨Q, ∼P / ∴ Q'},
+  {t:'t5', q:'What is the Converse Error?', a:'Affirming the consequent: P→Q, Q / ∴ P — INVALID.'},
+  {t:'t5', q:'What is the Inverse Error?', a:'Denying the antecedent: P→Q, ∼P / ∴ ∼Q — INVALID.'},
+  {t:'t5', q:'What is the Rule of Absorption?', a:'P→Q allows you to deduce P→(P∧Q), bundling cause and effect cleanly.'},
+  {t:'t6', q:'What is a fallacy?', a:'An error in reasoning that renders an argument invalid or deceptively persuasive without logical soundness.'},
+  {t:'t6', q:'Difference: Formal vs. Informal fallacy?', a:'Formal = structural validation error visible on abstract blueprint. Informal = contextual, content, relevance, or language ambiguity error.'},
+  {t:'t6', q:'Name informal fallacies tracked by the curriculum.', a:'Ad Hominem (attack person), Red Herring (distraction), Straw Man (misrepresentation), False Dilemma (forced choices), Post Hoc (false cause).'},
+  {t:'t7', q:'State the Law of Identity.', a:'A thing is identical to itself: A = A. In logic: P → P.'},
+  {t:'t7', q:'State the Law of Non-Contradiction.', a:'A proposition cannot be both true and false at the same time: ¬(A ∧ ¬A).'},
+  {t:'t7', q:'State the Law of Excluded Middle.', a:'Every proposition is either true or false — no third option: A ∨ ¬A.'},
+  {t:'t7', q:'Why do Intuitionists reject the Law of Excluded Middle?', a:'It can prove existence mathematically without offering structural building steps.'},
+  {t:'t8', q:'Difference between valid and sound argument?', a:'Valid = correct structural form. Sound = valid AND all supporting premises are factually accurate.'},
+  {t:'t8', q:'What are Critical Rows in truth tables?', o:'Rows where every single baseline premise evaluates as True.'},
+  {t:'t9', q:"Name Perry's four stages of cognitive development.", a:'Stage 1: Dualism · Stage 2: Multiplicity · Stage 3: Relativism · Stage 4: Commitment within Relativism'},
+  {t:'t9', q:'What is the difference between divergent and convergent thinking?', a:'Divergent = lateral option expansion (creative). Convergent = linear evaluation to select the best option (critical).'},
+  {t:'t10', q:'Differentiate Islamic Falsafa vs. Kalam.', a:'Falsafa covers universal sciences and logic derived from Greek texts. Kalam represents defensive scholastic theology safeguarding Tawhid.'},
+  {t:'t10', q:'Summarize the Al-Ghazali vs. Ibn Rushd dispute.', a:'Al-Ghazali warned unbridled reason spawns heresy; revelation wins. Ibn Rushd argued true philosophy harmonizes with and deepens faith.'},
+  {t:'t11', q:'List the 7 factors of human existence outlined in 2026 notes.', a:'Physical Body, Mind, Spirit/Soul, Emotions, Social Connections, Consciousness, and Self-Awareness.'},
+  {t:'t11', q:'How do Materialists view human consciousness?', a:'They reduce it down completely to automated neural brain firings.'}
+];
+
+// ══════════ STATE ══════════
+let currentTopic = 't1';
+let quizQuestions = [];
+let quizIdx = 0;
+let quizAnswered = {};
+let quizWrong = [];
+let fcIdx = 0;
+let fcPool = [...FLASHCARDS];
+let fcFlipped = false;
+let chatHistory = [];
+let totalAnswered = 0, totalCorrect = 0;
+let topicStats = {};
+TOPICS.forEach(t => topicStats[t.id] = {answered:0, correct:0});
+
+let currentStreak = 0;
+let bestStreak = 0;
+
+let timerInterval = null;
+let timerSeconds = 0;
+let timerPerQ = 0;
+
+let darkMode = false;
+const explainCache = {};
+
+// ══════════ INIT ══════════
+window.onload = () => {
+  buildTopicList();
+  buildTopicSelects();
+  showNotes('t1');
+  initFlashcards();
+  renderProgress();
+};
+
+function buildTopicList() {
+  const list = document.getElementById('topic-list');
+  list.innerHTML = TOPICS.map(t => `
+    <div class="topic-item ${t.id === currentTopic ? 'active' : ''}" id="titem-${t.id}" onclick="showNotes('${t.id}')">
+      <span class="t-num">${t.id.replace('t','')}</span>
+      ${t.title}
+    </div>
+  `).join('');
+}
+
+function buildTopicSelects() {
+  const qSel = document.getElementById('quiz-topic-sel');
+  const fcSel = document.getElementById('fc-topic-sel');
+  TOPICS.forEach(t => {
+    qSel.innerHTML += `<option value="${t.id}">${t.id.replace('t','Topic ')} – ${t.title}</option>`;
+    fcSel.innerHTML += `<option value="${t.id}">${t.id.replace('t','Topic ')} – ${t.title}</option>`;
+  });
+}
+
+// ── TABS ──
+function switchTab(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  event.target.classList.add('active');
+  if(name === 'progress') renderProgress();
+}
+
+// ── NOTES ──
+function showNotes(id) {
+  currentTopic = id;
+  document.querySelectorAll('.topic-item').forEach(el => el.classList.remove('active'));
+  const item = document.getElementById('titem-' + id);
+  if(item) item.classList.add('active');
+
+  const data = NOTES[id];
+  if(!data) return;
+
+  const content = document.getElementById('notes-content');
+  let html = `<h2>${data.heading}</h2>`;
+  data.sections.forEach(s => {
+    html += `<h3>${s.h}</h3>${s.body}`;
+  });
+  html += `
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;">
+      <button class="ai-btn" onclick="openExplain('${id}','simple')">
+        <span>💡</span> Simple Explanation
+      </button>
+      <button class="ai-btn" style="background:#2d5a27;" onclick="openExplain('${id}','examples')">
+        <span>🌍</span> Real-World Examples
+      </button>
+      <button class="ai-btn" style="background:#4a2d8a;" onclick="openExplain('${id}','terms')">
+        <span>📖</span> Key Terms Glossary
+      </button>
+      <button class="ai-btn" style="background:#8a2d2d;" onclick="openExplain('${id}','traps')">
+        <span>⚠️</span> Exam Traps
+      </button>
+    </div>
+    <div class="explain-panel" id="explain-panel-${id}">
+      <div class="explain-close" onclick="closeExplain('${id}')">
+        <span>✨ AI Deep Explanation</span><span>✕ Close</span>
+      </div>
+      <div class="explain-tabs" id="explain-tabs-${id}">
+        <button class="explain-tab" data-pane="simple" onclick="switchExplainTab('${id}','simple',this)">💡 Simple</button>
+        <button class="explain-tab" data-pane="examples" onclick="switchExplainTab('${id}','examples',this)">🌍 Examples</button>
+        <button class="explain-tab" data-pane="terms" onclick="switchExplainTab('${id}','terms',this)">📖 Key Terms</button>
+        <button class="explain-tab" data-pane="traps" onclick="switchExplainTab('${id}','traps',this)">⚠️ Exam Traps</button>
+      </div>
+      <div class="explain-body" id="explain-body-${id}">
+        <div class="explain-pane" id="explain-pane-${id}-simple"></div>
+        <div class="explain-pane" id="explain-pane-${id}-examples"></div>
+        <div class="explain-pane" id="explain-pane-${id}-terms"></div>
+        <div class="explain-pane" id="explain-pane-${id}-traps"></div>
+      </div>
+    </div>
+  `;
+  content.innerHTML = html;
+}
+
+function closeExplain(id) {
+  const panel = document.getElementById('explain-panel-' + id);
+  if(panel) panel.classList.remove('visible');
+}
+
+function switchExplainTab(id, pane, btn) {
+  document.querySelectorAll(`#explain-tabs-${id} .explain-tab`).forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll(`#explain-body-${id} .explain-pane`).forEach(p => p.classList.remove('active'));
+  document.getElementById(`explain-pane-${id}-${pane}`).classList.add('active');
+}
+
+async function openExplain(topicId, pane) {
+  const panel = document.getElementById('explain-panel-' + topicId);
+  const body = document.getElementById('explain-body-' + topicId);
+  panel.classList.add('visible');
+
+  const tabEl = document.querySelector(`#explain-tabs-${topicId} [data-pane="${pane}"]`);
+  if(tabEl) { switchExplainTab(topicId, pane, tabEl); }
+
+  const cacheKey = topicId + '-' + pane;
+  if(explainCache[cacheKey]) return;
+
+  const paneEl = document.getElementById(`explain-pane-${topicId}-${pane}`);
+  paneEl.innerHTML = '<span class="spinner"></span> Generating…';
+
+  const topicTitle = TOPICS.find(t => t.id === topicId)?.title || topicId;
+
+  const prompts = {
+    simple: `You are a GST 212 Introduction to Philosophy tutor. Give a clear, simple explanation of "${topicTitle}" for a Nigerian university student who finds it confusing. Use local references (like Unilorin or Lagos life context if relevant). Include:
+1. A one-sentence plain-English definition
+2. The core idea via a sticky analogy
+3. The 3 most critical formulas or data assets to memorise
+Format using HTML only: use <h4> for sub-headings, <p> for paragraphs, <ul><li> for lists. No markdown.`,
+    examples: `Give 3 clear real-world examples illustrating "${topicTitle}" in daily life or Nigerian society. Format inside <div class="example-box"><strong>Example N</strong><br>text</div>. No markdown.`,
+    terms: `List programmatic terms for "${topicTitle}" that appear on exams. Format as: <div class="term-row"><span class="term-key">TERM</span><span>definition.</span></div>. No markdown.`,
+    traps: `List 4 common exam traps or semantic slip-ups students commit for "${topicTitle}". Format as: <div class="trap-box"><strong>⚠️ Trap N: Title</strong><br>text</div>. No markdown.`
+  };
+
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        messages: [{ role: "user", content: prompts[pane] }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.map(c => c.text || '').join('') || 'Could not generate content.';
+    explainCache[cacheKey] = text;
+    paneEl.innerHTML = text;
+  } catch(e) {
+    paneEl.innerHTML = '<p style="color:var(--red)">Error connecting to AI. Please try again.</p>';
+  }
+}
+
+// ── QUIZ ──
+function startQuiz() {
+  const topicSel = document.getElementById('quiz-topic-sel').value;
+  const count = parseInt(document.getElementById('quiz-count-sel').value);
+  timerPerQ = parseInt(document.getElementById('quiz-time-sel').value);
+
+  let pool = [];
+  if(topicSel === 'all') {
+    TOPICS.forEach(t => { if(MCQ[t.id]) MCQ[t.id].forEach((q,i) => pool.push({...q, topic:t.id, localIdx:i})); });
+  } else {
+    if(MCQ[topicSel]) MCQ[topicSel].forEach((q,i) => pool.push({...q, topic:topicSel, localIdx:i}));
+  }
+
+  pool = shuffle(pool);
+  quizQuestions = pool.slice(0, Math.min(count, pool.length));
+  quizIdx = 0;
+  quizAnswered = {};
+  quizWrong = [];
+
+  document.getElementById('quiz-start-msg').style.display = 'none';
+  document.getElementById('q-card').style.display = 'block';
+  document.getElementById('score-card').classList.remove('show');
+  document.getElementById('wrong-review').style.display = 'none';
+
+  if(timerPerQ > 0) document.getElementById('timer-row').style.display = 'flex';
+  else document.getElementById('timer-row').style.display = 'none';
+
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if(quizIdx >= quizQuestions.length) { showScore(); return; }
+  const q = quizQuestions[quizIdx];
+  const pct = (quizIdx / quizQuestions.length) * 100;
+  document.getElementById('q-progress').style.width = pct + '%';
+  document.getElementById('q-counter').textContent = `${quizIdx + 1} / ${quizQuestions.length}`;
+
+  const topicTitle = TOPICS.find(t => t.id === q.topic)?.title || '';
+  document.getElementById('q-meta').textContent = topicTitle;
+  document.getElementById('q-text').textContent = q.q;
+
+  const fb = document.getElementById('q-feedback');
+  fb.className = 'q-feedback';
+  fb.textContent = '';
+
+  const keys = ['A','B','C','D'];
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = q.o.map((opt, i) => `
+    <button class="opt-btn" id="opt-${i}" onclick="answerQ(${i})" ${quizAnswered[quizIdx] !== undefined ? 'disabled' : ''}>
+      <span class="opt-key">${keys[i]}</span> ${opt}
+    </button>
+  `).join('');
+
+  if(quizAnswered[quizIdx] !== undefined) {
+    const chosen = quizAnswered[quizIdx];
+    highlightAnswer(chosen, q.a);
+    showFeedback(chosen === q.a);
+    clearTimer();
+  } else if(timerPerQ > 0) {
+    startTimer(timerPerQ);
+  }
+
+  document.getElementById('q-prev').disabled = quizIdx === 0;
+  document.getElementById('q-next').disabled = quizIdx >= quizQuestions.length - 1;
+}
+
+function startTimer(seconds) {
+  clearTimer();
+  timerSeconds = seconds;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerSeconds--;
+    updateTimerDisplay();
+    if(timerSeconds <= 0) {
+      clearTimer();
+      if(quizAnswered[quizIdx] === undefined) {
+        const q = quizQuestions[quizIdx];
+        quizAnswered[quizIdx] = -1;
+        totalAnswered++;
+        if(topicStats[q.topic]) topicStats[q.topic].answered++;
+        currentStreak = 0;
+        quizWrong.push({ q: q.q, chosen: '(Time Expired)', correct: q.o[q.a], topic: TOPICS.find(t=>t.id===q.topic)?.title || '' });
+        document.querySelectorAll('.opt-btn').forEach((b,i) => { if(i === q.a) b.classList.add('correct'); b.disabled = true; });
+        const fb = document.getElementById('q-feedback');
+        fb.className = 'q-feedback show bad';
+        fb.textContent = `⏰ Time ran out! The correct answer was: ${q.o[q.a]}`;
+        document.getElementById('q-next').disabled = false;
+        updateHeaderStats();
+      }
+    }
+  }, 1000);
+}
+
+function clearTimer() {
+  if(timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+  const disp = document.getElementById('timer-display');
+  if(disp) disp.className = 'timer-display';
+}
+
+function updateTimerDisplay() {
+  const disp = document.getElementById('timer-display');
+  if(!disp) return;
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  disp.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  disp.className = 'timer-display';
+  if(timerSeconds <= 5) disp.classList.add('danger');
+  else if(timerSeconds <= Math.floor(timerPerQ * 0.3)) disp.classList.add('warning');
+}
+
+function answerQ(chosen) {
+  if(quizAnswered[quizIdx] !== undefined) return;
+  const q = quizQuestions[quizIdx];
+  quizAnswered[quizIdx] = chosen;
+  const correct = chosen === q.a;
+
+  clearTimer();
+  totalAnswered++;
+  if(correct) {
+    totalCorrect++;
+    currentStreak++;
+    if(currentStreak > bestStreak) bestStreak = currentStreak;
+  } else {
+    currentStreak = 0;
+    quizWrong.push({ q: q.q, chosen: q.o[chosen], correct: q.o[q.a], topic: TOPICS.find(t=>t.id===q.topic)?.title || '' });
+  }
+
+  if(topicStats[q.topic]) {
+    topicStats[q.topic].answered++;
+    if(correct) topicStats[q.topic].correct++;
+  }
+  updateHeaderStats();
+  highlightAnswer(chosen, q.a);
+  showFeedback(correct);
+
+  document.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+  document.getElementById('q-prev').disabled = quizIdx === 0;
+  document.getElementById('q-next').disabled = false;
+}
+
+function highlightAnswer(chosen, correct) {
+  document.querySelectorAll('.opt-btn').forEach((b, i) => {
+    if(i === correct) b.classList.add('correct');
+    else if(i === chosen && chosen !== correct) b.classList.add('wrong');
+  });
+}
+
+function showFeedback(correct) {
+  const fb = document.getElementById('q-feedback');
+  fb.className = 'q-feedback show ' + (correct ? 'ok' : 'bad');
+  fb.textContent = correct ? '✓ Correct!' : `✗ The correct answer is: ${quizQuestions[quizIdx].o[quizQuestions[quizIdx].a]}`;
+}
+
+function moveQ(dir) {
+  clearTimer();
+  quizIdx = Math.max(0, Math.min(quizQuestions.length - 1, quizIdx + dir));
+  renderQuestion();
+}
+
+function showScore() {
+  clearTimer();
+  document.getElementById('q-card').style.display = 'none';
+  document.getElementById('timer-row').style.display = 'none';
+  const answered = Object.keys(quizAnswered).length;
+  const correct = Object.values(quizAnswered).filter((v, i) => v === quizQuestions[i]?.a).length;
+  const wrong = answered - correct;
+  const skipped = quizQuestions.length - answered;
+  const pct = answered > 0 ? Math.round((correct / quizQuestions.length) * 100) : 0;
+
+  document.getElementById('score-pct').textContent = pct + '%';
+  document.getElementById('sc-correct').textContent = correct;
+  document.getElementById('sc-wrong').textContent = wrong;
+  document.getElementById('sc-skip').textContent = skipped;
+  document.getElementById('score-card').classList.add('show');
+  document.getElementById('q-progress').style.width = '100%';
+
+  const reviewBtn = document.getElementById('review-btn');
+  if(quizWrong.length > 0) {
+    reviewBtn.style.display = 'inline-block';
+    reviewBtn.textContent = `📋 Review ${quizWrong.length} Mistake${quizWrong.length>1?'s':''}`;
+  } else {
+    reviewBtn.style.display = 'none';
+  }
+}
+
+function showWrongReview() {
+  const el = document.getElementById('wrong-review');
+  el.style.display = 'block';
+  el.scrollIntoView({behavior:'smooth', block:'start'});
+  const list = document.getElementById('wrong-list');
+  list.innerHTML = quizWrong.map((w,i) => `
+    <div class="review-item">
+      <div class="ri-topic">${w.topic}</div>
+      <div class="ri-q">${i+1}. ${w.q}</div>
+      <div class="ri-wrong">✗ Your answer: ${w.chosen}</div>
+      <div class="ri-correct">✓ Correct answer: ${w.correct}</div>
+    </div>
+  `).join('');
+}
+
+// ── FLASHCARDS ──
+function initFlashcards() { fcPool = shuffle([...FLASHCARDS]); fcIdx = 0; renderFC(); }
+
+function setFCTopic(val, btn) {
+  if(val === 'all') fcPool = shuffle([...FLASHCARDS]);
+  else fcPool = shuffle(FLASHCARDS.filter(c => c.t === val));
+  fcIdx = 0; fcFlipped = false;
+  document.getElementById('flashcard').classList.remove('flipped');
+  renderFC();
+}
+
+function setFCTopicSel(val) { setFCTopic(val, null); }
+
+function renderFC() {
+  if(fcPool.length === 0) { document.getElementById('fc-q').textContent = 'No cards loaded for this category.'; return; }
+  const card = fcPool[fcIdx];
+  document.getElementById('fc-q').textContent = card.q;
+  document.getElementById('fc-a').textContent = card.a;
+  document.getElementById('fc-progress').textContent = `Card ${fcIdx + 1} of ${fcPool.length}`;
+  document.getElementById('flashcard').classList.remove('flipped');
+  fcFlipped = false;
+}
+
+function flipCard() {
+  fcFlipped = !fcFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', fcFlipped);
+}
+
+function fcNext(dir) {
+  if(dir === 1 && fcIdx < fcPool.length - 1) fcIdx++;
+  else if(dir === -1 && fcIdx > 0) fcIdx--;
+  renderFC();
+}
+
+function fcShuffle() {
+  fcPool = shuffle(fcPool);
+  fcIdx = 0;
+  renderFC();
+}
+
+// ── ASK AI (CHAT) ──
+function quickAsk(el) {
+  document.getElementById('chat-input').value = el.textContent;
+  sendChat();
+}
+
+function chatEnter(e) {
+  if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); }
+}
+
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+
+  appendMsg('user', msg);
+  chatHistory.push({ role: 'user', content: msg });
+
+  const loadId = 'ai-' + Date.now();
+  appendMsg('ai', '<span class="spinner"></span> Processing blueprint parameters…', loadId);
+
+  const systemPrompt = `You are an expert GST 212 Introduction to Philosophy tutor modeling the exact 2026 curriculum matrix. You know all explicit components: the eight characteristics of philosophy, the speculative/prescriptive/analytic/dialectical modes, the branches and sub-branches (ontology, cosmology, causality, theology), the fine differences of epistemology knowledge sources, truth table critical row checks, formal structural errors (affirming the consequent, denying the antecedent), informal parameters, and the 7 factors of human existence across divergent philosophical schools. Maintain an inspiring, clear style for a Nigerian university student. Keep total responses under 200 words.`;
+
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.map(c => c.text || '').join('') || 'Connection timeout. Re-evaluate structural variables.';
+
+    chatHistory.push({ role: 'assistant', content: reply });
+    updateMsg(loadId, reply);
+  } catch(e) {
+    updateMsg(loadId, 'Error connecting to structural AI environment.');
+  }
+}
+
+function appendMsg(role, content, id) {
+  const msgs = document.getElementById('chat-msgs');
+  const avatar = role === 'user' ? '👤' : '🎓';
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  if(id) div.id = id;
+  div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${content}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function updateMsg(id, content) {
+  const el = document.getElementById(id);
+  if(el) el.querySelector('.msg-bubble').textContent = content;
+}
+
+// ── PROGRESS ──
+function updateHeaderStats() {
+  document.getElementById('stat-done').textContent = totalAnswered;
+  const pct = totalAnswered > 0 ? Math.round((totalCorrect/totalAnswered)*100) + '%' : '0%';
+  document.getElementById('stat-pct').textContent = pct;
+  document.getElementById('stat-streak').textContent = currentStreak;
+}
+
+function renderProgress() {
+  const ob = totalAnswered > 0 ? Math.round((totalCorrect/totalAnswered)*100)+'%' : '—';
+  document.getElementById('ob-score').textContent = ob;
+  document.getElementById('ob-answered').textContent = totalAnswered;
+  document.getElementById('ob-correct').textContent = totalCorrect;
+  document.getElementById('ob-streak').textContent = bestStreak;
+  const studied = TOPICS.filter(t => topicStats[t.id]?.answered > 0).length;
+  document.getElementById('ob-topics').textContent = `${studied} / 11`;
+
+  const grid = document.getElementById('prog-grid');
+  grid.innerHTML = TOPICS.map(t => {
+    const s = topicStats[t.id] || {answered:0, correct:0};
+    const pct = s.answered > 0 ? Math.round((s.correct/s.answered)*100) : 0;
+    return `
+      <div class="prog-card">
+        <div class="prog-card-top">
+          <div class="prog-card-name">${t.id.replace('t','T')}. ${t.title}</div>
+          <div class="prog-card-pct">${s.answered > 0 ? pct+'%' : '—'}</div>
+        </div>
+        <div class="prog-bar-bg"><div class="prog-bar-fg" style="width:${pct}%"></div></div>
+        <div class="prog-card-stats">${s.correct} correct · ${s.answered - s.correct} wrong · ${s.answered} total</div>
+      </div>
+    `;
+  }).join('');
+  renderBadges();
+}
+
+// ── BADGES ──
+const BADGE_DEFS = [
+  { id:'first_answer', icon:'🎯', label:'First Step', desc:'Answer your first question', check:()=>totalAnswered>=1 },
+  { id:'ten_correct', icon:'⭐', label:'Getting There', desc:'Get 10 correct answers', check:()=>totalCorrect>=10 },
+  { id:'fifty_correct', icon:'🌟', label:'On a Roll', desc:'Get 50 correct answers', check:()=>totalCorrect>=50 },
+  { id:'hundred_correct', icon:'💯', label:'Centurion', desc:'Get 100 correct answers', check:()=>totalCorrect>=100 },
+  { id:'streak5', icon:'🔥', label:'On Fire', desc:'5 correct answers in a row', check:()=>bestStreak>=5 },
+  { id:'streak10', icon:'🚀', label:'Unstoppable', desc:'10 correct in a row', check:()=>bestStreak>=10 },
+  { id:'all_topics', icon:'🗺️', label:'Explorer', desc:'Study all 11 topics', check:()=>TOPICS.every(t=>topicStats[t.id]?.answered>0) },
+  { id:'perfect_quiz', icon:'🏆', label:'Perfect Score', desc:'Complete a quiz with 100%', check:()=>{ const a=Object.keys(quizAnswered).length; return a>0 && a===quizQuestions.length && Object.values(quizAnswered).every((v,i)=>v===quizQuestions[i]?.a); }},
+  { id:'accuracy80', icon:'🎖️', label:'Sharp Mind', desc:'Reach 80% overall accuracy', check:()=>totalAnswered>=20 && (totalCorrect/totalAnswered)>=0.8 },
+  { id:'two_fifty', icon:'🧠', label:'Scholar', desc:'Answer 250 questions', check:()=>totalAnswered>=250 },
+];
+
+function renderBadges() {
+  const grid = document.getElementById('badges-grid');
+  grid.innerHTML = BADGE_DEFS.map(b => {
+    const earned = b.check();
+    return `<div class="badge-chip ${earned ? 'earned' : 'locked'}" title="${b.desc}">${b.icon} ${b.label}${earned ? '' : ' 🔒'}</div>`;
+  }).join('');
+}
+
+function toggleDark() {
+  darkMode = !darkMode;
+  document.body.classList.toggle('dark', darkMode);
+  document.getElementById('dark-btn').textContent = darkMode ? '☀️ Light' : '🌙 Dark';
+}
+
+function exportNotesPDF() {
+  const notesEl = document.getElementById('notes-content');
+  const topicData = NOTES[currentTopic];
+  if(!topicData) { alert('Select a topic from the directory map first.'); return; }
+
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>GST 212 – ${topicData.heading}</title>
+      <style>
+        body { font-family: Georgia, serif; max-width: 750px; margin: 40px auto; color: #1a1a1a; line-height: 1.7; }
+        h1 { font-size: 1.6rem; border-bottom: 3px solid #c9a84c; padding-bottom: 10px; margin-bottom: 24px; }
+        h2 { font-size: 1.1rem; color: #1a1a2e; margin: 20px 0 8px; border-left: 4px solid #c9a84c; padding-left: 10px; }
+        p { margin-bottom: 10px; }
+        ul { margin: 6px 0 14px 20px; }
+        li { margin-bottom: 6px; }
+        .key-box { background: #fffbf0; border: 1px solid #c9a84c; border-left: 4px solid #c9a84c; padding: 10px 14px; margin: 10px 0; border-radius: 4px; }
+        .footer { margin-top: 40px; font-size: 0.8rem; color: #aaa; border-top: 1px solid #ddd; padding-top: 10px; }
+        @media print { body { margin: 20px; } }
+      </style>
+    </head>
+    <body>
+      <h1>GST 212 — ${topicData.heading}</h1>
+      ${notesEl.innerHTML.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, '').replace(/<div class="ai-response[^>]*>[\s\S]*?<\/div>/gi, '')}
+      <div class="footer">GST 212 Philosophy Study Hub Matrix • ${topicData.heading}</div>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+  setTimeout(() => { printWindow.print(); }, 400);
+}
+
+function resetProgress() {
+  if(!confirm('Reset all structural progress parameters? This path is destructive.')) return;
+  totalAnswered = 0; totalCorrect = 0;
+  currentStreak = 0; bestStreak = 0;
+  TOPICS.forEach(t => topicStats[t.id] = {answered:0, correct:0});
+  updateHeaderStats();
+  renderProgress();
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for(let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+</script>
+</body>
+</html>
