@@ -3,920 +3,631 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST 212 – Introduction to Philosophy: Complete Study Guide</title>
+<title>GST 212 – Philosophy Study Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=700;900&family=DM+Sans:ital,wght=0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, serif; background: #f5f0e8; color: #222; line-height: 1.7; }
-  header { background: #1a1a2e; color: #fff; padding: 32px 40px; text-align: center; }
-  header h1 { font-size: 2rem; margin-bottom: 8px; }
-  header p { color: #ccc; font-size: 0.95rem; }
-  nav { background: #16213e; padding: 12px 40px; position: sticky; top: 0; z-index: 100; }
-  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-  nav ul li a { color: #e0c97f; text-decoration: none; font-size: 0.82rem; padding: 4px 10px; border: 1px solid #e0c97f33; border-radius: 4px; }
-  nav ul li a:hover { background: #e0c97f22; }
-  .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
-  .topic-card { background: #fff; border-radius: 10px; margin-bottom: 48px; box-shadow: 0 2px 10px #0001; overflow: hidden; }
-  .topic-header { background: #1a1a2e; color: #e0c97f; padding: 20px 28px; }
-  .topic-header h2 { font-size: 1.4rem; }
-  .topic-header .num { font-size: 0.85rem; opacity: 0.7; }
-  .notes { padding: 24px 28px; border-bottom: 2px dashed #e0c97f44; }
-  .notes h3 { color: #1a1a2e; font-size: 1.1rem; margin: 18px 0 8px; border-left: 4px solid #e0c97f; padding-left: 10px; }
-  .notes h3:first-child { margin-top: 0; }
-  .notes p { margin-bottom: 10px; font-size: 0.97rem; }
-  .notes ul { margin: 8px 0 12px 20px; }
-  .notes ul li { margin-bottom: 5px; font-size: 0.95rem; }
-  .key-box { background: #fffbea; border: 1px solid #e0c97f; border-radius: 6px; padding: 12px 16px; margin: 12px 0; }
-  .key-box strong { color: #7a5c00; }
-  .mcq-section { padding: 24px 28px; }
-  .mcq-section h3 { color: #1a1a2e; font-size: 1.15rem; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid #e0c97f; }
-  .question { margin-bottom: 18px; padding: 14px 16px; background: #fafafa; border-radius: 6px; border-left: 3px solid #1a1a2e22; }
-  .question p { font-size: 0.93rem; font-weight: bold; margin-bottom: 8px; }
-  .options { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-  .options li { font-size: 0.9rem; padding: 3px 0; color: #333; }
-  .answers-section { background: #1a1a2e; color: #fff; padding: 24px 28px; }
-  .answers-section h3 { color: #e0c97f; margin-bottom: 16px; font-size: 1.1rem; }
-  .answers-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-  .ans-item { background: #ffffff15; border-radius: 4px; padding: 6px 8px; font-size: 0.82rem; }
-  .ans-item strong { color: #e0c97f; }
-  .ans-explain { font-size: 0.8rem; color: #aaa; margin-top: 2px; }
-  .back-top { text-align: center; padding: 12px; }
-  .back-top a { color: #1a1a2e; font-size: 0.85rem; text-decoration: none; background: #e0c97f; padding: 6px 16px; border-radius: 20px; }
-  @media(max-width:600px){ .options{grid-template-columns:1fr;} .answers-grid{grid-template-columns:repeat(3,1fr);} }
-</style>
-</head>
-<body>
+:root {
+  --ink: #0f0e17;
+  --paper: #f7f4ef;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gold-dim: #c9a84c33;
+  --navy: #1a1a2e;
+  --navy-mid: #16213e;
+  --red: #e05c3a;
+  --green: #3a8c5c;
+  --card: #ffffff;
+  --muted: #6b6660;
+  --border: #ddd8d0;
+}
 
-<header>
-  <h1>GST 212 – Introduction to Philosophy</h1>
-  <p>Complete Study Guide &amp; 100 MCQs Per Topic with Answer Key</p>
-</header>
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-<nav>
-  <ul>
-    <li><a href="#t1">1. Nature of Philosophy</a></li>
-    <li><a href="#t2">2. Modes of Philosophy</a></li>
-    <li><a href="#t3">3. Branches of Philosophy</a></li>
-    <li><a href="#t4">4. Syllogism</a></li>
-    <li><a href="#t5">5. Symbolic Logic</a></li>
-    <li><a href="#t6">6. Fallacy</a></li>
-    <li><a href="#t7">7. Laws of Thought</a></li>
-    <li><a href="#t8">8. Arguments</a></li>
-    <li><a href="#t9">9. Creative &amp; Critical Thinking</a></li>
-    <li><a href="#t10">10. Philosophy &amp; Religion</a></li>
-    <li><a href="#t11">11. Impact on Human Existence</a></li>
-  </ul>
-</nav>
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
 
-<div class="container">
+/* ── HEADER ── */
+header {
+  background: var(--navy);
+  padding: 28px 40px 24px;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, #c9a84c18 0%, transparent 70%);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+.header-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 1.2;
+}
+.header-title p { color: var(--gold-light); font-size: 0.85rem; margin-top: 4px; font-weight: 300; }
+.header-stats {
+  display: flex;
+  gap: 16px;
+}
+.stat-chip {
+  background: #ffffff14;
+  border: 1px solid #ffffff22;
+  border-radius: 8px;
+  padding: 8px 14px;
+  text-align: center;
+  color: #fff;
+}
+.stat-chip .num { font-size: 1.3rem; font-weight: 700; color: var(--gold); display: block; }
+.stat-chip .lbl { font-size: 0.7rem; opacity: .7; letter-spacing: .05em; text-transform: uppercase; }
 
-<!-- ============================================================ TOPIC 1 -->
-<div class="topic-card" id="t1">
-  <div class="topic-header">
-    <div class="num">TOPIC 1</div>
-    <h2>The Meaning and Nature of Philosophy</h2>
-  </div>
-  <div class="notes">
-    <h3>What is Philosophy?</h3>
-    <p>The word <strong>Philosophy</strong> comes from two Greek words: <em>Philo</em> (love) and <em>Sophia</em> (wisdom). Together they mean <strong>"love of wisdom"</strong> or "love of knowledge." It is a strong desire to uncover what is hidden — an enquiry into the unknown for better understanding.</p>
-    <div class="key-box"><strong>Simple Definition:</strong> Philosophy is the systematic, rational, and critical investigation of fundamental questions about existence, knowledge, values, and reality.</div>
+/* ── NAV TABS ── */
+.tab-bar {
+  background: var(--navy-mid);
+  padding: 0 40px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 14px 20px;
+  color: #aaa;
+  font-size: 0.83rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: .03em;
+}
+.tab-btn:hover { color: var(--gold-light); }
+.tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-    <h3>Key Thinkers and Their Views</h3>
-    <ul>
-      <li><strong>Carter Good:</strong> Philosophy is a science that organises and systematises all fields of knowledge — comprising logic, ethics, aesthetics, metaphysics, and epistemology.</li>
-      <li><strong>Russell (2010):</strong> Philosophy seeks to examine assumptions underlying human thought and action, enabling individuals to think clearly and rationally.</li>
-      <li><strong>Jalaluddin &amp; Idi (2013):</strong> Philosophy is a comprehensive and systematic view of the entire domain of knowledge.</li>
-      <li><strong>Stanford Encyclopedia:</strong> Philosophy fosters critical thinking, ethical reasoning, and conceptual clarity.</li>
-    </ul>
+/* ── LAYOUT ── */
+.app-body { max-width: 1100px; margin: 0 auto; padding: 28px 24px; }
 
-    <h3>Characteristics of Philosophy</h3>
-    <ul>
-      <li><strong>Rational and Critical</strong> – Proceeds through argumentation and logical evaluation, not mere opinion.</li>
-      <li><strong>Reflective and Second-order</strong> – Reflects on the foundations and methods of other disciplines.</li>
-      <li><strong>Systematic and Coherent</strong> – Organises ideas into logically consistent systems, avoiding contradiction.</li>
-      <li><strong>Speculative yet Grounded</strong> – Ventures beyond observation to address ultimate questions, while anchored in reason.</li>
-      <li><strong>Normative and Evaluative</strong> – Concerned with what <em>ought to be</em>, not just what is.</li>
-      <li><strong>Universal and Foundational</strong> – Addresses questions that transcend cultures (truth, knowledge, existence).</li>
-      <li><strong>Dialectical</strong> – Progresses through dialogue, debate, and confrontation of opposing views.</li>
-      <li><strong>Practical and Transformative</strong> – Shapes human life, guiding action and moral decision-making.</li>
-    </ul>
+/* ── MODE BUTTONS ── */
+.mode-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.mode-btn {
+  padding: 9px 18px;
+  border-radius: 24px;
+  border: 2px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--muted);
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mode-btn:hover { border-color: var(--gold); color: var(--ink); }
+.mode-btn.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
-    <h3>Why Philosophy Matters</h3>
-    <p>Philosophy shapes human self-understanding, ethical norms, cultural values, education, and political structures. It asks fundamental questions: <em>What is knowledge? How can we know that we know? What are the limits of human knowledge?</em></p>
-    <p>It involves <strong>systematic thinking</strong> — coherent reasoning about the whole domain of our experience, using logic, language analysis, and critical analysis.</p>
-  </div>
+/* ── PANELS ── */
+.panel { display: none; }
+.panel.active { display: block; }
 
-  <div class="mcq-section">
-    <h3>100 Multiple Choice Questions – Topic 1</h3>
+/* ── NOTES PANEL ── */
+.notes-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  min-height: 540px;
+}
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.topic-item {
+  padding: 11px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.84rem;
+  border: 1px solid transparent;
+  transition: all .18s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+}
+.topic-item:hover { border-color: var(--gold); }
+.topic-item.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.topic-item .t-num {
+  background: var(--gold-dim);
+  color: var(--gold);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+.topic-item.active .t-num { background: #ffffff22; color: var(--gold-light); }
 
-    <div class="question"><p>1. The word "philosophy" is derived from which language?</p><ul class="options"><li>A) Latin</li><li>B) Greek</li><li>C) Hebrew</li><li>D) Arabic</li></ul></div>
-    <div class="question"><p>2. "Philo" in Greek means:</p><ul class="options"><li>A) Knowledge</li><li>B) Wisdom</li><li>C) Love</li><li>D) Truth</li></ul></div>
-    <div class="question"><p>3. "Sophia" in Greek means:</p><ul class="options"><li>A) Love</li><li>B) Wisdom</li><li>C) Reason</li><li>D) Enquiry</li></ul></div>
-    <div class="question"><p>4. The literal meaning of philosophy is:</p><ul class="options"><li>A) Study of science</li><li>B) Love of wisdom</li><li>C) Search for God</li><li>D) Knowledge of nature</li></ul></div>
-    <div class="question"><p>5. According to Carter Good, philosophy is a science that seeks to:</p><ul class="options"><li>A) Prove God's existence</li><li>B) Organise and systematise all fields of knowledge</li><li>C) Study physical phenomena</li><li>D) Teach moral values only</li></ul></div>
-    <div class="question"><p>6. Which of these is NOT listed by Carter Good as a component of philosophy?</p><ul class="options"><li>A) Logic</li><li>B) Aesthetics</li><li>C) Theology</li><li>D) Metaphysics</li></ul></div>
-    <div class="question"><p>7. Russell (2010) argues philosophy enables individuals to:</p><ul class="options"><li>A) Follow traditions blindly</li><li>B) Think clearly and rationally about life</li><li>C) Accept religious doctrines</li><li>D) Avoid questioning beliefs</li></ul></div>
-    <div class="question"><p>8. Jalaluddin &amp; Idi describe philosophy as:</p><ul class="options"><li>A) A narrow and specific study</li><li>B) A comprehensive and systematic view</li><li>C) An empirical science only</li><li>D) A study of language only</li></ul></div>
-    <div class="question"><p>9. According to the Stanford Encyclopedia of Philosophy, philosophy fosters:</p><ul class="options"><li>A) Blind acceptance of facts</li><li>B) Critical thinking, ethical reasoning, and conceptual clarity</li><li>C) Rejection of all values</li><li>D) Pure scientific experimentation</li></ul></div>
-    <div class="question"><p>10. Philosophy proceeds through argumentation and logical evaluation rather than:</p><ul class="options"><li>A) Evidence</li><li>B) Mere opinion or tradition</li><li>C) Critical analysis</li><li>D) Systematic thinking</li></ul></div>
-    <div class="question"><p>11. The characteristic of philosophy concerned with "what ought to be" is:</p><ul class="options"><li>A) Speculative</li><li>B) Dialectical</li><li>C) Normative and evaluative</li><li>D) Reflective</li></ul></div>
-    <div class="question"><p>12. Philosophy's "second-order" characteristic means it:</p><ul class="options"><li>A) Studies science directly</li><li>B) Reflects on the foundations and methods of other disciplines</li><li>C) Only deals with second-hand knowledge</li><li>D) Is less important than other disciplines</li></ul></div>
-    <div class="question"><p>13. The dialectical characteristic of philosophy means it progresses through:</p><ul class="options"><li>A) Individual thought alone</li><li>B) Sacred texts</li><li>C) Dialogue, debate and confrontation of opposing views</li><li>D) Laboratory experiments</li></ul></div>
-    <div class="question"><p>14. Philosophy is said to be "speculative yet grounded" because it:</p><ul class="options"><li>A) Makes guesses without reason</li><li>B) Ventures beyond observation while remaining anchored in rational justification</li><li>C) Relies only on empirical evidence</li><li>D) Ignores reality</li></ul></div>
-    <div class="question"><p>15. Which characteristic shows philosophy transcends particular cultures and contexts?</p><ul class="options"><li>A) Normative</li><li>B) Universal and foundational</li><li>C) Dialectical</li><li>D) Reflective</li></ul></div>
-    <div class="question"><p>16. Philosophy is described as "practical and transformative" because it:</p><ul class="options"><li>A) Only concerns abstract theory</li><li>B) Shapes human life, guiding action and moral decision-making</li><li>C) Is limited to academic settings</li><li>D) Deals only with ancient problems</li></ul></div>
-    <div class="question"><p>17. The systematic nature of philosophy involves:</p><ul class="options"><li>A) Random speculation</li><li>B) Coherent reasoning about the whole domain of experience</li><li>C) Study of natural science only</li><li>D) Memorisation of facts</li></ul></div>
-    <div class="question"><p>18. Philosophy asks fundamental questions such as:</p><ul class="options"><li>A) How fast does light travel?</li><li>B) What is the chemical formula of water?</li><li>C) What is knowledge and how can we know that we know?</li><li>D) How many planets are in the solar system?</li></ul></div>
-    <div class="question"><p>19. The fact that philosophy has no single universal definition implies it:</p><ul class="options"><li>A) Is unimportant</li><li>B) Tends to elude consensual definition</li><li>C) Is only for experts</li><li>D) Should be abandoned</li></ul></div>
-    <div class="question"><p>20. Philosophy involves the use of all of the following EXCEPT:</p><ul class="options"><li>A) Logic</li><li>B) Language analysis</li><li>C) Blind faith</li><li>D) Critical analysis</li></ul></div>
-    <div class="question"><p>21. Philosophical inquiry continues to influence how humans:</p><ul class="options"><li>A) Eat and sleep</li><li>B) Interpret their lives, make decisions and engage with societies</li><li>C) Conduct laboratory research only</li><li>D) Worship only</li></ul></div>
-    <div class="question"><p>22. Knowledge, as referred to in philosophy, means:</p><ul class="options"><li>A) Facts found in textbooks</li><li>B) What one believes to be true about human existence</li><li>C) Scientific data only</li><li>D) Religious beliefs only</li></ul></div>
-    <div class="question"><p>23. Philosophy helps simplify:</p><ul class="options"><li>A) Scientific equations</li><li>B) Complex ideas and statements about our experiences in life</li><li>C) Mathematical problems</li><li>D) Engineering processes</li></ul></div>
-    <div class="question"><p>24. The expository and critical analyses in philosophy help arrive at:</p><ul class="options"><li>A) Technical solutions</li><li>B) Clarification of ideas and sound conclusions</li><li>C) Religious doctrines</li><li>D) Scientific laws</li></ul></div>
-    <div class="question"><p>25. Philosophy does NOT concern itself ONLY with man; it also investigates:</p><ul class="options"><li>A) Physical geography</li><li>B) Issues of knowledge and fundamental questions about existence</li><li>C) Chemical reactions</li><li>D) Computer programming</li></ul></div>
-    <div class="question"><p>26. The "love of wisdom" definition of philosophy was first established by:</p><ul class="options"><li>A) Romans</li><li>B) Greeks</li><li>C) Egyptians</li><li>D) Persians</li></ul></div>
-    <div class="question"><p>27. Philosophy that is "systematic and coherent" aims to:</p><ul class="options"><li>A) Create confusion</li><li>B) Organise ideas into logically consistent systems, avoiding contradiction</li><li>C) Promote subjective opinions</li><li>D) Isolate knowledge</li></ul></div>
-    <div class="question"><p>28. The philosophical tradition of questioning assumptions was pioneered by:</p><ul class="options"><li>A) Aristotle</li><li>B) Plato</li><li>C) Socrates</li><li>D) Kant</li></ul></div>
-    <div class="question"><p>29. Philosophy is described as "rational and critical" from which philosopher onward?</p><ul class="options"><li>A) Plato</li><li>B) Socrates</li><li>C) Aristotle</li><li>D) Russell</li></ul></div>
-    <div class="question"><p>30. The coherent reasoning about the whole domain of our experience of the universe is called:</p><ul class="options"><li>A) Critical thinking</li><li>B) Systematic thinking</li><li>C) Speculative thinking</li><li>D) Analytic thinking</li></ul></div>
-    <div class="question"><p>31. Philosophy examines arguments about:</p><ul class="options"><li>A) Physical and spiritual nature of the universe</li><li>B) Only physical nature</li><li>C) Only spiritual matters</li><li>D) Mathematical proofs</li></ul></div>
-    <div class="question"><p>32. The citation "Amaele, 2002" is used in the notes to reference discussions on:</p><ul class="options"><li>A) Epistemology only</li><li>B) Arguments on the physical and spiritual nature of the universe</li><li>C) Education policies</li><li>D) African philosophy</li></ul></div>
-    <div class="question"><p>33. Philosophy provides answers by:</p><ul class="options"><li>A) Giving absolute truths without questioning</li><li>B) Asking questions for the sake of knowing better and understanding</li><li>C) Accepting all traditions</li><li>D) Relying on authority</li></ul></div>
-    <div class="question"><p>34. According to Jalaluddin &amp; Idi, philosophical thinking leads one to think:</p><ul class="options"><li>A) Emotionally and passively</li><li>B) Radically, systematically, thoroughly, and fundamentally</li><li>C) Casually and superficially</li><li>D) Traditionally only</li></ul></div>
-    <div class="question"><p>35. The study of philosophy is comprehensive because it is:</p><ul class="options"><li>A) Limited to one area of knowledge</li><li>B) An exploration of knowledge and the viewpoint of entire knowledge</li><li>C) Only concerned with metaphysics</li><li>D) Based purely on science</li></ul></div>
-    <div class="question"><p>36. Philosophy serves as a guide for determining:</p><ul class="options"><li>A) Only scientific methods</li><li>B) Aims, curriculum content, teaching methods, and evaluation</li><li>C) Physical laws of nature</li><li>D) Economic policies only</li></ul></div>
-    <div class="question"><p>37. Which of the following best describes philosophy as a "way of life"?</p><ul class="options"><li>A) It only exists in books</li><li>B) It is a rigorous, reflective enterprise that guides how one ought to live</li><li>C) It is a purely theoretical exercise</li><li>D) It rejects all human experiences</li></ul></div>
-    <div class="question"><p>38. The desire to uncover what is covered is best described as:</p><ul class="options"><li>A) Science</li><li>B) Religion</li><li>C) Philosophical enquiry</li><li>D) Tradition</li></ul></div>
-    <div class="question"><p>39. The study of philosophy is NOT limited to exploration of knowledge but also includes:</p><ul class="options"><li>A) Political science</li><li>B) The viewpoint of entire knowledge itself</li><li>C) Agricultural sciences</li><li>D) Computer studies</li></ul></div>
-    <div class="question"><p>40. "Phillips, 2023" refers to a citation from:</p><ul class="options"><li>A) A philosophy textbook</li><li>B) The Stanford Encyclopedia of Philosophy</li><li>C) A religious text</li><li>D) A government document</li></ul></div>
-    <div class="question"><p>41. Philosophy shapes all of the following EXCEPT:</p><ul class="options"><li>A) Ethical norms</li><li>B) Cultural values</li><li>C) Chemical formulas</li><li>D) Political structures</li></ul></div>
-    <div class="question"><p>42. The traditional branches of philosophy that have shaped human self-understanding include:</p><ul class="options"><li>A) Physics, chemistry, biology</li><li>B) Existentialism, ethics, metaphysics, epistemology</li><li>C) Algebra, geometry, calculus</li><li>D) Art, music, literature</li></ul></div>
-    <div class="question"><p>43. In philosophy, the activity of "clarification of ideas" is achieved through:</p><ul class="options"><li>A) Religious prayer</li><li>B) Logic, language analysis, expository and critical analysis</li><li>C) Physical experiments</li><li>D) Memorisation</li></ul></div>
-    <div class="question"><p>44. When philosophy asks "What are the limitations of human knowledge?" this falls under:</p><ul class="options"><li>A) Metaphysics</li><li>B) Axiology</li><li>C) Epistemology</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>45. "Coherent reasoning" in philosophy means reasoning that is:</p><ul class="options"><li>A) Scattered and inconsistent</li><li>B) Logical, consistent and well-structured</li><li>C) Based only on feelings</li><li>D) Traditional and unchanging</li></ul></div>
-    <div class="question"><p>46. Philosophy's universal characteristic means it addresses questions that:</p><ul class="options"><li>A) Only apply to African cultures</li><li>B) Transcend particular cultures and historical contexts</li><li>C) Are specific to one religion</li><li>D) Belong only to modern times</li></ul></div>
-    <div class="question"><p>47. A person who has never studied philosophy:</p><ul class="options"><li>A) Cannot think at all</li><li>B) May not reason as correctly as someone who studied logic</li><li>C) Will always reason correctly</li><li>D) Is superior to a philosopher</li></ul></div>
-    <div class="question"><p>48. "Man's relationship to the universe" is a topic discussed in philosophy under:</p><ul class="options"><li>A) Pure science</li><li>B) Philosophical arguments and metaphysics</li><li>C) History only</li><li>D) Literature</li></ul></div>
-    <div class="question"><p>49. The phrase "reflective and second-order" in philosophy means:</p><ul class="options"><li>A) Philosophy is secondary and unimportant</li><li>B) Philosophy reflects on the foundations and methods of other disciplines</li><li>C) It comes after all other subjects</li><li>D) It only reflects on political events</li></ul></div>
-    <div class="question"><p>50. The phrase "philosophy is both an intellectual discipline and a way of life" means:</p><ul class="options"><li>A) Philosophy is only academic</li><li>B) It is grounded in reason and oriented toward truth, shaping how one lives</li><li>C) It is only a lifestyle</li><li>D) It is irrelevant to daily life</li></ul></div>
-    <div class="question"><p>51. Philosophy's influence on education includes:</p><ul class="options"><li>A) Only improving reading skills</li><li>B) Shaping aims, curriculum content, and teaching methods</li><li>C) Designing school uniforms</li><li>D) Reducing class sizes</li></ul></div>
-    <div class="question"><p>52. Human beings engage in philosophical thinking primarily because:</p><ul class="options"><li>A) They are bored</li><li>B) They encounter environmental problems that subject them to continuous reflection</li><li>C) It is a school requirement</li><li>D) They follow traditions</li></ul></div>
-    <div class="question"><p>53. The term "normative" in describing philosophy means:</p><ul class="options"><li>A) Describing what is</li><li>B) Prescribing what ought to be</li><li>C) Predicting the future</li><li>D) Recording history</li></ul></div>
-    <div class="question"><p>54. Philosophy is distinct from science primarily because:</p><ul class="options"><li>A) It ignores evidence</li><li>B) It ventures beyond empirical observation to address ultimate questions</li><li>C) It is less rigorous</li><li>D) It rejects logic</li></ul></div>
-    <div class="question"><p>55. Which of the following is an example of a philosophical question?</p><ul class="options"><li>A) What is the boiling point of water?</li><li>B) How many continents are there?</li><li>C) What is the meaning of life?</li><li>D) What is the speed of light?</li></ul></div>
-    <div class="question"><p>56. The coherent and systematic characteristic of philosophy aims to:</p><ul class="options"><li>A) Promote confusion</li><li>B) Avoid contradiction and achieve conceptual clarity</li><li>C) Collect data empirically</li><li>D) Replace science</li></ul></div>
-    <div class="question"><p>57. Philosophy is considered foundational because:</p><ul class="options"><li>A) It was the first subject ever taught</li><li>B) It provides conceptual foundations upon which other disciplines build</li><li>C) It is the easiest subject</li><li>D) It requires no special knowledge</li></ul></div>
-    <div class="question"><p>58. The "balancing of imaginative insight with disciplined reasoning" refers to which characteristic?</p><ul class="options"><li>A) Normative</li><li>B) Dialectical</li><li>C) Speculative yet grounded</li><li>D) Universal</li></ul></div>
-    <div class="question"><p>59. "Philosophical knowledge is not static" refers to which characteristic?</p><ul class="options"><li>A) Universal</li><li>B) Systematic</li><li>C) Dialectical</li><li>D) Normative</li></ul></div>
-    <div class="question"><p>60. Philosophical inquiry helps man identify and pursue knowledge that is:</p><ul class="options"><li>A) Popular</li><li>B) Of utmost value</li><li>C) Easiest to understand</li><li>D) Imposed by authority</li></ul></div>
-    <div class="question"><p>61. The analysis used in philosophy that examines language and concepts is called:</p><ul class="options"><li>A) Expository analysis</li><li>B) Language analysis</li><li>C) Scientific analysis</li><li>D) Historical analysis</li></ul></div>
-    <div class="question"><p>62. The statement "philosophy is a rigorous, reflective, and critical enterprise" means it:</p><ul class="options"><li>A) Is casual and imprecise</li><li>B) Seeks to understand reality, knowledge, and value in their fundamental forms</li><li>C) Accepts all claims without question</li><li>D) Is only for professional academics</li></ul></div>
-    <div class="question"><p>63. What best defines "wisdom" in the context of philosophy?</p><ul class="options"><li>A) Accumulation of facts</li><li>B) Deep understanding of fundamental truths about existence and reality</li><li>C) Intelligence quotient (IQ)</li><li>D) Technical skills</li></ul></div>
-    <div class="question"><p>64. According to Russell, what does philosophy examine about human thought and action?</p><ul class="options"><li>A) Their emotional content</li><li>B) Their underlying assumptions</li><li>C) Their historical context</li><li>D) Their scientific basis</li></ul></div>
-    <div class="question"><p>65. Philosophy's practical and transformative aspect means it:</p><ul class="options"><li>A) Only has theoretical applications</li><li>B) Informs how one ought to live</li><li>C) Has no impact on society</li><li>D) Only studies ancient civilisations</li></ul></div>
-    <div class="question"><p>66. The characteristics of philosophy reveal it as both:</p><ul class="options"><li>A) Religious and secular</li><li>B) An intellectual discipline and a way of life</li><li>C) Scientific and artistic</li><li>D) Theoretical and historical</li></ul></div>
-    <div class="question"><p>67. Philosophy specifically helps man identify the kind of knowledge that is:</p><ul class="options"><li>A) Most popular</li><li>B) Of utmost value</li><li>C) Easiest to learn</li><li>D) Endorsed by authority</li></ul></div>
-    <div class="question"><p>68. The idea that philosophy "simplifies complex ideas" shows it functions as:</p><ul class="options"><li>A) A tool of confusion</li><li>B) A tool for making experiences fully understandable</li><li>C) An obstacle to learning</li><li>D) A replacement for common sense</li></ul></div>
-    <div class="question"><p>69. A philosophical system that "avoids contradiction" is described as:</p><ul class="options"><li>A) Speculative</li><li>B) Dialectical</li><li>C) Systematic and coherent</li><li>D) Normative</li></ul></div>
-    <div class="question"><p>70. The study of philosophy is said to be comprehensive because:</p><ul class="options"><li>A) It covers only ethics and metaphysics</li><li>B) It explores all domains of knowledge and their viewpoints</li><li>C) It includes only Western thought</li><li>D) It is limited to logic</li></ul></div>
-    <div class="question"><p>71. In summary, which word BEST captures the core activity of philosophy?</p><ul class="options"><li>A) Memorisation</li><li>B) Experimentation</li><li>C) Enquiry</li><li>D) Revelation</li></ul></div>
-    <div class="question"><p>72. Philosophical inquiry into social structures involves questions about:</p><ul class="options"><li>A) Chemical reactions</li><li>B) Power, justice, governance, and human rights</li><li>C) Agricultural methods</li><li>D) Geographic boundaries</li></ul></div>
-    <div class="question"><p>73. The characteristic of philosophy that involves evaluating human conduct and the good life is:</p><ul class="options"><li>A) Speculative</li><li>B) Normative and evaluative</li><li>C) Foundational</li><li>D) Systematic</li></ul></div>
-    <div class="question"><p>74. Philosophy is said to be universal because it addresses questions about:</p><ul class="options"><li>A) Local customs</li><li>B) Truth, knowledge, and existence across all cultures</li><li>C) Regional laws</li><li>D) National languages</li></ul></div>
-    <div class="question"><p>75. Which of the following does NOT appear as a component of systematic thinking in philosophy?</p><ul class="options"><li>A) Logic</li><li>B) Expository analysis</li><li>C) Physical experiments</li><li>D) Critical analysis</li></ul></div>
-    <div class="question"><p>76. The word "Sophia" directly translates to:</p><ul class="options"><li>A) Love</li><li>B) Truth</li><li>C) Wisdom</li><li>D) Knowledge</li></ul></div>
-    <div class="question"><p>77. Which characteristic of philosophy most directly relates to moral and character development?</p><ul class="options"><li>A) Speculative</li><li>B) Dialectical</li><li>C) Normative and evaluative</li><li>D) Systematic</li></ul></div>
-    <div class="question"><p>78. Philosophy as a "second-order" discipline means it primarily:</p><ul class="options"><li>A) Studies primary facts of nature</li><li>B) Studies the methods and foundations of other disciplines</li><li>C) Relies on secondary sources only</li><li>D) Is less important than other disciplines</li></ul></div>
-    <div class="question"><p>79. The evolution of philosophical knowledge through critique and counter-argument is described as:</p><ul class="options"><li>A) Speculative advancement</li><li>B) Dialectical progression</li><li>C) Normative expansion</li><li>D) Systematic development</li></ul></div>
-    <div class="question"><p>80. Philosophy's contribution to education includes all EXCEPT:</p><ul class="options"><li>A) Guiding curriculum content</li><li>B) Shaping teaching methods</li><li>C) Designing physical laboratories</li><li>D) Determining educational aims</li></ul></div>
-    <div class="question"><p>81. The phrase "strong love for knowledge of things that goes beyond the surface level" best describes:</p><ul class="options"><li>A) Casual curiosity</li><li>B) Philosophy</li><li>C) Common sense</li><li>D) Scientific observation</li></ul></div>
-    <div class="question"><p>82. The view that philosophy provides "conceptual foundations for other disciplines" shows it is:</p><ul class="options"><li>A) Speculative</li><li>B) Practical</li><li>C) Foundational</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>83. "Rational scrutiny" in philosophy means:</p><ul class="options"><li>A) Accepting ideas without question</li><li>B) Subjecting beliefs to careful logical examination</li><li>C) Relying on feelings</li><li>D) Following authority</li></ul></div>
-    <div class="question"><p>84. Which philosopher is associated with "logical analysis as the proper method of philosophy"?</p><ul class="options"><li>A) Plato</li><li>B) Aristotle</li><li>C) Bertrand Russell</li><li>D) Socrates</li></ul></div>
-    <div class="question"><p>85. The normative characteristic of philosophy is most evident in which branch?</p><ul class="options"><li>A) Metaphysics</li><li>B) Epistemology</li><li>C) Ethics and political philosophy</li><li>D) Cosmology</li></ul></div>
-    <div class="question"><p>86. The statement that philosophy "asks many questions for the sake of knowing better" reflects which characteristic?</p><ul class="options"><li>A) Normative</li><li>B) Rational and critical</li><li>C) Universal</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>87. A "coherent system" in philosophy is one that:</p><ul class="options"><li>A) Contains contradictions</li><li>B) Is logically consistent with no contradictions</li><li>C) Changes with every philosopher</li><li>D) Relies on supernatural revelation</li></ul></div>
-    <div class="question"><p>88. The statement that philosophy covers "the whole domain of our experience" means:</p><ul class="options"><li>A) It is limited to natural science</li><li>B) It addresses every aspect of human experience comprehensively</li><li>C) It only covers intellectual experiences</li><li>D) It focuses on physical experiences</li></ul></div>
-    <div class="question"><p>89. Philosophy is existentially meaningful because it:</p><ul class="options"><li>A) Provides technical skills</li><li>B) Informs how one ought to live and make meaningful choices</li><li>C) Gives scientific facts</li><li>D) Predicts future events</li></ul></div>
-    <div class="question"><p>90. The characteristic of philosophy that addresses questions of justice, goodness, and beauty is:</p><ul class="options"><li>A) Speculative</li><li>B) Universal</li><li>C) Normative and evaluative</li><li>D) Coherent</li></ul></div>
-    <div class="question"><p>91. Philosophy is "practical" in the sense that:</p><ul class="options"><li>A) It provides technical solutions to engineering problems</li><li>B) It guides moral decision-making and societal organisation</li><li>C) It replaces all other disciplines</li><li>D) It is the same as applied science</li></ul></div>
-    <div class="question"><p>92. According to the lecture notes, in their struggle for survival, humans encounter:</p><ul class="options"><li>A) Mathematical challenges</li><li>B) Environmental problems that lead to continuous reflection</li><li>C) Only physical challenges</li><li>D) Economic problems alone</li></ul></div>
-    <div class="question"><p>93. Philosophy is described as being both "abstract" and:</p><ul class="options"><li>A) Practical and transformative</li><li>B) Scientific and empirical</li><li>C) Theological and religious</li><li>D) Historical and cultural</li></ul></div>
-    <div class="question"><p>94. The critical and reflective nature of philosophy is best illustrated by:</p><ul class="options"><li>A) Accepting all knowledge as absolute</li><li>B) Questioning assumptions and subjecting beliefs to rational scrutiny</li><li>C) Trusting authority figures completely</li><li>D) Following established traditions</li></ul></div>
-    <div class="question"><p>95. Which statement about philosophy is MOST accurate?</p><ul class="options"><li>A) It only concerns ancient civilisations</li><li>B) It has a single, universally agreed-upon definition</li><li>C) It is a rigorous, reflective, critical enterprise seeking fundamental understanding</li><li>D) It is only studied in Greece</li></ul></div>
-    <div class="question"><p>96. The idea that philosophy is "oriented toward truth" means its ultimate goal is:</p><ul class="options"><li>A) Personal opinion</li><li>B) Discovering and understanding truth</li><li>C) Political power</li><li>D) Scientific discovery only</li></ul></div>
-    <div class="question"><p>97. Philosophy uses "argument on our experience of the universe" to:</p><ul class="options"><li>A) Confuse people</li><li>B) Arrive at clarification of ideas and sound conclusions</li><li>C) Reject all knowledge</li><li>D) Promote one culture</li></ul></div>
-    <div class="question"><p>98. Which best explains why philosophy "tends to elude consensual definition"?</p><ul class="options"><li>A) It is poorly studied</li><li>B) Its scope is so comprehensive and multifaceted that no single definition captures it</li><li>C) Philosophers never agree on anything</li><li>D) It changes every year</li></ul></div>
-    <div class="question"><p>99. The idea that philosophy emerged from human encounter with "environmental problems" suggests:</p><ul class="options"><li>A) Philosophy only solves environmental crises</li><li>B) Human practical experience drives philosophical reflection</li><li>C) Philosophy is a natural science</li><li>D) All philosophers were farmers</li></ul></div>
-    <div class="question"><p>100. Philosophy shapes "political structures" by:</p><ul class="options"><li>A) Writing laws directly</li><li>B) Providing conceptual frameworks for thinking about justice, governance, and rights</li><li>C) Running governments</li><li>D) Electing leaders</li></ul></div>
-  </div>
+.notes-content {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  overflow-y: auto;
+  max-height: 74vh;
+}
+.notes-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--navy);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gold-dim);
+}
+.notes-content h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 18px 0 8px;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.notes-content h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.notes-content p { margin-bottom: 10px; font-size: 0.93rem; color: #333; }
+.notes-content ul { margin: 6px 0 12px 0; list-style: none; }
+.notes-content ul li {
+  padding: 5px 0 5px 20px;
+  font-size: 0.9rem;
+  color: #333;
+  position: relative;
+  border-bottom: 1px dashed #eee;
+}
+.notes-content ul li:last-child { border-bottom: none; }
+.notes-content ul li::before {
+  content: '→';
+  color: var(--gold);
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+}
+.key-box {
+  background: #fffbf0;
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-size: 0.88rem;
+}
+.key-box strong { color: #7a5c00; }
 
-  <div class="answers-section">
-    <h3>Answer Key – Topic 1</h3>
-    <div class="answers-grid">
-      <div class="ans-item"><strong>1. B</strong></div><div class="ans-item"><strong>2. C</strong></div><div class="ans-item"><strong>3. B</strong></div><div class="ans-item"><strong>4. B</strong></div><div class="ans-item"><strong>5. B</strong></div>
-      <div class="ans-item"><strong>6. C</strong></div><div class="ans-item"><strong>7. B</strong></div><div class="ans-item"><strong>8. B</strong></div><div class="ans-item"><strong>9. B</strong></div><div class="ans-item"><strong>10. B</strong></div>
-      <div class="ans-item"><strong>11. C</strong></div><div class="ans-item"><strong>12. B</strong></div><div class="ans-item"><strong>13. C</strong></div><div class="ans-item"><strong>14. B</strong></div><div class="ans-item"><strong>15. B</strong></div>
-      <div class="ans-item"><strong>16. B</strong></div><div class="ans-item"><strong>17. B</strong></div><div class="ans-item"><strong>18. C</strong></div><div class="ans-item"><strong>19. B</strong></div><div class="ans-item"><strong>20. C</strong></div>
-      <div class="ans-item"><strong>21. B</strong></div><div class="ans-item"><strong>22. B</strong></div><div class="ans-item"><strong>23. B</strong></div><div class="ans-item"><strong>24. B</strong></div><div class="ans-item"><strong>25. B</strong></div>
-      <div class="ans-item"><strong>26. B</strong></div><div class="ans-item"><strong>27. B</strong></div><div class="ans-item"><strong>28. C</strong></div><div class="ans-item"><strong>29. B</strong></div><div class="ans-item"><strong>30. B</strong></div>
-      <div class="ans-item"><strong>31. A</strong></div><div class="ans-item"><strong>32. B</strong></div><div class="ans-item"><strong>33. B</strong></div><div class="ans-item"><strong>34. B</strong></div><div class="ans-item"><strong>35. B</strong></div>
-      <div class="ans-item"><strong>36. B</strong></div><div class="ans-item"><strong>37. B</strong></div><div class="ans-item"><strong>38. C</strong></div><div class="ans-item"><strong>39. B</strong></div><div class="ans-item"><strong>40. B</strong></div>
-      <div class="ans-item"><strong>41. C</strong></div><div class="ans-item"><strong>42. B</strong></div><div class="ans-item"><strong>43. B</strong></div><div class="ans-item"><strong>44. C</strong></div><div class="ans-item"><strong>45. B</strong></div>
-      <div class="ans-item"><strong>46. B</strong></div><div class="ans-item"><strong>47. B</strong></div><div class="ans-item"><strong>48. B</strong></div><div class="ans-item"><strong>49. B</strong></div><div class="ans-item"><strong>50. B</strong></div>
-      <div class="ans-item"><strong>51. B</strong></div><div class="ans-item"><strong>52. B</strong></div><div class="ans-item"><strong>53. B</strong></div><div class="ans-item"><strong>54. B</strong></div><div class="ans-item"><strong>55. C</strong></div>
-      <div class="ans-item"><strong>56. B</strong></div><div class="ans-item"><strong>57. B</strong></div><div class="ans-item"><strong>58. C</strong></div><div class="ans-item"><strong>59. C</strong></div><div class="ans-item"><strong>60. B</strong></div>
-      <div class="ans-item"><strong>61. B</strong></div><div class="ans-item"><strong>62. B</strong></div><div class="ans-item"><strong>63. B</strong></div><div class="ans-item"><strong>64. B</strong></div><div class="ans-item"><strong>65. B</strong></div>
-      <div class="ans-item"><strong>66. B</strong></div><div class="ans-item"><strong>67. B</strong></div><div class="ans-item"><strong>68. B</strong></div><div class="ans-item"><strong>69. C</strong></div><div class="ans-item"><strong>70. B</strong></div>
-      <div class="ans-item"><strong>71. C</strong></div><div class="ans-item"><strong>72. B</strong></div><div class="ans-item"><strong>73. B</strong></div><div class="ans-item"><strong>74. B</strong></div><div class="ans-item"><strong>75. C</strong></div>
-      <div class="ans-item"><strong>76. C</strong></div><div class="ans-item"><strong>77. C</strong></div><div class="ans-item"><strong>78. B</strong></div><div class="ans-item"><strong>79. B</strong></div><div class="ans-item"><strong>80. C</strong></div>
-      <div class="ans-item"><strong>81. B</strong></div><div class="ans-item"><strong>82. C</strong></div><div class="ans-item"><strong>83. B</strong></div><div class="ans-item"><strong>84. C</strong></div><div class="ans-item"><strong>85. C</strong></div>
-      <div class="ans-item"><strong>86. B</strong></div><div class="ans-item"><strong>87. B</strong></div><div class="ans-item"><strong>88. B</strong></div><div class="ans-item"><strong>89. B</strong></div><div class="ans-item"><strong>90. C</strong></div>
-      <div class="ans-item"><strong>91. B</strong></div><div class="ans-item"><strong>92. B</strong></div><div class="ans-item"><strong>93. A</strong></div><div class="ans-item"><strong>94. B</strong></div><div class="ans-item"><strong>95. C</strong></div>
-      <div class="ans-item"><strong>96. B</strong></div><div class="ans-item"><strong>97. B</strong></div><div class="ans-item"><strong>98. B</strong></div><div class="ans-item"><strong>99. B</strong></div><div class="ans-item"><strong>100. B</strong></div>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-</div>
+/* AI Explain button */
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 16px;
+  font-family: 'DM Sans', sans-serif;
+  transition: opacity .2s;
+}
+.ai-btn:hover { opacity: .85; }
+.ai-response {
+  background: #f0f4ff;
+  border-left: 3px solid #4a6cf7;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  display: none;
+}
+.ai-response.visible { display: block; }
+.ai-loading { color: var(--muted); font-style: italic; }
 
-<!-- ============================================================ TOPIC 2 -->
-<div class="topic-card" id="t2">
-  <div class="topic-header">
-    <div class="num">TOPIC 2</div>
-    <h2>Modes of Philosophy</h2>
-  </div>
-  <div class="notes">
-    <h3>What are Modes of Philosophy?</h3>
-    <p>Modes of philosophy are the various <strong>approaches or methods</strong> through which philosophical thinking takes place. There are four main modes: <strong>Speculative, Prescriptive, Analytic,</strong> and <strong>Dialectical</strong>.</p>
+/* ── QUIZ PANEL ── */
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.quiz-controls { display: flex; gap: 10px; flex-wrap: wrap; }
+.quiz-select {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  background: #fff;
+  cursor: pointer;
+}
+.quiz-start-btn {
+  padding: 9px 22px;
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.quiz-start-btn:hover { opacity: .85; }
 
-    <h3>1. Speculative Mode</h3>
-    <p>This is thinking systematically and critically about everything that exists, seeking to understand how all experience forms a <strong>meaningful whole</strong>. It is a search for <strong>wholeness and order of knowledge</strong>. Key words: <em>what, why, who, where</em>.</p>
-    <div class="key-box"><strong>Key feature:</strong> Concerned with ultimate reality and existence — asks about being, God, the soul, causality, and the nature of the universe. Goes beyond empirical observation. Associated with <strong>Aristotle and Thomas Aquinas</strong>.</div>
+.progress-bar-wrap {
+  background: #eee;
+  border-radius: 10px;
+  height: 6px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--red));
+  border-radius: 10px;
+  transition: width .4s ease;
+}
 
-    <h3>2. Prescriptive Mode</h3>
-    <p>This mode is interested in <strong>establishing standards</strong> for assessing values, judging conduct, and appraising art. It asks: What is good or bad? Right or wrong? Beautiful or ugly?</p>
-    <div class="key-box"><strong>Key feature:</strong> Normative — deals with what <em>ought to be</em> rather than what is. Evaluates human actions, institutions, and ideals. Associated with <strong>Plato</strong> (justice and the good life).</div>
+.q-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 16px #0000060a;
+}
+.q-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.q-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.opt-btn {
+  padding: 13px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all .18s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+.opt-btn:hover:not(:disabled) { border-color: var(--navy); background: #f0f2ff; }
+.opt-btn .opt-key {
+  min-width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.opt-btn.correct { border-color: var(--green); background: #f0fdf4; color: var(--green); }
+.opt-btn.correct .opt-key { background: var(--green); color: #fff; }
+.opt-btn.wrong { border-color: var(--red); background: #fff5f3; color: var(--red); }
+.opt-btn.wrong .opt-key { background: var(--red); color: #fff; }
+.opt-btn:disabled { cursor: default; }
 
-    <h3>3. Analytic Mode</h3>
-    <p>This mode is interested in <strong>words and meaning</strong>. It shows how inconsistencies arise when meanings used in one context are applied in another. The task is to <strong>clarify language and concepts</strong> by exposing their inconsistencies.</p>
-    <div class="key-box"><strong>Key feature:</strong> Focus on clarity, precision, and logical structure. Associated with <strong>Bertrand Russell</strong>, who emphasized logical analysis as the proper method.</div>
+.q-feedback {
+  font-size: 0.88rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: none;
+}
+.q-feedback.show { display: block; }
+.q-feedback.ok { background: #f0fdf4; color: var(--green); border: 1px solid #bbf7d0; }
+.q-feedback.bad { background: #fff5f3; color: var(--red); border: 1px solid #fecaca; }
 
-    <h3>4. Dialectical Mode</h3>
-    <p>This mode involves <strong>dialogue, argument, and synthesis</strong> of opposing viewpoints. Truth emerges through the interaction of <strong>thesis and antithesis</strong>. It reflects philosophy as a dynamic and evolving discipline.</p>
-    <div class="key-box"><strong>Key feature:</strong> Rooted in the tradition of <strong>Socrates</strong>, who used questioning and dialogue to uncover deeper insights.</div>
+.q-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.q-nav-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  transition: all .2s;
+}
+.q-nav-btn.prev { background: #eee; color: var(--ink); }
+.q-nav-btn.next { background: var(--navy); color: var(--gold); }
+.q-nav-btn:hover:not(:disabled) { opacity: .85; }
+.q-nav-btn:disabled { opacity: .35; cursor: default; }
 
-    <h3>Relevance of the Modes</h3>
-    <ul>
-      <li>They make philosophy <strong>comprehensive</strong> — addressing reality, knowledge, and values from different angles (Aristotle).</li>
-      <li>They ensure <strong>clarity and logical rigour</strong> — especially through analysis (Bertrand Russell).</li>
-      <li>They promote <strong>critical thinking</strong> — questioning assumptions, avoiding dogmatism (Socrates).</li>
-      <li>They provide <strong>moral and practical guidance</strong> — linking philosophy to conduct (Thomas Aquinas).</li>
-      <li>They make philosophy <strong>dynamic and progressive</strong> — growing through dialogue and critique.</li>
-    </ul>
-  </div>
+.quiz-score-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  display: none;
+}
+.quiz-score-card.show { block; }
+.score-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.score-label { color: #aaa; margin-top: 6px; margin-bottom: 24px; }
+.score-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.score-item .s-num { font-size: 1.6rem; font-weight: 700; }
+.score-item .s-lbl { font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: .06em; }
+.score-correct { color: #6ee7b7; }
+.score-wrong { color: #fca5a5; }
+.score-skipped { color: #fde68a; }
+.retry-btn {
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.retry-btn:hover { opacity: .9; }
 
-  <div class="mcq-section">
-    <h3>100 Multiple Choice Questions – Topic 2</h3>
-    <div class="question"><p>1. The various approaches or methods of philosophy are called:</p><ul class="options"><li>A) Branches</li><li>B) Modes</li><li>C) Types</li><li>D) Divisions</li></ul></div>
-    <div class="question"><p>2. How many main modes of philosophy are discussed in the lecture notes?</p><ul class="options"><li>A) Two</li><li>B) Three</li><li>C) Four</li><li>D) Five</li></ul></div>
-    <div class="question"><p>3. The speculative mode is concerned with:</p><ul class="options"><li>A) Language and meaning only</li><li>B) Thinking systematically about everything that exists to understand how experience forms a meaningful whole</li><li>C) Establishing standards for art</li><li>D) Arguing through dialogue only</li></ul></div>
-    <div class="question"><p>4. According to Amaele (2002), speculative philosophy is a search for:</p><ul class="options"><li>A) Sensory knowledge</li><li>B) Coherence in the whole realm of thought and experience</li><li>C) Political power</li><li>D) Religious truth only</li></ul></div>
-    <div class="question"><p>5. The speculative mode uses terms such as:</p><ul class="options"><li>A) How, when, where</li><li>B) What, why, who, where</li><li>C) If, then, therefore</li><li>D) All, some, none</li></ul></div>
-    <div class="question"><p>6. The speculative mode asks questions about:</p><ul class="options"><li>A) Grammar and language</li><li>B) Being, God, the soul, causality, and the nature of the universe</li><li>C) Political systems only</li><li>D) Artistic styles</li></ul></div>
-    <div class="question"><p>7. Which philosophers exemplify the speculative mode?</p><ul class="options"><li>A) Plato and Socrates</li><li>B) Aristotle and Thomas Aquinas</li><li>C) Bertrand Russell and Hume</li><li>D) Kant and Nietzsche</li></ul></div>
-    <div class="question"><p>8. The prescriptive mode is interested in:</p><ul class="options"><li>A) Explaining the origin of the universe</li><li>B) Establishing standards for assessing values, judging conduct, and appraising art</li><li>C) Clarifying language</li><li>D) Debating through dialogue</li></ul></div>
-    <div class="question"><p>9. The prescriptive mode asks questions such as:</p><ul class="options"><li>A) What exists beyond the physical?</li><li>B) What is good or bad, right or wrong, beautiful or ugly?</li><li>C) How do we know what we know?</li><li>D) What are the rules of logic?</li></ul></div>
-    <div class="question"><p>10. The prescriptive mode is also described as a _____ mode.</p><ul class="options"><li>A) Speculative</li><li>B) Normative</li><li>C) Analytic</li><li>D) Empirical</li></ul></div>
-    <div class="question"><p>11. According to Akinpelu (1981), prescriptive philosophy seeks to:</p><ul class="options"><li>A) Analyse language</li><li>B) Recommend principles for describing what actions and qualities are worthwhile</li><li>C) Study ultimate reality</li><li>D) Create political systems</li></ul></div>
-    <div class="question"><p>12. Prescriptive philosophy also asks whether descriptions of good/bad are:</p><ul class="options"><li>A) Scientific facts</li><li>B) In things themselves or mere projections of our mind</li><li>C) Religious truths</li><li>D) Mathematical certainties</li></ul></div>
-    <div class="question"><p>13. The philosopher most associated with the prescriptive mode (justice and the good life) is:</p><ul class="options"><li>A) Aristotle</li><li>B) Bertrand Russell</li><li>C) Plato</li><li>D) Socrates</li></ul></div>
-    <div class="question"><p>14. The analytic mode is primarily interested in:</p><ul class="options"><li>A) Ultimate reality</li><li>B) Words and meaning</li><li>C) Values and ethics</li><li>D) Dialogue and debate</li></ul></div>
-    <div class="question"><p>15. The task of the philosophical analyst is to:</p><ul class="options"><li>A) Create new moral values</li><li>B) Examine concepts closely to determine what they really mean by exposing their inconsistencies</li><li>C) Study the origin of the universe</li><li>D) Conduct scientific experiments</li></ul></div>
-    <div class="question"><p>16. The analytic mode shows how inconsistencies arise when:</p><ul class="options"><li>A) Conclusions contradict premises</li><li>B) Meanings appropriate in certain contexts are used in other contexts</li><li>C) Two premises are both false</li><li>D) Questions are unanswerable</li></ul></div>
-    <div class="question"><p>17. Which thinker emphasized logical analysis as the proper method of philosophy?</p><ul class="options"><li>A) Plato</li><li>B) Thomas Aquinas</li><li>C) Bertrand Russell</li><li>D) Socrates</li></ul></div>
-    <div class="question"><p>18. The analytic mode focuses on:</p><ul class="options"><li>A) Creating grand philosophical systems</li><li>B) Clarity, precision, and logical structure</li><li>C) Ultimate questions about God</li><li>D) Social justice</li></ul></div>
-    <div class="question"><p>19. The analytic mode is described as central to which period of philosophy?</p><ul class="options"><li>A) Ancient philosophy</li><li>B) Medieval philosophy</li><li>C) Modern philosophy</li><li>D) Renaissance philosophy</li></ul></div>
-    <div class="question"><p>20. In the analytic mode, words or concepts are examined because:</p><ul class="options"><li>A) They are always clear and precise</li><li>B) They have different meanings depending on context</li><li>C) They never cause confusion</li><li>D) They are universal and unchanging</li></ul></div>
-    <div class="question"><p>21. The dialectical mode involves:</p><ul class="options"><li>A) Silent individual reflection only</li><li>B) Dialogue, argument, and synthesis of opposing viewpoints</li><li>C) Memorisation of texts</li><li>D) Rejection of all arguments</li></ul></div>
-    <div class="question"><p>22. In the dialectical mode, truth emerges through:</p><ul class="options"><li>A) Authority of experts</li><li>B) The interaction of thesis and antithesis</li><li>C) Scientific measurement</li><li>D) Divine revelation</li></ul></div>
-    <div class="question"><p>23. The dialectical method is rooted in the tradition of:</p><ul class="options"><li>A) Aristotle</li><li>B) Plato</li><li>C) Socrates</li><li>D) Kant</li></ul></div>
-    <div class="question"><p>24. Socrates used which method in the dialectical mode?</p><ul class="options"><li>A) Writing long essays</li><li>B) Questioning and dialogue to uncover deeper insights</li><li>C) Scientific experimentation</li><li>D) Mathematical proofs</li></ul></div>
-    <div class="question"><p>25. The dialectical mode reflects philosophy as a:</p><ul class="options"><li>A) Static and fixed discipline</li><li>B) Dynamic and evolving discipline</li><li>C) Religious practice</li><li>D) Scientific method</li></ul></div>
-    <div class="question"><p>26. The mode of philosophy that deals with values, ethics, and standards is:</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>27. The mode that seeks to clarify meaning rather than construct grand systems is:</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Analytic</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>28. The speculative mode goes _____ empirical observation.</p><ul class="options"><li>A) Within</li><li>B) Against</li><li>C) Beyond</li><li>D) Alongside</li></ul></div>
-    <div class="question"><p>29. A prescriptive analysis examines a set of circumstances to determine:</p><ul class="options"><li>A) What is scientifically proven</li><li>B) What should be (normative judgment)</li><li>C) What has historically happened</li><li>D) What can be observed</li></ul></div>
-    <div class="question"><p>30. Which mode would be used to evaluate whether an act of charity is truly good?</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>31. Which mode would be used to question what the word "justice" actually means?</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Analytic</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>32. Which mode would best address the question "Does God exist?"</p><ul class="options"><li>A) Analytic</li><li>B) Prescriptive</li><li>C) Dialectical</li><li>D) Speculative</li></ul></div>
-    <div class="question"><p>33. Which mode is best demonstrated in a Socratic dialogue?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Speculative</li><li>D) Prescriptive</li></ul></div>
-    <div class="question"><p>34. The relevance of the modes includes making philosophy:</p><ul class="options"><li>A) Narrow and one-sided</li><li>B) Comprehensive, addressing reality, knowledge, and values from different angles</li><li>C) Only theoretical</li><li>D) Unrelated to life</li></ul></div>
-    <div class="question"><p>35. Clarity and logical rigour in philosophy are especially ensured by which mode?</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Analytic</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>36. Critical thinking and questioning assumptions is most associated with which mode?</p><ul class="options"><li>A) Prescriptive</li><li>B) Analytic</li><li>C) Speculative</li><li>D) Dialectical (Socratic spirit)</li></ul></div>
-    <div class="question"><p>37. Moral and practical guidance in philosophy is linked to:</p><ul class="options"><li>A) The analytic mode</li><li>B) The speculative mode</li><li>C) Thomas Aquinas and the prescriptive/speculative tradition</li><li>D) The dialectical mode alone</li></ul></div>
-    <div class="question"><p>38. According to Peters (1966), the prescriptive mode involves examining:</p><ul class="options"><li>A) The rules of logic</li><li>B) What we mean by good or bad, right or wrong, beautiful or ugly</li><li>C) The nature of reality</li><li>D) Language inconsistencies</li></ul></div>
-    <div class="question"><p>39. The modes make philosophy dynamic and progressive by:</p><ul class="options"><li>A) Fixing one approach forever</li><li>B) Allowing it to grow through dialogue, critique, and new perspectives</li><li>C) Rejecting traditional views</li><li>D) Focusing on one topic</li></ul></div>
-    <div class="question"><p>40. The analytic mode clarifies language and concepts because:</p><ul class="options"><li>A) Words have fixed, unchanging meanings</li><li>B) Words have different meanings depending on context, causing inconsistencies</li><li>C) Language is always simple</li><li>D) Concepts never cause confusion</li></ul></div>
-    <div class="question"><p>41. The prescriptive mode is concerned with "what ought to be" rather than:</p><ul class="options"><li>A) What is logical</li><li>B) What is (descriptive reality)</li><li>C) What can be observed empirically</li><li>D) What has been proven</li></ul></div>
-    <div class="question"><p>42. Aristotle and Thomas Aquinas constructed comprehensive accounts of reality grounded in:</p><ul class="options"><li>A) Faith alone</li><li>B) Reason (speculative mode)</li><li>C) Language analysis</li><li>D) Political debate</li></ul></div>
-    <div class="question"><p>43. The speculative mode seeks "coherence" in the whole realm of:</p><ul class="options"><li>A) Politics and economics</li><li>B) Thought and experience</li><li>C) Language and grammar</li><li>D) Science and technology</li></ul></div>
-    <div class="question"><p>44. In the analytic mode, the examination of concepts closely helps determine:</p><ul class="options"><li>A) Whether they are true or false scientifically</li><li>B) What they really mean by exposing inconsistencies</li><li>C) Whether they are morally correct</li><li>D) Whether they match reality</li></ul></div>
-    <div class="question"><p>45. The mode used to argue for or against a proposition through structured debate is:</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>46. Which philosopher used the dialectical mode's "thesis-antithesis-synthesis" most famously in modern philosophy?</p><ul class="options"><li>A) Plato</li><li>B) Hegel</li><li>C) Aristotle</li><li>D) Russell</li></ul></div>
-    <div class="question"><p>47. The speculative mode is a "systematic search" for:</p><ul class="options"><li>A) Clarity in language</li><li>B) Wholeness and order of knowledge in all that we experience</li><li>C) Standards for judging art</li><li>D) Logical forms of argument</li></ul></div>
-    <div class="question"><p>48. The prescriptive mode recommends principles for describing actions that are:</p><ul class="options"><li>A) Scientifically proven</li><li>B) Worthwhile and why they should be worthwhile</li><li>C) Popular among the majority</li><li>D) Historically accepted</li></ul></div>
-    <div class="question"><p>49. The analytic mode's emphasis on "precision and logical structure" was most associated with:</p><ul class="options"><li>A) Medieval philosophers</li><li>B) Ancient Greek philosophers</li><li>C) Modern philosophers like Bertrand Russell</li><li>D) African philosophers</li></ul></div>
-    <div class="question"><p>50. If you are trying to determine whether "freedom" is being used consistently in an argument, you are using the:</p><ul class="options"><li>A) Speculative mode</li><li>B) Prescriptive mode</li><li>C) Analytic mode</li><li>D) Dialectical mode</li></ul></div>
-    <div class="question"><p>51. The prescriptive mode evaluates:</p><ul class="options"><li>A) Only scientific claims</li><li>B) Human actions, institutions, and ideals such as justice, goodness, and beauty</li><li>C) Language and grammar</li><li>D) Mathematical proofs</li></ul></div>
-    <div class="question"><p>52. "The search for some coherence in the whole realm of thought and experience" is the definition of:</p><ul class="options"><li>A) Prescriptive philosophy</li><li>B) Speculative philosophy</li><li>C) Analytic philosophy</li><li>D) Dialectical philosophy</li></ul></div>
-    <div class="question"><p>53. All of the following are modes of philosophy EXCEPT:</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Empirical</li><li>D) Analytic</li></ul></div>
-    <div class="question"><p>54. The mode that evaluates "what should be" rather than "what is" is:</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>55. The speculative mode's approach to questions about the soul is:</p><ul class="options"><li>A) To dismiss them as unanswerable</li><li>B) To seek rational explanations beyond appearances</li><li>C) To rely only on religious texts</li><li>D) To conduct scientific experiments</li></ul></div>
-    <div class="question"><p>56. The dialectical mode shows that philosophical knowledge:</p><ul class="options"><li>A) Is fixed and unchanging</li><li>B) Evolves through critique and counter-argument</li><li>C) Can only come from authority</li><li>D) Is purely individual</li></ul></div>
-    <div class="question"><p>57. The mode of philosophy described as a "normative mode that deals with values, ethics, and standards" is:</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Prescriptive</li><li>D) Speculative</li></ul></div>
-    <div class="question"><p>58. "Eliminating ambiguity and confusion" is the goal of which mode?</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>59. Thomas Aquinas is cited as providing "moral and practical guidance" through which mode?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Speculative/Prescriptive</li><li>D) Empirical</li></ul></div>
-    <div class="question"><p>60. Bertrand Russell's approach to philosophy emphasizes:</p><ul class="options"><li>A) Speculative reasoning about God</li><li>B) Logical analysis as the proper method</li><li>C) Dialectical debate</li><li>D) Prescriptive ethical standards</li></ul></div>
-    <div class="question"><p>61. The term "antithesis" in the dialectical mode refers to:</p><ul class="options"><li>A) The conclusion of an argument</li><li>B) The opposing viewpoint to the thesis</li><li>C) The major premise</li><li>D) A logical fallacy</li></ul></div>
-    <div class="question"><p>62. The speculative mode provides "rational explanations of what lies":</p><ul class="options"><li>A) Within our senses</li><li>B) Behind appearances</li><li>C) In scientific data</li><li>D) In written texts</li></ul></div>
-    <div class="question"><p>63. The prescriptive mode's questions about beauty fall under the branch called:</p><ul class="options"><li>A) Epistemology</li><li>B) Metaphysics</li><li>C) Aesthetics</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>64. The relevance of modes that is emphasized by Russell's influence is:</p><ul class="options"><li>A) Moral guidance</li><li>B) Clarity and logical rigour</li><li>C) Critical thinking</li><li>D) Comprehensive coverage</li></ul></div>
-    <div class="question"><p>65. The dialectical mode's "synthesis" is:</p><ul class="options"><li>A) The original idea</li><li>B) The combining and resolving of thesis and antithesis into a new understanding</li><li>C) A logical fallacy</li><li>D) The rejection of all arguments</li></ul></div>
-    <div class="question"><p>66. The analytic mode's interest in "how inconsistencies may arise" shows its focus on:</p><ul class="options"><li>A) The nature of God</li><li>B) Language use across different contexts</li><li>C) Social justice</li><li>D) Causality</li></ul></div>
-    <div class="question"><p>67. Which mode would examine what "democracy" really means when used in different political systems?</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Analytic</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>68. The prescriptive mode's concern with "standards" is most similar to which branch of philosophy?</p><ul class="options"><li>A) Epistemology</li><li>B) Axiology (ethics and aesthetics)</li><li>C) Logic</li><li>D) Cosmology</li></ul></div>
-    <div class="question"><p>69. The speculative mode addresses questions about causality. "Causality" refers to:</p><ul class="options"><li>A) The rules of grammar</li><li>B) Cause-and-effect relationships</li><li>C) Political structures</li><li>D) Artistic standards</li></ul></div>
-    <div class="question"><p>70. Which mode is described as making philosophy "progressive"?</p><ul class="options"><li>A) Speculative</li><li>B) Analytic</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>71. The statement "Philosophy uses various approaches or methods" introduces the concept of:</p><ul class="options"><li>A) Branches of philosophy</li><li>B) Modes of philosophy</li><li>C) Types of arguments</li><li>D) Laws of thought</li></ul></div>
-    <div class="question"><p>72. The speculative mode's concern with "God" places it closest to which branch?</p><ul class="options"><li>A) Ethics</li><li>B) Theology (part of metaphysics)</li><li>C) Logic</li><li>D) Aesthetics</li></ul></div>
-    <div class="question"><p>73. The analytic mode's task of examining concepts is designed to:</p><ul class="options"><li>A) Create new concepts</li><li>B) Expose inconsistencies and determine true meaning</li><li>C) Accept all definitions as valid</li><li>D) Replace empirical science</li></ul></div>
-    <div class="question"><p>74. Plato's discussions of justice most represent which mode?</p><ul class="options"><li>A) Analytic</li><li>B) Speculative</li><li>C) Prescriptive</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>75. Which mode is most concerned with "what exists beyond the physical world"?</p><ul class="options"><li>A) Analytic</li><li>B) Prescriptive</li><li>C) Speculative</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>76. The prescriptive mode is concerned with descriptions that are either in:</p><ul class="options"><li>A) Language or logic</li><li>B) Things themselves or mere projections of our mind</li><li>C) Religion or science</li><li>D) Nature or culture</li></ul></div>
-    <div class="question"><p>77. "Comprehensiveness" as a relevance of modes means philosophy can address:</p><ul class="options"><li>A) Only ethical questions</li><li>B) Reality, knowledge, and values from different angles</li><li>C) Only metaphysical questions</li><li>D) Only political questions</li></ul></div>
-    <div class="question"><p>78. The mode most useful in resolving conceptual debates in science or law would be:</p><ul class="options"><li>A) Speculative</li><li>B) Prescriptive</li><li>C) Analytic</li><li>D) None of the above</li></ul></div>
-    <div class="question"><p>79. The speculative mode's systematic nature means it:</p><ul class="options"><li>A) Randomly selects topics to discuss</li><li>B) Organises thinking coherently about all of existence</li><li>C) Only studies language</li><li>D) Focuses only on ethics</li></div></ul>
-    <div class="question"><p>80. "Thesis" in the dialectical mode refers to:</p><ul class="options"><li>A) The conclusion of a syllogism</li><li>B) The initial position or proposition being argued</li><li>C) A type of logical fallacy</li><li>D) A university assignment</li></ul></div>
-    <div class="question"><p>81. According to Amaele (2002), speculative philosophy seeks coherence in the realm of:</p><ul class="options"><li>A) Language only</li><li>B) Thought and experience</li><li>C) Physical matter only</li><li>D) Political discourse</li></ul></div>
-    <div class="question"><p>82. The prescriptive mode is interested in "appraising art." This places it within which branch?</p><ul class="options"><li>A) Logic</li><li>B) Epistemology</li><li>C) Aesthetics</li><li>D) Metaphysics</li></ul></div>
-    <div class="question"><p>83. The analytic mode most helps philosophers to:</p><ul class="options"><li>A) Speculate about God's existence</li><li>B) Clarify what terms and concepts really mean</li><li>C) Establish moral codes</li><li>D) Argue through dialogue</li></ul></div>
-    <div class="question"><p>84. The dialectical mode shows philosophy's knowledge evolves through:</p><ul class="options"><li>A) Individual meditation</li><li>B) Scientific experiments</li><li>C) Critique and counter-argument</li><li>D) Acceptance of tradition</li></ul></div>
-    <div class="question"><p>85. The modes of philosophy collectively contribute to:</p><ul class="options"><li>A) Narrowing philosophy to one approach</li><li>B) Making philosophy comprehensive, clear, critical, practical, and dynamic</li><li>C) Replacing science</li><li>D) Eliminating disagreement in philosophy</li></ul></div>
-    <div class="question"><p>86. The prescriptive mode deals with "what ought to be" — this is a _____ judgment.</p><ul class="options"><li>A) Empirical</li><li>B) Descriptive</li><li>C) Normative</li><li>D) Scientific</li></ul></div>
-    <div class="question"><p>87. Which mode avoids dogmatism by encouraging continuous questioning?</p><ul class="options"><li>A) Prescriptive</li><li>B) Speculative</li><li>C) Dialectical (Socratic spirit)</li><li>D) Analytic</li></ul></div>
-    <div class="question"><p>88. The analytic mode in "modern philosophy" focuses on:</p><ul class="options"><li>A) Building grand metaphysical systems</li><li>B) Clarifying meaning rather than constructing grand systems</li><li>C) Establishing moral codes</li><li>D) Studying ultimate reality</li></ul></div>
-    <div class="question"><p>89. Akinpelu (1981) is cited in connection with which mode?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Prescriptive</li><li>D) Speculative</li></ul></div>
-    <div class="question"><p>90. Peters (1966) is cited in connection with which mode?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Prescriptive</li><li>D) Speculative</li></ul></div>
-    <div class="question"><p>91. Which mode specifically examines "what lies behind appearances"?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Speculative</li><li>D) Prescriptive</li></ul></div>
-    <div class="question"><p>92. "Philosophical thinking leads one to think radically, systematically, thoroughly, and fundamentally" reflects which mode most directly?</p><ul class="options"><li>A) Analytic</li><li>B) Prescriptive</li><li>C) Speculative</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>93. The dialectical mode's connection to Socrates is through:</p><ul class="options"><li>A) Written philosophical treatises</li><li>B) Questioning and dialogue to uncover deeper insights</li><li>C) Mathematical logic</li><li>D) Political theory</li></ul></div>
-    <div class="question"><p>94. "Modes of philosophy" is another name for:</p><ul class="options"><li>A) Branches of philosophy</li><li>B) Approaches or methods of philosophy</li><li>C) Types of fallacies</li><li>D) Rules of inference</li></ul></div>
-    <div class="question"><p>95. The prescriptive mode's evaluation of "institutions" falls most under which area?</p><ul class="options"><li>A) Epistemology</li><li>B) Political philosophy</li><li>C) Logic</li><li>D) Cosmology</li></ul></div>
-    <div class="question"><p>96. In the analytic mode, if the same word is used differently in two arguments, the philosopher would:</p><ul class="options"><li>A) Accept both uses</li><li>B) Expose the inconsistency and clarify the true meaning</li><li>C) Reject both uses</li><li>D) Ignore the difference</li></ul></div>
-    <div class="question"><p>97. Which mode was described as a "systematic search for wholeness and order of knowledge"?</p><ul class="options"><li>A) Prescriptive</li><li>B) Analytic</li><li>C) Speculative</li><li>D) Dialectical</li></ul></div>
-    <div class="question"><p>98. The relevance of modes that connects to "providing moral and practical guidance" is associated with:</p><ul class="options"><li>A) Bertrand Russell</li><li>B) Thomas Aquinas</li><li>C) Socrates</li><li>D) Aristotle</li></ul></div>
-    <div class="question"><p>99. The modes of philosophy are important because they:</p><ul class="options"><li>A) Replace the branches of philosophy</li><li>B) Allow philosophy to address different aspects of reality from various perspectives</li><li>C) Limit philosophy to one method</li><li>D) Make philosophy less rigorous</li></ul></div>
-    <div class="question"><p>100. A philosopher who says "I want to understand if this action is truly just, not just whether people think it is" is using which mode?</p><ul class="options"><li>A) Analytic</li><li>B) Dialectical</li><li>C) Speculative</li><li>D) Prescriptive</li></ul></div>
-  </div>
+/* ── FLASHCARDS ── */
+.flashcard-wrap {
+  perspective: 1000px;
+  margin: 0 auto 24px;
+  max-width: 620px;
+  height: 280px;
+  cursor: pointer;
+}
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .5s ease;
+}
+.flashcard.flipped { transform: rotateY(180deg); }
+.fc-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  backface-visibility: hidden;
+}
+.fc-front {
+  background: var(--navy);
+  color: #fff;
+  border: 2px solid #ffffff18;
+}
+.fc-back {
+  background: #fff;
+  border: 2px solid var(--gold);
+  transform: rotateY(180deg);
+}
+.fc-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  opacity: .55;
+  margin-bottom: 12px;
+}
+.fc-question {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+}
+.fc-answer {
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.fc-hint {
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-top: 14px;
+}
+.fc-hint-back {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.fc-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.fc-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all .2s;
+  font-weight: 500;
+}
+.fc-btn.got-it { background: var(--green); color: #fff; }
+.fc-btn.review { background: #fff3; color: var(--ink); border: 1px solid var(--border); }
+.fc-btn.skip { background: #eee; color: var(--muted); }
+.fc-progress { text-align: center; font-size: 0.8rem; color: var(--muted); margin: 12px 0; }
 
-  <div class="answers-section">
-    <h3>Answer Key – Topic 2</h3>
-    <div class="answers-grid">
-      <div class="ans-item"><strong>1. B</strong></div><div class="ans-item"><strong>2. C</strong></div><div class="ans-item"><strong>3. B</strong></div><div class="ans-item"><strong>4. B</strong></div><div class="ans-item"><strong>5. B</strong></div>
-      <div class="ans-item"><strong>6. B</strong></div><div class="ans-item"><strong>7. B</strong></div><div class="ans-item"><strong>8. B</strong></div><div class="ans-item"><strong>9. B</strong></div><div class="ans-item"><strong>10. B</strong></div>
-      <div class="ans-item"><strong>11. B</strong></div><div class="ans-item"><strong>12. B</strong></div><div class="ans-item"><strong>13. C</strong></div><div class="ans-item"><strong>14. B</strong></div><div class="ans-item"><strong>15. B</strong></div>
-      <div class="ans-item"><strong>16. B</strong></div><div class="ans-item"><strong>17. C</strong></div><div class="ans-item"><strong>18. B</strong></div><div class="ans-item"><strong>19. C</strong></div><div class="ans-item"><strong>20. B</strong></div>
-      <div class="ans-item"><strong>21. B</strong></div><div class="ans-item"><strong>22. B</strong></div><div class="ans-item"><strong>23. C</strong></div><div class="ans-item"><strong>24. B</strong></div><div class="ans-item"><strong>25. B</strong></div>
-      <div class="ans-item"><strong>26. C</strong></div><div class="ans-item"><strong>27. C</strong></div><div class="ans-item"><strong>28. C</strong></div><div class="ans-item"><strong>29. B</strong></div><div class="ans-item"><strong>30. C</strong></div>
-      <div class="ans-item"><strong>31. C</strong></div><div class="ans-item"><strong>32. D</strong></div><div class="ans-item"><strong>33. B</strong></div><div class="ans-item"><strong>34. B</strong></div><div class="ans-item"><strong>35. C</strong></div>
-      <div class="ans-item"><strong>36. D</strong></div><div class="ans-item"><strong>37. C</strong></div><div class="ans-item"><strong>38. B</strong></div><div class="ans-item"><strong>39. B</strong></div><div class="ans-item"><strong>40. B</strong></div>
-      <div class="ans-item"><strong>41. B</strong></div><div class="ans-item"><strong>42. B</strong></div><div class="ans-item"><strong>43. B</strong></div><div class="ans-item"><strong>44. B</strong></div><div class="ans-item"><strong>45. D</strong></div>
-      <div class="ans-item"><strong>46. B</strong></div><div class="ans-item"><strong>47. B</strong></div><div class="ans-item"><strong>48. B</strong></div><div class="ans-item"><strong>49. C</strong></div><div class="ans-item"><strong>50. C</strong></div>
-      <div class="ans-item"><strong>51. B</strong></div><div class="ans-item"><strong>52. B</strong></div><div class="ans-item"><strong>53. C</strong></div><div class="ans-item"><strong>54. C</strong></div><div class="ans-item"><strong>55. B</strong></div>
-      <div class="ans-item"><strong>56. B</strong></div><div class="ans-item"><strong>57. C</strong></div><div class="ans-item"><strong>58. B</strong></div><div class="ans-item"><strong>59. C</strong></div><div class="ans-item"><strong>60. B</strong></div>
-      <div class="ans-item"><strong>61. B</strong></div><div class="ans-item"><strong>62. B</strong></div><div class="ans-item"><strong>63. C</strong></div><div class="ans-item"><strong>64. B</strong></div><div class="ans-item"><strong>65. B</strong></div>
-      <div class="ans-item"><strong>66. B</strong></div><div class="ans-item"><strong>67. C</strong></div><div class="ans-item"><strong>68. B</strong></div><div class="ans-item"><strong>69. B</strong></div><div class="ans-item"><strong>70. D</strong></div>
-      <div class="ans-item"><strong>71. B</strong></div><div class="ans-item"><strong>72. B</strong></div><div class="ans-item"><strong>73. B</strong></div><div class="ans-item"><strong>74. C</strong></div><div class="ans-item"><strong>75. C</strong></div>
-      <div class="ans-item"><strong>76. B</strong></div><div class="ans-item"><strong>77. B</strong></div><div class="ans-item"><strong>78. C</strong></div><div class="ans-item"><strong>79. B</strong></div><div class="ans-item"><strong>80. B</strong></div>
-      <div class="ans-item"><strong>81. B</strong></div><div class="ans-item"><strong>82. C</strong></div><div class="ans-item"><strong>83. B</strong></div><div class="ans-item"><strong>84. C</strong></div><div class="ans-item"><strong>85. B</strong></div>
-      <div class="ans-item"><strong>86. C</strong></div><div class="ans-item"><strong>87. C</strong></div><div class="ans-item"><strong>88. B</strong></div><div class="ans-item"><strong>89. C</strong></div><div class="ans-item"><strong>90. C</strong></div>
-      <div class="ans-item"><strong>91. C</strong></div><div class="ans-item"><strong>92. C</strong></div><div class="ans-item"><strong>93. B</strong></div><div class="ans-item"><strong>94. B</strong></div><div class="ans-item"><strong>95. B</strong></div>
-      <div class="ans-item"><strong>96. B</strong></div><div class="ans-item"><strong>97. C</strong></div><div class="ans-item"><strong>98. B</strong></div><div class="ans-item"><strong>99. B</strong></div><div class="ans-item"><strong>100. D</strong></div>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-</div>
+/* ── ASK AI ── */
+.ask-ai-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.ask-ai-intro {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.ask-ai-intro .icon { font-size: 2rem; flex-shrink: 0; }
+.ask-ai-intro h3 { font-family: 'Playfair Display', serif; margin-bottom: 6px; color: var(--gold); }
+.ask-ai-intro p { font-size: 0.88rem; color: #ccc; }
 
-<!-- NOTE: Topics 3-11 follow the same pattern. Full content below. -->
+.quick-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.quick-chip {
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background: #fff;
+  transition: all .18s;
+  color: var(--ink);
+}
+.quick-chip:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
-<!-- ============================================================ TOPIC 3 -->
-<div class="topic-card" id="t3">
-  <div class="topic-header">
-    <div class="num">TOPIC 3</div>
-    <h2>Branches of Philosophy</h2>
-  </div>
-  <div class="notes">
-    <h3>The Four Major Branches</h3>
-    <p>The major branches are: <strong>Metaphysics, Epistemology, Logic,</strong> and <strong>Axiology</strong>. They are also called the problems, structures, or components of philosophy.</p>
-
-    <h3>1. Metaphysics</h3>
-    <p>From Greek: <em>Meta</em> (after/beyond) + <em>Physika</em> (nature). Metaphysics seeks to explain elements of reality <strong>not easily discovered through everyday experience</strong>. It studies ultimate and fundamental reality — the nature of God, the universe, man, and life.</p>
-    <div class="key-box"><strong>Sub-branches:</strong> Ontology (study of being/existence), Cosmology (origin/development of the universe), Causality (cause and effect), Theology (conceptions of God).</div>
-    <ul>
-      <li><strong>Ontology</strong>: "Science of being." Asks what it means for anything to exist. Is basic reality matter, spirit, or both? Is reality fixed or always changing?</li>
-      <li><strong>Cosmology</strong>: How did the universe originate? Did it come by accident or design?</li>
-      <li><strong>Theology</strong>: Is there a God? What are God's attributes? Why does evil exist if God is all-good and all-powerful?</li>
-    </ul>
-
-    <h3>2. Epistemology</h3>
-    <p>From Greek: <em>Episteme</em> (knowledge) + <em>Logos</em> (study of). Epistemology is the <strong>theory of knowledge</strong> — studying its nature, source, and validity. Key question: "What is true?" and "How do we know that we know?"</p>
-    <div class="key-box"><strong>Key issues:</strong> Skepticism (can we know reality?), Absolute vs. Relative truth, Sources of knowledge.</div>
-    <p><strong>Five Sources of Knowledge:</strong></p>
-    <ul>
-      <li><strong>Revelation</strong> – Knowledge from God/deity. Accepted by faith; cannot be empirically proved or disproved.</li>
-      <li><strong>Empirical</strong> – Through the five senses: hearing, seeing, feeling, smelling, tasting. Open to replication.</li>
-      <li><strong>Authoritative</strong> – From experts, tradition, textbooks, teachers. Danger: if built on incorrect assumptions, knowledge is distorted.</li>
-      <li><strong>Rational</strong> – Through reasoning faculty. Rationalists believe the mind can arrive at knowledge independently of the senses. Uses formal logic.</li>
-      <li><strong>Intuition</strong> – Comes suddenly and directly without reasoning. Common in philosophy and music. Weakness: not safe when used alone.</li>
-    </ul>
-
-    <h3>3. Axiology</h3>
-    <p>From Greek: <em>Axios</em> (worth/value) + <em>Logos</em> (theory). Axiology is the study of <strong>judgements about values</strong>. It includes both ethics and aesthetics.</p>
-    <ul>
-      <li><strong>Ethics</strong>: Study of what makes actions right or wrong. Includes meta-ethics, value theory, theory of conduct, and applied ethics. Key question: "How should I behave?"</li>
-      <li><strong>Aesthetics</strong>: Study of what is beautiful, enjoyable, or tasteful. "What is beautiful?" and "What should I like?" Governs the creation and appreciation of beauty and art.</li>
-    </ul>
-
-    <h3>4. Logic</h3>
-    <p>The branch concerned with <strong>reasoning and the distinction between good and bad reasoning</strong>. It involves methods and principles for determining the correctness of an argument.</p>
-    <ul>
-      <li><strong>Deductive Logic</strong>: From general to specific (universal to particular). Conclusion follows necessarily from premises. Uses syllogism (major premise, minor premise, conclusion).</li>
-      <li><strong>Inductive Logic</strong>: From specific to general (particular to universal). Conclusion is probable but not guaranteed.</li>
-    </ul>
-  </div>
-
-  <div class="mcq-section">
-    <h3>100 Multiple Choice Questions – Topic 3</h3>
-    <div class="question"><p>1. The major branches of philosophy are:</p><ul class="options"><li>A) Science, religion, art, history</li><li>B) Metaphysics, epistemology, logic, and axiology</li><li>C) Politics, economics, sociology, psychology</li><li>D) Grammar, rhetoric, arithmetic, geometry</li></ul></div>
-    <div class="question"><p>2. The word "Metaphysics" comes from Greek words meaning:</p><ul class="options"><li>A) Love of wisdom</li><li>B) Study of knowledge</li><li>C) After or beyond nature</li><li>D) Theory of value</li></ul></div>
-    <div class="question"><p>3. Metaphysics seeks to explain elements of reality that are:</p><ul class="options"><li>A) Easily experienced in everyday life</li><li>B) Not easily discovered or experienced in everyday life</li><li>C) Proven by scientific experiments</li><li>D) Found in religious texts only</li></ul></div>
-    <div class="question"><p>4. Metaphysics is concerned with the nature of:</p><ul class="options"><li>A) Language and grammar</li><li>B) God, reality, the universe, man, and life</li><li>C) Mathematical calculations</li><li>D) Political systems</li></ul></div>
-    <div class="question"><p>5. The sub-branch of metaphysics that studies "being and existence" is:</p><ul class="options"><li>A) Cosmology</li><li>B) Theology</li><li>C) Ontology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>6. Ontology is described as the:</p><ul class="options"><li>A) Study of values</li><li>B) Science of being</li><li>C) Theory of knowledge</li><li>D) Study of art</li></ul></div>
-    <div class="question"><p>7. Cosmology deals with:</p><ul class="options"><li>A) Conceptions of God</li><li>B) Theories about the origin, nature, and development of the universe</li><li>C) The study of moral values</li><li>D) Language analysis</li></ul></div>
-    <div class="question"><p>8. Theology as part of metaphysics deals with:</p><ul class="options"><li>A) Political systems</li><li>B) Conceptions of and about God</li><li>C) The beauty of nature</li><li>D) Rules of reasoning</li></ul></div>
-    <div class="question"><p>9. According to Scholfield (1972), metaphysics is:</p><ul class="options"><li>A) The study of moral conduct</li><li>B) The study of ultimate reality of existence</li><li>C) The theory of knowledge</li><li>D) The study of argument</li></ul></div>
-    <div class="question"><p>10. "Ta meta ta physika" refers to:</p><ul class="options"><li>A) Ethics</li><li>B) Metaphysics</li><li>C) Logic</li><li>D) Axiology</li></ul></div>
-    <div class="question"><p>11. Ontology asks the question:</p><ul class="options"><li>A) How should I behave?</li><li>B) Is basic reality matter or spirit?</li><li>C) How can I know what is true?</li><li>D) What is beautiful?</li></ul></div>
-    <div class="question"><p>12. The cosmological question "Did the universe come about by accident or design?" is a:</p><ul class="options"><li>A) Logical question</li><li>B) Ethical question</li><li>C) Metaphysical question</li><li>D) Epistemological question</li></ul></div>
-    <div class="question"><p>13. The problem of evil — "If God is all-good and all-powerful, why does evil exist?" — falls under:</p><ul class="options"><li>A) Axiology</li><li>B) Epistemology</li><li>C) Logic</li><li>D) Theology (metaphysics)</li></ul></div>
-    <div class="question"><p>14. Epistemology is also called:</p><ul class="options"><li>A) Theory of value</li><li>B) Theory of knowledge</li><li>C) Theory of beauty</li><li>D) Theory of being</li></ul></div>
-    <div class="question"><p>15. The Greek word "episteme" means:</p><ul class="options"><li>A) Value</li><li>B) Being</li><li>C) Knowledge, understanding</li><li>D) Beauty</li></ul></div>
-    <div class="question"><p>16. Epistemology covers two areas in educational terms:</p><ul class="options"><li>A) Teaching and administration</li><li>B) Curriculum and instruction (content and method)</li><li>C) Planning and evaluation</li><li>D) Science and arts</li></ul></div>
-    <div class="question"><p>17. Skepticism in epistemology asserts that:</p><ul class="options"><li>A) Knowledge is always absolute</li><li>B) People cannot acquire reliable knowledge; the search for truth is in vain</li><li>C) The senses are perfectly reliable</li><li>D) Authority is the best source of knowledge</li></ul></div>
-    <div class="question"><p>18. Who was the Greek Sophist who asserted "nothing exists, and if it did, we could not know it"?</p><ul class="options"><li>A) Plato</li><li>B) Socrates</li><li>C) Gorgias</li><li>D) Aristotle</li></ul></div>
-    <div class="question"><p>19. Agnosticism is defined as:</p><ul class="options"><li>A) Belief in the existence of God</li><li>B) A profession of ignorance about the existence or non-existence of God</li><li>C) Rejection of all knowledge</li><li>D) Acceptance of all religious truths</li></ul></div>
-    <div class="question"><p>20. "Absolute Truth" in epistemology is truth that is:</p><ul class="options"><li>A) Subject to change with time</li><li>B) Eternally and universally true irrespective of time or place</li><li>C) Determined by majority opinion</li><li>D) Proven only by science</li></ul></div>
-    <div class="question"><p>21. Revelation as a source of knowledge:</p><ul class="options"><li>A) Can be proved empirically</li><li>B) Must be accepted by faith and cannot be proved or disproved empirically</li><li>C) Is based on the five senses</li><li>D) Comes from rational reasoning only</li></ul></div>
-    <div class="question"><p>22. According to Oladejo (2004), empirical knowledge is:</p><ul class="options"><li>A) From God</li><li>B) Derived from human perception and confirmed by the evidence of the five senses</li><li>C) From authority figures</li><li>D) From sudden insight</li></ul></div>
-    <div class="question"><p>23. An advantage of empirical knowledge is:</p><ul class="options"><li>A) It comes directly from God</li><li>B) Many sensory experiences and experiments are open to replication and public examination</li><li>C) It is always infallible</li><li>D) It requires no verification</li></ul></div>
-    <div class="question"><p>24. Authoritative knowledge includes information from:</p><ul class="options"><li>A) Dreams and visions</li><li>B) Textbooks, newspapers, teachers, experts</li><li>C) The five senses only</li><li>D) Individual reasoning only</li></ul></div>
-    <div class="question"><p>25. The danger of authoritative knowledge is that:</p><ul class="options"><li>A) It is too personal</li><li>B) If built on incorrect assumptions, knowledge will be distorted</li><li>C) It is never accepted by anyone</li><li>D) It cannot be communicated</li></ul></div>
-    <div class="question"><p>26. Rational knowledge is acquired through:</p><ul class="options"><li>A) The five senses</li><li>B) Divine revelation</li><li>C) The reasoning faculty of the mind</li><li>D) Sudden insight</li></ul></div>
-    <div class="question"><p>27. Rationalists believe the mind can arrive at knowledge:</p><ul class="options"><li>A) Only through religious experience</li><li>B) Independently of sensory experience</li><li>C) Only through authority</li><li>D) Only through experimentation</li></ul></div>
-    <div class="question"><p>28. Intuition as a source of knowledge:</p><ul class="options"><li>A) Comes through a long process of reasoning</li><li>B) Comes suddenly and directly without passing through reasoning</li><li>C) Is derived from authority</li><li>D) Is based on the five senses</li></ul></div>
-    <div class="question"><p>29. The weakness of intuition as a source of knowledge is:</p><ul class="options"><li>A) It is too slow</li><li>B) It is not safe when used alone</li><li>C) It always leads to false conclusions</li><li>D) It requires laboratory testing</li></ul></div>
-    <div class="question"><p>30. Axiology is the branch that studies:</p><ul class="options"><li>A) Ultimate reality</li><li>B) The nature of knowledge</li><li>C) Judgements about values</li><li>D) Rules of reasoning</li></ul></div>
-    <div class="question"><p>31. "Axios" in Greek means:</p><ul class="options"><li>A) Knowledge</li><li>B) Worth or value</li><li>C) Reasoning</li><li>D) Being</li></ul></div>
-    <div class="question"><p>32. The two main branches of axiology are:</p><ul class="options"><li>A) Logic and metaphysics</li><li>B) Ethics and aesthetics</li><li>C) Ontology and cosmology</li><li>D) Epistemology and logic</li></ul></div>
-    <div class="question"><p>33. Ethics is described as the study of:</p><ul class="options"><li>A) What is beautiful</li><li>B) What makes actions right or wrong</li><li>C) The origin of the universe</li><li>D) The rules of valid argument</li></ul></div>
-    <div class="question"><p>34. The key ethical question is:</p><ul class="options"><li>A) What is real?</li><li>B) How do we know?</li><li>C) How should I behave?</li><li>D) What is beautiful?</li></ul></div>
-    <div class="question"><p>35. Aesthetics is the study of:</p><ul class="options"><li>A) What is morally right</li><li>B) What is beautiful, enjoyable, or tasteful</li><li>C) How we acquire knowledge</li><li>D) What ultimately exists</li></ul></div>
-    <div class="question"><p>36. Logic is the branch of philosophy concerned with:</p><ul class="options"><li>A) The nature of God</li><li>B) Reasoning and the distinction between good and bad reasoning</li><li>C) The study of values</li><li>D) The theory of knowledge</li></ul></div>
-    <div class="question"><p>37. The two divisions of logic are:</p><ul class="options"><li>A) Formal and informal</li><li>B) Deductive and inductive</li><li>C) Valid and invalid</li><li>D) Abstract and concrete</li></ul></div>
-    <div class="question"><p>38. Deductive logic proceeds from:</p><ul class="options"><li>A) Specific to general</li><li>B) General to specific (universal to particular)</li><li>C) Emotion to reason</li><li>D) Evidence to hypothesis</li></ul></div>
-    <div class="question"><p>39. Inductive logic proceeds from:</p><ul class="options"><li>A) General to specific</li><li>B) Specific to general (particular to universal)</li><li>C) Major premise to minor premise</li><li>D) Conclusion to premise</li></ul></div>
-    <div class="question"><p>40. "Every man is mortal; Abu is a man; therefore Abu is mortal" is an example of:</p><ul class="options"><li>A) Inductive logic</li><li>B) Deductive logic</li><li>C) Intuition</li><li>D) Empirical reasoning</li></ul></div>
-    <div class="question"><p>41. Logicians are interested in:</p><ul class="options"><li>A) How the mind arrives at conclusions psychologically</li><li>B) The correctness of the completed process of reasoning</li><li>C) Emotional aspects of thought</li><li>D) The source of knowledge</li></ul></div>
-    <div class="question"><p>42. If thinking is orderly, we say it is:</p><ul class="options"><li>A) Intuitive</li><li>B) Logical and rational</li><li>C) Empirical</li><li>D) Authoritative</li></ul></div>
-    <div class="question"><p>43. If thinking is disorderly, it is described as:</p><ul class="options"><li>A) Logical</li><li>B) Rational</li><li>C) Illogical and irrational</li><li>D) Systematic</li></ul></div>
-    <div class="question"><p>44. Metaphysics consists of ontology, cosmology, causality, and:</p><ul class="options"><li>A) Ethics</li><li>B) Aesthetics</li><li>C) Theology</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>45. Chopra (2005) defines axiology as:</p><ul class="options"><li>A) The study of ultimate reality</li><li>B) The branch of philosophy studying judgements about values including ethics and aesthetics</li><li>C) The theory of knowledge</li><li>D) The study of reasoning</li></ul></div>
-    <div class="question"><p>46. Epistemology seeks answers to issues relating to:</p><ul class="options"><li>A) The creation of the universe</li><li>B) Dependability of knowledge and validity of sources</li><li>C) Moral rules of conduct</li><li>D) Artistic appreciation</li></ul></div>
-    <div class="question"><p>47. According to Singh &amp; Nath (2008), ethics evaluates:</p><ul class="options"><li>A) Beauty and ugliness</li><li>B) Human habits, character, and voluntary determination</li><li>C) The origin of the universe</li><li>D) Sources of knowledge</li></ul></div>
-    <div class="question"><p>48. The study of aesthetics governs the creation and appreciation of:</p><ul class="options"><li>A) Logical arguments</li><li>B) Knowledge sources</li><li>C) Beauty and art</li><li>D) Political systems</li></ul></div>
-    <div class="question"><p>49. Which source of knowledge was described as knowledge that "bypasses the limitations of human experience"?</p><ul class="options"><li>A) Empirical</li><li>B) Authoritative</li><li>C) Rational</li><li>D) Intuition</li></ul></div>
-    <div class="question"><p>50. Deductive logic consists of which three parts?</p><ul class="options"><li>A) Hypothesis, evidence, conclusion</li><li>B) Major premise, minor premise, conclusion</li><li>C) Thesis, antithesis, synthesis</li><li>D) Data, analysis, inference</li></ul></div>
-    <div class="question"><p>51. "Formal logic is a tool used by rationalists" means:</p><ul class="options"><li>A) Emotions guide rational knowledge</li><li>B) Structured logical reasoning supports knowledge independent of the senses</li><li>C) Religious texts provide rational knowledge</li><li>D) Science replaces rational knowledge</li></ul></div>
-    <div class="question"><p>52. The ontological question "Is reality fixed or does change characterise it?" refers to:</p><ul class="options"><li>A) Cosmology</li><li>B) Theology</li><li>C) Ontology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>53. "The classroom is an axiological theatre" means:</p><ul class="options"><li>A) Logic is taught in classrooms</li><li>B) Teachers constantly instruct students in value systems through their actions</li><li>C) Metaphysics is the core of education</li><li>D) Students study drama in class</li></ul></div>
-    <div class="question"><p>54. Which source of knowledge presupposes "a transcendent supernatural reality"?</p><ul class="options"><li>A) Empirical</li><li>B) Rational</li><li>C) Revelation</li><li>D) Authoritative</li></ul></div>
-    <div class="question"><p>55. Logic also examines how the mind functions in reaching:</p><ul class="options"><li>A) Religious beliefs</li><li>B) Valid arguments</li><li>C) Empirical data</li><li>D) Artistic judgments</li></ul></div>
-    <div class="question"><p>56. "Is basic reality found in matter or spirit?" is a question of:</p><ul class="options"><li>A) Epistemology</li><li>B) Ethics</li><li>C) Ontology</li><li>D) Aesthetics</li></ul></div>
-    <div class="question"><p>57. The sub-branches of ethics listed in the notes include all EXCEPT:</p><ul class="options"><li>A) Meta-ethics</li><li>B) Applied ethics</li><li>C) Cosmological ethics</li><li>D) Theory of conduct</li></ul></div>
-    <div class="question"><p>58. "Relative truth" in epistemology means truth that:</p><ul class="options"><li>A) Is absolute and unchanging</li><li>B) Is subject to change — what is true today may be false tomorrow</li><li>C) Comes only from God</li><li>D) Is proven by science</li></ul></div>
-    <div class="question"><p>59. Cosmology asks the question "How did the universe originate and develop?" This falls under which branch?</p><ul class="options"><li>A) Logic</li><li>B) Axiology</li><li>C) Metaphysics</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>60. "Values primarily refer to those objects which we cherish, appreciate, want, desire or need" is a definition from which branch?</p><ul class="options"><li>A) Logic</li><li>B) Metaphysics</li><li>C) Axiology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>61. If civilisation would stagnate without accepting some knowledge without personal verification, this is an argument for:</p><ul class="options"><li>A) Empirical knowledge</li><li>B) Intuitive knowledge</li><li>C) Authoritative knowledge</li><li>D) Revelation knowledge</li></ul></div>
-    <div class="question"><p>62. Logic involves the study of arguments, methods and principles used to determine:</p><ul class="options"><li>A) The beauty of an object</li><li>B) The correctness or otherwise of an argument</li><li>C) The value of an action</li><li>D) The origin of the universe</li></ul></div>
-    <div class="question"><p>63. Aesthetics evaluates things of daily life such as:</p><ul class="options"><li>A) Mathematical equations</li><li>B) School architecture, television programs, billboards</li><li>C) Scientific experiments</li><li>D) Political decisions</li></ul></div>
-    <div class="question"><p>64. The study of "what it means for anything to exist" is:</p><ul class="options"><li>A) Cosmology</li><li>B) Theology</li><li>C) Ontology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>65. Which source of knowledge is described as common in "philosophy and music"?</p><ul class="options"><li>A) Empirical</li><li>B) Rational</li><li>C) Revelation</li><li>D) Intuition</li></ul></div>
-    <div class="question"><p>66. "Episteme" (Greek) means:</p><ul class="options"><li>A) Being</li><li>B) Value</li><li>C) Knowledge, understanding</li><li>D) Reason</li></ul></div>
-    <div class="question"><p>67. Axiology stands at the very foundation of which process?</p><ul class="options"><li>A) Scientific research</li><li>B) Educational process</li><li>C) Political governance</li><li>D) Economic development</li></ul></div>
-    <div class="question"><p>68. The ethical question "Are ethical standards absolute or relative?" relates to which epistemological issue?</p><ul class="options"><li>A) Skepticism</li><li>B) Whether all truth is relative or absolute</li><li>C) Authoritative knowledge</li><li>D) Intuitive insight</li></ul></div>
-    <div class="question"><p>69. Metaphysics is also viewed as the study of the ultimate cause and the most _____ principles of reality.</p><ul class="options"><li>A) Logical</li><li>B) Universal</li><li>C) Ethical</li><li>D) Cultural</li></ul></div>
-    <div class="question"><p>70. The question "What is the nature of change?" falls under which metaphysical sub-branch?</p><ul class="options"><li>A) Theology</li><li>B) Cosmology</li><li>C) Ontology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>71. Deductive arguments provide _____ grounds for the conclusion.</p><ul class="options"><li>A) Probable</li><li>B) Absolutely conclusive</li><li>C) Weak</li><li>D) Relative</li></ul></div>
-    <div class="question"><p>72. Inductive arguments provide _____ support for the conclusion.</p><ul class="options"><li>A) Absolute</li><li>B) Guaranteed</li><li>C) Some evidence but not guaranteed</li><li>D) No support</li></ul></div>
-    <div class="question"><p>73. The question "Can morality be separated from religion?" is a question of:</p><ul class="options"><li>A) Metaphysics</li><li>B) Logic</li><li>C) Ethics</li><li>D) Cosmology</li></ul></div>
-    <div class="question"><p>74. Logic examines whether the conclusion is:</p><ul class="options"><li>A) Beautiful</li><li>B) Valuable</li><li>C) Derived from or follows from the premises</li><li>D) Historically accepted</li></ul></div>
-    <div class="question"><p>75. "All academic disciplines employ logic" shows that logic is:</p><ul class="options"><li>A) Limited to philosophy</li><li>B) A universal tool for reasoning across all fields</li><li>C) Only used in mathematics</li><li>D) Irrelevant to sciences</li></ul></div>
-    <div class="question"><p>76. Which of the following is a cosmological question?</p><ul class="options"><li>A) What is the moral basis of law?</li><li>B) Does its existence have any purpose?</li><li>C) What is beautiful?</li><li>D) How do we know what we know?</li></ul></div>
-    <div class="question"><p>77. Epistemology asks: "What is true?" and:</p><ul class="options"><li>A) What is good?</li><li>B) How do we know that we know?</li><li>C) What exists?</li><li>D) What is beautiful?</li></ul></div>
-    <div class="question"><p>78. The reason "culture wars" over values in schools exist is that:</p><ul class="options"><li>A) Schools have no curriculum</li><li>B) People embrace different ethical bases and disagree over moral values to teach children</li><li>C) Teachers do not study ethics</li><li>D) Education is purely scientific</li></ul></div>
-    <div class="question"><p>79. The "Logos" component of the word "axiology" means:</p><ul class="options"><li>A) Value</li><li>B) Logic or Theory</li><li>C) Being</li><li>D) Knowledge</li></ul></div>
-    <div class="question"><p>80. The metaphysical sub-branch dealing with "time, space, matter, process, cause and effect" is:</p><ul class="options"><li>A) Theology</li><li>B) Cosmology</li><li>C) Ontology</li><li>D) Ethics</li></ul></div>
-    <div class="question"><p>81. Which branch of philosophy would address the question "What is the purpose of punishment?"</p><ul class="options"><li>A) Metaphysics</li><li>B) Epistemology</li><li>C) Ethics</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>82. Which branch would you use to evaluate a painting for its artistic worth?</p><ul class="options"><li>A) Logic</li><li>B) Epistemology</li><li>C) Aesthetics</li><li>D) Ontology</li></ul></div>
-    <div class="question"><p>83. Deductive logic is described as the "classical approach to traditional philosophical thought" consisting of:</p><ul class="options"><li>A) Four statements</li><li>B) Three statements: major and minor premises, and a conclusion</li><li>C) Two statements: a claim and evidence</li><li>D) Five steps</li></ul></div>
-    <div class="question"><p>84. The advantage of revelation knowledge for believers is that it is considered:</p><ul class="options"><li>A) Empirically verifiable</li><li>B) From an omniscient source not available through other methods</li><li>C) Scientifically proven</li><li>D) Based on personal experience</li></ul></div>
-    <div class="question"><p>85. Epistemology, in educational terms, covers:</p><ul class="options"><li>A) School administration and management</li><li>B) Curriculum (content) and instruction (method)</li><li>C) School finance and policy</li><li>D) Student welfare</li></ul></div>
-    <div class="question"><p>86. Amaele (2017) is cited in connection with which branch?</p><ul class="options"><li>A) Axiology</li><li>B) Metaphysics and Logic</li><li>C) Ethics only</li><li>D) Aesthetics only</li></ul></div>
-    <div class="question"><p>87. The phrase "the most fundamental categories of existence" is associated with:</p><ul class="options"><li>A) Epistemology</li><li>B) Ontology</li><li>C) Ethics</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>88. Which ethical theory "evaluates actions based on their consequences"?</p><ul class="options"><li>A) Deontology</li><li>B) Virtue ethics</li><li>C) Utilitarianism</li><li>D) Intuitionism</li></ul></div>
-    <div class="question"><p>89. The question "Who benefits from values?" falls under:</p><ul class="options"><li>A) Logic</li><li>B) Metaphysics</li><li>C) Axiology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>90. The statement "sensory knowledge is built upon assumptions accepted by faith in the dependability of human sensory mechanisms" is a:</p><ul class="options"><li>A) Criticism of rational knowledge</li><li>B) Acknowledgment of the limitation of empirical knowledge</li><li>C) Defence of revelation knowledge</li><li>D) Argument for intuition</li></ul></div>
-    <div class="question"><p>91. Which sub-discipline of ethics includes "applied ethics"?</p><ul class="options"><li>A) Cosmology</li><li>B) Logic</li><li>C) The branch of ethics within axiology</li><li>D) Epistemology</li></ul></div>
-    <div class="question"><p>92. Metaphysics is structured around the fundamental questions of:</p><ul class="options"><li>A) Beauty, art, and aesthetic experience</li><li>B) God, reality, the universe, man, life</li><li>C) Knowledge, truth, and sources of information</li><li>D) Right, wrong, and moral conduct</li></ul></div>
-    <div class="question"><p>93. "Meta" in "Metaphysics" means:</p><ul class="options"><li>A) Nature</li><li>B) Science</li><li>C) After or beyond</li><li>D) Study of</li></ul></div>
-    <div class="question"><p>94. "Physika" in "Metaphysics" means:</p><ul class="options"><li>A) After</li><li>B) Beyond</li><li>C) Nature</li><li>D) Science</li></ul></div>
-    <div class="question"><p>95. A person who studies "what is worth pursuing in life" is engaged in:</p><ul class="options"><li>A) Logic</li><li>B) Axiology/Ethics</li><li>C) Metaphysics/Ontology</li><li>D) Cosmology</li></ul></div>
-    <div class="question"><p>96. The belief that "tomorrow will be like the past" underpins which type of logic?</p><ul class="options"><li>A) Deductive</li><li>B) Inductive</li><li>C) Formal</li><li>D) Intuitive</li></ul></div>
-    <div class="question"><p>97. According to the lecture notes, a person who has studied logic is:</p><ul class="options"><li>A) Guaranteed to always reason correctly</li><li>B) More likely to reason correctly than one who has not</li><li>C) The only person who can reason</li><li>D) Incapable of making errors</li></ul></div>
-    <div class="question"><p>98. "Is God's relationship to human beings personal?" is a question of:</p><ul class="options"><li>A) Cosmology</li><li>B) Ethics</li><li>C) Theology (metaphysics)</li><li>D) Logic</li></ul></div>
-    <div class="question"><p>99. Axiology's questions include all EXCEPT:</p><ul class="options"><li>A) What is a value?</li><li>B) How do we justify our values?</li><li>C) How did the universe originate?</li><li>D) Who benefits from values?</li></ul></div>
-    <div class="question"><p>100. The branch of philosophy that would evaluate whether a judge's sentence is fair is:</p><ul class="options"><li>A) Metaphysics</li><li>B) Logic</li><li>C) Ethics</li><li>D) Epistemology</li></ul></div>
-  </div>
-
-  <div class="answers-section">
-    <h3>Answer Key – Topic 3</h3>
-    <div class="answers-grid">
-      <div class="ans-item"><strong>1. B</strong></div><div class="ans-item"><strong>2. C</strong></div><div class="ans-item"><strong>3. B</strong></div><div class="ans-item"><strong>4. B</strong></div><div class="ans-item"><strong>5. C</strong></div>
-      <div class="ans-item"><strong>6. B</strong></div><div class="ans-item"><strong>7. B</strong></div><div class="ans-item"><strong>8. B</strong></div><div class="ans-item"><strong>9. B</strong></div><div class="ans-item"><strong>10. B</strong></div>
-      <div class="ans-item"><strong>11. B</strong></div><div class="ans-item"><strong>12. C</strong></div><div class="ans-item"><strong>13. D</strong></div><div class="ans-item"><strong>14. B</strong></div><div class="ans-item"><strong>15. C</strong></div>
-      <div class="ans-item"><strong>16. B</strong></div><div class="ans-item"><strong>17. B</strong></div><div class="ans-item"><strong>18. C</strong></div><div class="ans-item"><strong>19. B</strong></div><div class="ans-item"><strong>20. B</strong></div>
-      <div class="ans-item"><strong>21. B</strong></div><div class="ans-item"><strong>22. B</strong></div><div class="ans-item"><strong>23. B</strong></div><div class="ans-item"><strong>24. B</strong></div><div class="ans-item"><strong>25. B</strong></div>
-      <div class="ans-item"><strong>26. C</strong></div><div class="ans-item"><strong>27. B</strong></div><div class="ans-item"><strong>28. B</strong></div><div class="ans-item"><strong>29. B</strong></div><div class="ans-item"><strong>30. C</strong></div>
-      <div class="ans-item"><strong>31. B</strong></div><div class="ans-item"><strong>32. B</strong></div><div class="ans-item"><strong>33. B</strong></div><div class="ans-item"><strong>34. C</strong></div><div class="ans-item"><strong>35. B</strong></div>
-      <div class="ans-item"><strong>36. B</strong></div><div class="ans-item"><strong>37. B</strong></div><div class="ans-item"><strong>38. B</strong></div><div class="ans-item"><strong>39. B</strong></div><div class="ans-item"><strong>40. B</strong></div>
-      <div class="ans-item"><strong>41. B</strong></div><div class="ans-item"><strong>42. B</strong></div><div class="ans-item"><strong>43. C</strong></div><div class="ans-item"><strong>44. C</strong></div><div class="ans-item"><strong>45. B</strong></div>
-      <div class="ans-item"><strong>46. B</strong></div><div class="ans-item"><strong>47. B</strong></div><div class="ans-item"><strong>48. C</strong></div><div class="ans-item"><strong>49. D</strong></div><div class="ans-item"><strong>50. B</strong></div>
-      <div class="ans-item"><strong>51. B</strong></div><div class="ans-item"><strong>52. C</strong></div><div class="ans-item"><strong>53. B</strong></div><div class="ans-item"><strong>54. C</strong></div><div class="ans-item"><strong>55. B</strong></div>
-      <div class="ans-item"><strong>56. C</strong></div><div class="ans-item"><strong>57. C</strong></div><div class="ans-item"><strong>58. B</strong></div><div class="ans-item"><strong>59. C</strong></div><div class="ans-item"><strong>60. C</strong></div>
-      <div class="ans-item"><strong>61. C</strong></div><div class="ans-item"><strong>62. B</strong></div><div class="ans-item"><strong>63. B</strong></div><div class="ans-item"><strong>64. C</strong></div><div class="ans-item"><strong>65. D</strong></div>
-      <div class="ans-item"><strong>66. C</strong></div><div class="ans-item"><strong>67. B</strong></div><div class="ans-item"><strong>68. B</strong></div><div class="ans-item"><strong>69. B</strong></div><div class="ans-item"><strong>70. C</strong></div>
-      <div class="ans-item"><strong>71. B</strong></div><div class="ans-item"><strong>72. C</strong></div><div class="ans-item"><strong>73. C</strong></div><div class="ans-item"><strong>74. C</strong></div><div class="ans-item"><strong>75. B</strong></div>
-      <div class="ans-item"><strong>76. B</strong></div><div class="ans-item"><strong>77. B</strong></div><div class="ans-item"><strong>78. B</strong></div><div class="ans-item"><strong>79. B</strong></div><div class="ans-item"><strong>80. C</strong></div>
-      <div class="ans-item"><strong>81. C</strong></div><div class="ans-item"><strong>82. C</strong></div><div class="ans-item"><strong>83. B</strong></div><div class="ans-item"><strong>84. B</strong></div><div class="ans-item"><strong>85. B</strong></div>
-      <div class="ans-item"><strong>86. B</strong></div><div class="ans-item"><strong>87. B</strong></div><div class="ans-item"><strong>88. C</strong></div><div class="ans-item"><strong>89. C</strong></div><div class="ans-item"><strong>90. B</strong></div>
-      <div class="ans-item"><strong>91. C</strong></div><div class="ans-item"><strong>92. B</strong></div><div class="ans-item"><strong>93. C</strong></div><div class="ans-item"><strong>94. C</strong></div><div class="ans-item"><strong>95. B</strong></div>
-      <div class="ans-item"><strong>96. B</strong></div><div class="ans-item"><strong>97. B</strong></div><div class="ans-item"><strong>98. C</strong></div><div class="ans-item"><strong>99. C</strong></div><div class="ans-item"><strong>100. C</strong></div>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-</div>
-
-<!-- Topics 4-11 are condensed for file size but follow EXACT same full structure -->
-<!-- For the downloadable file, all 11 topics × 100 questions are included in full -->
-
-<div style="background:#1a1a2e;color:#e0c97f;padding:24px 28px;border-radius:10px;margin:24px 0;text-align:center;font-size:1.05rem;">
-  ⚠️ <strong>Topics 4–11 are in the full downloadable file.</strong> The complete guide includes all 1,100 questions across all 11 topics with answers. Scroll down or use the navigation links above.
-</div>
-
-<!-- TOPICS 4-11: Full content -->
-
-<div class="topic-card" id="t4">
-  <div class="topic-header"><div class="num">TOPIC 4</div><h2>Syllogism – Elements, Types, and Rules</h2></div>
-  <div class="notes">
-    <h3>What is a Syllogism?</h3>
-    <p>A <strong>syllogism</strong> is a three-step deductive reasoning method: <strong>Major Premise</strong> (assumed fact), <strong>Minor Premise</strong> (supports the major premise), and <strong>Conclusion</strong> (drawn from both premises). It is a tool to establish logical truth.</p>
-    <div class="key-box"><strong>Classic example:</strong> All mammals are warm-blooded (Major) / All dogs are mammals (Minor) / Therefore, all dogs are warm-blooded (Conclusion). The shared term "mammals" connects the premises.</div>
-    <h3>Types of Syllogism</h3>
-    <ul>
-      <li><strong>Conditional Syllogism:</strong> "If…then" structure. E.g., If today is sunny → the race will be held → Today is sunny → the race will be held.</li>
-      <li><strong>Categorical Syllogism:</strong> States categories directly. E.g., No reptiles are warm-blooded / Some pets are reptiles / Therefore, some pets are not warm.</li>
-      <li><strong>Disjunctive Syllogism:</strong> "Either/or" structure — if one option is ruled out, the other must be true.</li>
-      <li><strong>Hypothetical Syllogism:</strong> Chain of conditionals. If A→B and B→C, then A→C.</li>
-    </ul>
-    <h3>Rules of Syllogism</h3>
-    <ul>
-      <li>If the <strong>major premise is affirmative</strong>, the conclusion must be affirmative.</li>
-      <li>If the <strong>minor premise is negative</strong>, the conclusion must be negative.</li>
-      <li>The conclusion should combine the unique elements of the major and minor premises.</li>
-    </ul>
-    <h3>Figures of Syllogism</h3>
-    <p><strong>1st Figure:</strong> Subject is in major, predicate in minor. <strong>2nd Figure:</strong> Predicate of conclusion appears in both premises. <strong>3rd Figure:</strong> Subject of conclusion is predicate of both premises. <strong>4th Figure:</strong> Predicate of major = subject of minor.</p>
-    <h3>Illicit Major</h3>
-    <p>An <strong>illicit major</strong> is an invalid conclusion where a term used in the conclusion was not properly distributed in the major premise. Example: "All dogs love food; John loves food; therefore John is a dog" — INVALID.</p>
-  </div>
-  <div class="mcq-section">
-    <h3>100 Multiple Choice Questions – Topic 4</h3>
-    <div class="question"><p>1. A syllogism is a _____ method of framing an argument.</p><ul class="options"><li>A) Two-step</li><li>B) Three-step</li><li>C) Four-step</li><li>D) Five-step</li></ul></div>
-    <div class="question"><p>2. The first part of a syllogism is the:</p><ul class="options"><li>A) Conclusion</li><li>B) Minor Premise</li><li>C) Major Premise</li><li>D) Thesis</li></ul></div>
-    <div class="question"><p>3. The Major Premise is:</p><ul class="options"><li>A) A conclusion drawn from other statements</li><li>B) An assumption or argument meant to be taken as fact</li><li>C) A supporting statement for the minor premise</li><li>D) The final outcome of reasoning</li></ul></div>
-    <div class="question"><p>4. The Minor Premise serves to:</p><ul class="options"><li>A) Introduce the topic</li><li>B) Substantiate the Major Premise</li><li>C) Draw the conclusion</li><li>D) Challenge the major premise</li></ul></div>
-    <div class="question"><p>5. Syllogism is a form of _____ reasoning.</p><ul class="options"><li>A) Inductive</li><li>B) Intuitive</li><li>C) Deductive</li><li>D) Empirical</li></ul></div>
-    <div class="question"><p>6. In "All mammals are warm-blooded / All dogs are mammals / Therefore, all dogs are warm-blooded," the shared element between the premises is:</p><ul class="options"><li>A) Warm-blooded</li><li>B) Dogs</li><li>C) Mammals</li><li>D) All</li></ul></div>
-    <div class="question"><p>7. The conclusion of a syllogism is formed by combining:</p><ul class="options"><li>A) The two premises verbatim</li><li>B) The unique (non-shared) elements of the major and minor premises</li><li>C) The shared elements of the premises</li><li>D) Only the major premise</li></ul></div>
-    <div class="question"><p>8. A conditional syllogism uses the structure:</p><ul class="options"><li>A) All…some…therefore</li><li>B) No…some…therefore</li><li>C) If…then…therefore</li><li>D) Either…or…therefore</li></ul></div>
-    <div class="question"><p>9. "If the VC is here, the ceremony will hold; The VC is here; Therefore, the ceremony will hold" is a:</p><ul class="options"><li>A) Categorical syllogism</li><li>B) Conditional syllogism</li><li>C) Disjunctive syllogism</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>10. "No reptiles are warm-blooded / Some pets are reptiles / Therefore, some pets are not warm" is a:</p><ul class="options"><li>A) Conditional syllogism</li><li>B) Categorical syllogism</li><li>C) Disjunctive syllogism</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>11. A hypothetical syllogism takes the form:</p><ul class="options"><li>A) All A are B; All B are C; Therefore all A are C</li><li>B) If A then B; If B then C; Therefore if A then C</li><li>C) Either A or B; Not A; Therefore B</li><li>D) No A are B; Some C are A; Therefore some C are not B</li></ul></div>
-    <div class="question"><p>12. "If I study, I pass. If I pass, I graduate. Therefore, if I study, I graduate." This is a:</p><ul class="options"><li>A) Categorical syllogism</li><li>B) Conditional syllogism</li><li>C) Hypothetical syllogism</li><li>D) Disjunctive syllogism</li></ul></div>
-    <div class="question"><p>13. A disjunctive syllogism presents an:</p><ul class="options"><li>A) If/then scenario</li><li>B) Either/or scenario where one option is ruled out</li><li>C) All/some scenario</li><li>D) No/some scenario</li></ul></div>
-    <div class="question"><p>14. Rule 1 of syllogism states: if the major premise is affirmative, the conclusion must be:</p><ul class="options"><li>A) Negative</li><li>B) Neutral</li><li>C) Affirmative</li><li>D) Uncertain</li></ul></div>
-    <div class="question"><p>15. Rule 2 of syllogism states: if the minor premise is negative, the conclusion must be:</p><ul class="options"><li>A) Affirmative</li><li>B) Neutral</li><li>C) Negative</li><li>D) Conditional</li></ul></div>
-    <div class="question"><p>16. "All humans are mortal / Socrates is not mortal / Therefore, Socrates is not human" demonstrates which rule?</p><ul class="options"><li>A) Rule 1 – affirmative major leads to affirmative conclusion</li><li>B) Rule 2 – negative minor leads to negative conclusion</li><li>C) Rule 3 – shared elements form the conclusion</li><li>D) No rule – this is invalid</li></ul></div>
-    <div class="question"><p>17. In the 1st Figure of syllogism, the shared term appears as:</p><ul class="options"><li>A) Predicate in both premises</li><li>B) Subject in the major premise and predicate in the minor premise</li><li>C) Subject in both premises</li><li>D) Not present in either premise</li></ul></div>
-    <div class="question"><p>18. "All dogs love food; John loves food; Therefore, John is a dog" is an example of:</p><ul class="options"><li>A) Valid categorical syllogism</li><li>B) Illicit major – invalid conclusion</li><li>C) Correct conditional syllogism</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>19. An "Illicit Major" refers to:</p><ul class="options"><li>A) A major premise that is too general</li><li>B) An invalid conclusion where a term in the conclusion was not properly distributed in the major premise</li><li>C) A major premise that is negative</li><li>D) A valid but unsound argument</li></ul></div>
-    <div class="question"><p>20. "All cows are mammals / All mammals are animals / Therefore, all cows are animals" is a:</p><ul class="options"><li>A) Conditional syllogism</li><li>B) Valid categorical syllogism</li><li>C) Disjunctive syllogism</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>21. In "All humans are mortal / Socrates is a human / Therefore, Socrates is mortal," the conclusion is:</p><ul class="options"><li>A) Invalid</li><li>B) An illicit major</li><li>C) Valid and correct</li><li>D) Based on inductive reasoning</li></ul></div>
-    <div class="question"><p>22. A syllogism is described as a "deductive reasoning tool" to establish:</p><ul class="options"><li>A) Probable conclusions</li><li>B) Logical truth</li><li>C) Emotional appeal</li><li>D) Sensory knowledge</li></ul></div>
-    <div class="question"><p>23. The conclusion of a valid syllogism necessarily:</p><ul class="options"><li>A) Is always true factually</li><li>B) Follows logically from the premises</li><li>C) Is based on probability</li><li>D) Comes before the minor premise</li></ul></div>
-    <div class="question"><p>24. How many types of syllogism are listed in the lecture notes?</p><ul class="options"><li>A) Two</li><li>B) Three</li><li>C) Four</li><li>D) Five</li></ul></div>
-    <div class="question"><p>25. In a syllogism, the term appearing in both premises but not in the conclusion is called the:</p><ul class="options"><li>A) Subject term</li><li>B) Predicate term</li><li>C) Middle term</li><li>D) Conclusion term</li></ul></div>
-    <div class="question"><p>26. The syllogism "All birds are animals / All parrots are birds / (Conclusion)" demonstrates which figure?</p><ul class="options"><li>A) 1st Figure</li><li>B) 2nd Figure</li><li>C) 3rd Figure</li><li>D) 4th Figure</li></ul></div>
-    <div class="question"><p>27. "No foxes are birds / All parrots are birds / No parrots are foxes" demonstrates which figure?</p><ul class="options"><li>A) 1st Figure</li><li>B) 2nd Figure</li><li>C) 3rd Figure</li><li>D) 4th Figure</li></ul></div>
-    <div class="question"><p>28. "All birds are animals / All birds are mortals / Some mortals are animals" demonstrates which figure?</p><ul class="options"><li>A) 1st Figure</li><li>B) 2nd Figure</li><li>C) 3rd Figure</li><li>D) 4th Figure</li></ul></div>
-    <div class="question"><p>29. "No birds are cows / All cows are animals / Some animals are not birds" demonstrates which figure?</p><ul class="options"><li>A) 1st Figure</li><li>B) 2nd Figure</li><li>C) 3rd Figure</li><li>D) 4th Figure</li></ul></div>
-    <div class="question"><p>30. A syllogism must contain exactly:</p><ul class="options"><li>A) Two propositions</li><li>B) Three propositions</li><li>C) Four propositions</li><li>D) Five propositions</li></ul></div>
-    <div class="question"><p>31. The "Either/or" structure in disjunctive syllogism means:</p><ul class="options"><li>A) Both options can be false</li><li>B) If one option is eliminated, the other must be true</li><li>C) Both options must be true</li><li>D) Neither option matters</li></ul></div>
-    <div class="question"><p>32. "If A is part of C, then B is a part of A" is an example of which syllogism type?</p><ul class="options"><li>A) Categorical</li><li>B) Conditional</li><li>C) Disjunctive</li><li>D) Hypothetical</li></ul></div>
-    <div class="question"><p>33. Syllogism gives us information about:</p><ul class="options"><li>A) Mathematical equations</li><li>B) The relations between elements</li><li>C) Scientific facts</li><li>D) Historical events</li></ul></div>
-    <div class="question"><p>34. In a syllogism, the conclusion should be a combination of:</p><ul class="options"><li>A) The shared elements</li><li>B) The unique (non-shared) elements from each premise</li><li>C) The middle term repeated</li><li>D) The major premise alone</li></ul></div>
-    <div class="question"><p>35. The syllogism structure is described as "relatively clear and straightforward" but must be:</p><ul class="options"><li>A) Complicated</li><li>B) Precise in execution</li><li>C) Based on feelings</li><li>D) Informal</li></ul></div>
-    <div class="question"><p>36. What makes a syllogism properly formatted? The conclusion should:</p><ul class="options"><li>A) Repeat the major premise</li><li>B) Combine the unique elements from both premises</li><li>C) Contradict the minor premise</li><li>D) Be longer than both premises</li></ul></div>
-    <div class="question"><p>37. In logic, a syllogism is more than a proposition because it:</p><ul class="options"><li>A) Contains only one statement</li><li>B) Contains and must contain three propositions</li><li>C) Is always true</li><li>D) Uses only inductive reasoning</li></ul></div>
-    <div class="question"><p>38. "Ilorin town is in Kwara State / University of Ilorin is in Ilorin / Therefore, University of Ilorin is in Kwara State" is a:</p><ul class="options"><li>A) Disjunctive syllogism</li><li>B) Categorical syllogism (deductive)</li><li>C) Inductive argument</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>39. In a categorical syllogism, which statement about categories is made?</p><ul class="options"><li>A) If one category exists, another follows</li><li>B) Either this category or another applies</li><li>C) Direct statements about categories (all, no, some)</li><li>D) Conditional statements about categories</li></ul></div>
-    <div class="question"><p>40. A whole syllogism can neither be:</p><ul class="options"><li>A) Valid nor invalid</li><li>B) Asserted nor denied</li><li>C) True nor false</li><li>D) Sound nor unsound</li></ul></div>
-    <div class="question"><p>41. The subject term in logic is associated with:</p><ul class="options"><li>A) The whole syllogism</li><li>B) An individual proposition only</li><li>C) The major premise only</li><li>D) The conclusion only</li></ul></div>
-    <div class="question"><p>42. In "Cacy Ngamen is beautiful," the subject term is:</p><ul class="options"><li>A) Beautiful</li><li>B) Is</li><li>C) Cacy Ngamen</li><li>D) Ngamen</li></ul></div>
-    <div class="question"><p>43. In "Cacy Ngamen is beautiful," the predicate term is:</p><ul class="options"><li>A) Cacy Ngamen</li><li>B) Is</li><li>C) Beautiful</li><li>D) The whole sentence</li></ul></div>
-    <div class="question"><p>44. Subject and predicate terms in logic are associated with:</p><ul class="options"><li>A) The whole argument</li><li>B) The whole syllogism</li><li>C) Individual propositions only</li><li>D) The major premise only</li></ul></div>
-    <div class="question"><p>45. "All Black women are beautiful / Cacy Ngamen is a black woman / Therefore, Cacy Ngamen is beautiful" — the conclusion is:</p><ul class="options"><li>A) Invalid</li><li>B) An inductive inference</li><li>C) A necessary logical conclusion from the premises</li><li>D) An illicit major</li></ul></div>
-    <div class="question"><p>46. A conditional syllogism's major premise states a:</p><ul class="options"><li>A) Categorical fact</li><li>B) Conditional relationship ("if…then")</li><li>C) Disjunctive choice</li><li>D) Universal statement</li></ul></div>
-    <div class="question"><p>47. The hypothetical syllogism is also called the:</p><ul class="options"><li>A) Chain rule for logic</li><li>B) Categorical rule</li><li>C) Disjunctive rule</li><li>D) Prescriptive rule</li></ul></div>
-    <div class="question"><p>48. Which is NOT one of the four types of syllogism listed?</p><ul class="options"><li>A) Conditional</li><li>B) Categorical</li><li>C) Inductive</li><li>D) Disjunctive</li></ul></div>
-    <div class="question"><p>49. The structure "If A then B; If B then C; Therefore if A then C" is called:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Hypothetical Syllogism</li><li>D) Categorical Syllogism</li></ul></div>
-    <div class="question"><p>50. What does it mean that a syllogism "gives us information about hidden relations"?</p><ul class="options"><li>A) It reveals obvious facts</li><li>B) It uncovers logical connections between statements that are not immediately obvious</li><li>C) It hides information</li><li>D) It creates new facts</li></ul></div>
-    <div class="question"><p>51. In "All humans are mortal / Socrates is a human / Therefore Socrates is mortal" — the middle term is:</p><ul class="options"><li>A) Mortal</li><li>B) Socrates</li><li>C) Human</li><li>D) Therefore</li></ul></div>
-    <div class="question"><p>52. In the 2nd Figure of syllogism, the characteristic arrangement is:</p><ul class="options"><li>A) Middle term as subject in both premises</li><li>B) Middle term as predicate in both premises</li><li>C) Middle term absent from both premises</li><li>D) Middle term only in the conclusion</li></ul></div>
-    <div class="question"><p>53. The purpose of syllogism is best described as:</p><ul class="options"><li>A) Creating emotional persuasion</li><li>B) Establishing logical truth through structured deductive reasoning</li><li>C) Providing probable conclusions</li><li>D) Generating universal laws of nature</li></ul></div>
-    <div class="question"><p>54. "Either we eat pizza or minced pie; we aren't eating pizza; therefore we are eating minced pie" is a:</p><ul class="options"><li>A) Hypothetical syllogism</li><li>B) Categorical syllogism</li><li>C) Disjunctive syllogism</li><li>D) Conditional syllogism</li></ul></div>
-    <div class="question"><p>55. An illicit major results in a conclusion that is:</p><ul class="options"><li>A) Always factually true</li><li>B) Logically invalid</li><li>C) Emotionally satisfying</li><li>D) Inductively strong</li></ul></div>
-    <div class="question"><p>56. In "All women are liars / Toyin is a woman / Therefore, Toyin is a liar" — this syllogism moves from:</p><ul class="options"><li>A) Particular to general</li><li>B) General to particular</li><li>C) Particular to particular</li><li>D) General to general</li></ul></div>
-    <div class="question"><p>57. "All mothers are women / All women are human beings / Therefore, all mothers are human beings" moves from:</p><ul class="options"><li>A) General to particular</li><li>B) Particular to general</li><li>C) General to general</li><li>D) Particular to particular</li></ul></div>
-    <div class="question"><p>58. A syllogism is considered a "deductive reasoning tool" because:</p><ul class="options"><li>A) Its conclusion is only probable</li><li>B) Its conclusion follows necessarily if the premises are true</li><li>C) It generalises from specific cases</li><li>D) It is based on sensory experience</li></ul></div>
-    <div class="question"><p>59. In a properly formatted syllogism, the element appearing in both premises but NOT in the conclusion is called the:</p><ul class="options"><li>A) Conclusion term</li><li>B) Unique term</li><li>C) Middle term</li><li>D) Subject term</li></ul></div>
-    <div class="question"><p>60. The premise "All mammals are warm-blooded" in a syllogism is the:</p><ul class="options"><li>A) Minor Premise</li><li>B) Conclusion</li><li>C) Major Premise</li><li>D) Middle term</li></ul></div>
-    <div class="question"><p>61. When a syllogism has an affirmative major premise, Rule 1 requires:</p><ul class="options"><li>A) A negative minor premise</li><li>B) An affirmative conclusion</li><li>C) A neutral conclusion</li><li>D) A conditional conclusion</li></ul></div>
-    <div class="question"><p>62. A valid syllogism with true premises is called:</p><ul class="options"><li>A) Inductive</li><li>B) Sound</li><li>C) Probable</li><li>D) Intuitive</li></ul></div>
-    <div class="question"><p>63. "Syllogism is a deductive reasoning tool to establish logical truth" — this means its conclusions:</p><ul class="options"><li>A) Are always factually correct</li><li>B) Are guaranteed by the logical form, assuming true premises</li><li>C) Are merely probable</li><li>D) Are based on intuition</li></ul></div>
-    <div class="question"><p>64. In a hypothetical syllogism, the relationship between A, B, and C is:</p><ul class="options"><li>A) A OR B leads to C</li><li>B) A leads to B, B leads to C, therefore A leads to C (chain relationship)</li><li>C) A and B both lead to C independently</li><li>D) A leads to both B and C</li></ul></div>
-    <div class="question"><p>65. The minor premise of a syllogism must:</p><ul class="options"><li>A) Contradict the major premise</li><li>B) Serve to substantiate or connect with the major premise</li><li>C) Be always affirmative</li><li>D) Be the same as the conclusion</li></ul></div>
-    <div class="question"><p>66. In which type of syllogism does the conclusion follow from an "if…then" conditional?</p><ul class="options"><li>A) Categorical</li><li>B) Disjunctive</li><li>C) Conditional</li><li>D) Hypothetical</li></ul></div>
-    <div class="question"><p>67. "Syllogism presents a relatively clear and straightforward means of presenting an argument" suggests:</p><ul class="options"><li>A) It is casual and imprecise</li><li>B) It is a structured, clear logical tool that must be precisely executed</li><li>C) It is complicated and rarely used</li><li>D) It only works for mathematical problems</li></ul></div>
-    <div class="question"><p>68. The key difference between a conditional and a categorical syllogism is:</p><ul class="options"><li>A) The number of premises</li><li>B) Whether it uses "if…then" vs. direct category statements</li><li>C) The number of conclusions</li><li>D) Whether it is deductive or inductive</li></ul></div>
-    <div class="question"><p>69. The term that appears in the major premise but not the minor premise (unique to major) ends up in:</p><ul class="options"><li>A) The minor premise again</li><li>B) The conclusion as the predicate</li><li>C) The middle term</li><li>D) Neither premise nor conclusion</li></ul></div>
-    <div class="question"><p>70. "All physicians are university graduates / All members of NMA are physicians / Therefore, all members of NMA are university graduates" — this is a:</p><ul class="options"><li>A) Disjunctive syllogism</li><li>B) Categorical syllogism (general to general)</li><li>C) Conditional syllogism</li><li>D) Hypothetical syllogism</li></ul></div>
-    <div class="question"><p>71. In the disjunctive syllogism, if the first option IS the case, then:</p><ul class="options"><li>A) The second option must also be true</li><li>B) We cannot conclude about the second option directly</li><li>C) The second option is definitely false</li><li>D) Both options are irrelevant</li></ul></div>
-    <div class="question"><p>72. The 3rd Figure of syllogism features the middle term as:</p><ul class="options"><li>A) Predicate in both premises</li><li>B) Subject in both premises</li><li>C) Absent from both premises</li><li>D) Only in the conclusion</li></ul></div>
-    <div class="question"><p>73. "Illicit" in "Illicit Major" means:</p><ul class="options"><li>A) The premise is too long</li><li>B) The term is not properly used/distributed — making the conclusion invalid</li><li>C) The premise is negative</li><li>D) The argument is informal</li></ul></div>
-    <div class="question"><p>74. To check if your syllogism is properly formatted, you should:</p><ul class="options"><li>A) Make all premises negative</li><li>B) Check that the conclusion combines the unique elements from each premise</li><li>C) Ensure the conclusion is longer than the premises</li><li>D) Verify that the middle term appears in the conclusion</li></ul></div>
-    <div class="question"><p>75. A syllogism "tells us about hidden relation of the statement" — this means:</p><ul class="options"><li>A) It creates new facts</li><li>B) It reveals logical connections not immediately obvious from individual statements</li><li>C) It hides the truth</li><li>D) It only applies to simple statements</li></ul></div>
-    <div class="question"><p>76. The minor premise in "All humans are mortal / Socrates is a human / Therefore, Socrates is mortal" is:</p><ul class="options"><li>A) All humans are mortal</li><li>B) Socrates is a human</li><li>C) Therefore, Socrates is mortal</li><li>D) All mortal beings are human</li></ul></div>
-    <div class="question"><p>77. The conclusion in "All cows are mammals / All mammals are animals / ?" is:</p><ul class="options"><li>A) All mammals are cows</li><li>B) Some animals are mammals</li><li>C) All cows are animals</li><li>D) No cows are animals</li></ul></div>
-    <div class="question"><p>78. When the minor premise is negative, Rule 2 of syllogism requires:</p><ul class="options"><li>A) An affirmative conclusion</li><li>B) A negative conclusion</li><li>C) A conditional conclusion</li><li>D) An uncertain conclusion</li></ul></div>
-    <div class="question"><p>79. The most basic requirement for a syllogism to function properly is:</p><ul class="options"><li>A) That premises be emotionally compelling</li><li>B) That premises be precisely and logically connected</li><li>C) That the argument be long and detailed</li><li>D) That it uses poetic language</li></ul></div>
-    <div class="question"><p>80. Which type of syllogism would an argument about "either pass or fail" use?</p><ul class="options"><li>A) Conditional</li><li>B) Categorical</li><li>C) Disjunctive</li><li>D) Hypothetical</li></ul></div>
-    <div class="question"><p>81. "If I study, I pass; if I pass, I graduate; therefore if I study I graduate" uses:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Disjunctive Syllogism</li><li>C) Hypothetical Syllogism</li><li>D) Categorical Syllogism</li></ul></div>
-    <div class="question"><p>82. A properly structured syllogism in which the middle term is "mammals" would conclude about the relationship between:</p><ul class="options"><li>A) Mammals and themselves</li><li>B) The subjects and predicates of each premise that are NOT "mammals"</li><li>C) All three terms including mammals</li><li>D) Only the major premise subject</li></ul></div>
-    <div class="question"><p>83. In classical logic, the subject and predicate terms of a syllogism apply to:</p><ul class="options"><li>A) The entire syllogism</li><li>B) Individual propositions only</li><li>C) The argument as a whole</li><li>D) The major premise alone</li></ul></div>
-    <div class="question"><p>84. The 4th Figure of syllogism is characterized by:</p><ul class="options"><li>A) Middle term as subject in both premises</li><li>B) Middle term as predicate in both premises</li><li>C) Predicate of major = subject of minor</li><li>D) No middle term</li></ul></div>
-    <div class="question"><p>85. "No birds are cows / All cows are animals / Some animals are not birds" is a:</p><ul class="options"><li>A) 1st Figure</li><li>B) 2nd Figure</li><li>C) 3rd Figure</li><li>D) 4th Figure</li></ul></div>
-    <div class="question"><p>86. A syllogism that appears structured but draws an illogical conclusion is called:</p><ul class="options"><li>A) A valid syllogism</li><li>B) A sound argument</li><li>C) An illicit major</li><li>D) A hypothetical syllogism</li></ul></div>
-    <div class="question"><p>87. In a conditional syllogism, once the condition (antecedent) is confirmed true, the:</p><ul class="options"><li>A) Conclusion is uncertain</li><li>B) Conclusion (consequent) must follow</li><li>C) Major premise is questioned</li><li>D) Minor premise is irrelevant</li></ul></div>
-    <div class="question"><p>88. The term "minor premise" is called "minor" because it:</p><ul class="options"><li>A) Is less important</li><li>B) Serves to connect or substantiate the major premise, providing the specific link</li><li>C) Is always negative</li><li>D) Is shorter than the major premise</li></ul></div>
-    <div class="question"><p>89. Which syllogism type is described as "combining two conditionals with a disjunction" in the rules of inference?</p><ul class="options"><li>A) Hypothetical</li><li>B) Disjunctive</li><li>C) Constructive Dilemma</li><li>D) Categorical</li></ul></div>
-    <div class="question"><p>90. Syllogism is mainly associated with which form of reasoning?</p><ul class="options"><li>A) Inductive</li><li>B) Deductive</li><li>C) Abductive</li><li>D) Intuitive</li></ul></div>
-    <div class="question"><p>91. To test a syllogism's correctness, you verify that:</p><ul class="options"><li>A) The premises are factually true</li><li>B) The conclusion logically follows from the premises</li><li>C) The syllogism contains more than three propositions</li><li>D) The subject terms are well-known</li></ul></div>
-    <div class="question"><p>92. "All husbands are responsible / Akin is a husband / Therefore, Akin is responsible" — the type of movement is:</p><ul class="options"><li>A) Particular to general</li><li>B) General to particular</li><li>C) General to general</li><li>D) Particular to particular</li></ul></div>
-    <div class="question"><p>93. The disjunctive syllogism eliminates one option in an either/or scenario. This is logically valid because:</p><ul class="options"><li>A) The premises are always true</li><li>B) If one of two mutually exclusive options is false, the other must be true</li><li>C) All options are always valid</li><li>D) The conclusion is always affirmative</li></ul></div>
-    <div class="question"><p>94. "All scholars are educated / All scholars are academicians / Therefore, all academicians are educated" — the movement type is:</p><ul class="options"><li>A) Particular to general</li><li>B) General to particular</li><li>C) General to general</li><li>D) Particular to particular</li></ul></div>
-    <div class="question"><p>95. A syllogism's "precise execution" requires that the:</p><ul class="options"><li>A) Premises be as long as possible</li><li>B) Unique elements combine correctly and the middle term is not in the conclusion</li><li>C) Conclusion repeats the major premise</li><li>D) Minor premise is always negative</li></ul></div>
-    <div class="question"><p>96. In "All gutter boys are wayward / All Yahoo boys are gutter boys / Therefore, all Yahoo boys are wayward" — the movement is:</p><ul class="options"><li>A) General to particular</li><li>B) Particular to general</li><li>C) General to general</li><li>D) Particular to particular</li></ul></div>
-    <div class="question"><p>97. Which proposition in a syllogism is the one that "can be asserted or denied"?</p><ul class="options"><li>A) The whole syllogism</li><li>B) Individual propositions within the syllogism</li><li>C) Only the conclusion</li><li>D) Only the major premise</li></ul></div>
-    <div class="question"><p>98. In the conditional syllogism "If today is sunny → the race will be held → Today is sunny," the conclusion is:</p><ul class="options"><li>A) Today is not sunny</li><li>B) The race will not be held</li><li>C) The race will be held</li><li>D) Today might be sunny</li></ul></div>
-    <div class="question"><p>99. Syllogism as a "discussion of relation of elements" means it:</p><ul class="options"><li>A) Describes isolated facts</li><li>B) Shows how elements (terms) relate to each other logically</li><li>C) Discusses historical relationships</li><li>D) Analyses emotional connections</li></ul></div>
-    <div class="question"><p>100. Which of the following is the best example of an illicit major?</p><ul class="options"><li>A) All humans are mortal; Socrates is human; therefore Socrates is mortal</li><li>B) All dogs love food; John loves food; therefore John is a dog</li><li>C) All cows are mammals; all mammals are animals; therefore all cows are animals</li><li>D) If it rains, the ground is wet; it rains; therefore the ground is wet</li></ul></div>
-  </div>
-  <div class="answers-section">
-    <h3>Answer Key – Topic 4</h3>
-    <div class="answers-grid">
-      <div class="ans-item"><strong>1. B</strong></div><div class="ans-item"><strong>2. C</strong></div><div class="ans-item"><strong>3. B</strong></div><div class="ans-item"><strong>4. B</strong></div><div class="ans-item"><strong>5. C</strong></div>
-      <div class="ans-item"><strong>6. C</strong></div><div class="ans-item"><strong>7. B</strong></div><div class="ans-item"><strong>8. C</strong></div><div class="ans-item"><strong>9. B</strong></div><div class="ans-item"><strong>10. B</strong></div>
-      <div class="ans-item"><strong>11. B</strong></div><div class="ans-item"><strong>12. C</strong></div><div class="ans-item"><strong>13. B</strong></div><div class="ans-item"><strong>14. C</strong></div><div class="ans-item"><strong>15. C</strong></div>
-      <div class="ans-item"><strong>16. B</strong></div><div class="ans-item"><strong>17. B</strong></div><div class="ans-item"><strong>18. B</strong></div><div class="ans-item"><strong>19. B</strong></div><div class="ans-item"><strong>20. B</strong></div>
-      <div class="ans-item"><strong>21. C</strong></div><div class="ans-item"><strong>22. B</strong></div><div class="ans-item"><strong>23. B</strong></div><div class="ans-item"><strong>24. C</strong></div><div class="ans-item"><strong>25. C</strong></div>
-      <div class="ans-item"><strong>26. A</strong></div><div class="ans-item"><strong>27. B</strong></div><div class="ans-item"><strong>28. C</strong></div><div class="ans-item"><strong>29. D</strong></div><div class="ans-item"><strong>30. B</strong></div>
-      <div class="ans-item"><strong>31. B</strong></div><div class="ans-item"><strong>32. B</strong></div><div class="ans-item"><strong>33. B</strong></div><div class="ans-item"><strong>34. B</strong></div><div class="ans-item"><strong>35. B</strong></div>
-      <div class="ans-item"><strong>36. B</strong></div><div class="ans-item"><strong>37. B</strong></div><div class="ans-item"><strong>38. B</strong></div><div class="ans-item"><strong>39. C</strong></div><div class="ans-item"><strong>40. B</strong></div>
-      <div class="ans-item"><strong>41. B</strong></div><div class="ans-item"><strong>42. C</strong></div><div class="ans-item"><strong>43. C</strong></div><div class="ans-item"><strong>44. C</strong></div><div class="ans-item"><strong>45. C</strong></div>
-      <div class="ans-item"><strong>46. B</strong></div><div class="ans-item"><strong>47. A</strong></div><div class="ans-item"><strong>48. C</strong></div><div class="ans-item"><strong>49. C</strong></div><div class="ans-item"><strong>50. B</strong></div>
-      <div class="ans-item"><strong>51. C</strong></div><div class="ans-item"><strong>52. B</strong></div><div class="ans-item"><strong>53. B</strong></div><div class="ans-item"><strong>54. C</strong></div><div class="ans-item"><strong>55. B</strong></div>
-      <div class="ans-item"><strong>56. B</strong></div><div class="ans-item"><strong>57. C</strong></div><div class="ans-item"><strong>58. B</strong></div><div class="ans-item"><strong>59. C</strong></div><div class="ans-item"><strong>60. C</strong></div>
-      <div class="ans-item"><strong>61. B</strong></div><div class="ans-item"><strong>62. B</strong></div><div class="ans-item"><strong>63. B</strong></div><div class="ans-item"><strong>64. B</strong></div><div class="ans-item"><strong>65. B</strong></div>
-      <div class="ans-item"><strong>66. C</strong></div><div class="ans-item"><strong>67. B</strong></div><div class="ans-item"><strong>68. B</strong></div><div class="ans-item"><strong>69. B</strong></div><div class="ans-item"><strong>70. B</strong></div>
-      <div class="ans-item"><strong>71. B</strong></div><div class="ans-item"><strong>72. B</strong></div><div class="ans-item"><strong>73. B</strong></div><div class="ans-item"><strong>74. B</strong></div><div class="ans-item"><strong>75. B</strong></div>
-      <div class="ans-item"><strong>76. B</strong></div><div class="ans-item"><strong>77. C</strong></div><div class="ans-item"><strong>78. B</strong></div><div class="ans-item"><strong>79. B</strong></div><div class="ans-item"><strong>80. C</strong></div>
-      <div class="ans-item"><strong>81. C</strong></div><div class="ans-item"><strong>82. B</strong></div><div class="ans-item"><strong>83. B</strong></div><div class="ans-item"><strong>84. C</strong></div><div class="ans-item"><strong>85. D</strong></div>
-      <div class="ans-item"><strong>86. C</strong></div><div class="ans-item"><strong>87. B</strong></div><div class="ans-item"><strong>88. B</strong></div><div class="ans-item"><strong>89. C</strong></div><div class="ans-item"><strong>90. B</strong></div>
-      <div class="ans-item"><strong>91. B</strong></div><div class="ans-item"><strong>92. B</strong></div><div class="ans-item"><strong>93. B</strong></div><div class="ans-item"><strong>94. C</strong></div><div class="ans-item"><strong>95. B</strong></div>
-      <div class="ans-item"><strong>96. C</strong></div><div class="ans-item"><strong>97. B</strong></div><div class="ans-item"><strong>98. C</strong></div><div class="ans-item"><strong>99. B</strong></div><div class="ans-item"><strong>100. B</strong></div>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-</div>
-
-<!-- REMAINING TOPICS: 5-11 with full notes + 100 MCQs each are included in condensed format for filesize. Each follows the identical structure above. -->
-
-<div style="background:#fff;border-radius:10px;padding:28px;margin-bottom:32px;box-shadow:0 2px 10px #0001;" id="t5">
-  <div style="background:#1a1a2e;color:#e0c97f;padding:16px 20px;border-radius:6px;margin:-28px -28px 20px;"><div style="font-size:.85rem;opacity:.7">TOPIC 5</div><h2 style="font-size:1.3rem">Symbolic Logic & Rules of Inference</h2></div>
-  <h3 style="color:#1a1a2e;margin-bottom:10px;border-left:4px solid #e0c97f;padding-left:10px;">Summary Notes</h3>
-  <p><strong>Symbolic logic</strong> uses premises (facts given) to reach a conclusion through legal, step-by-step moves. There are <strong>9 Rules of Inference</strong>:</p>
-  <ul style="margin:10px 0 16px 20px;line-height:1.9">
-    <li><strong>1. Modus Ponens (M.P.)</strong> – If P→Q and P is true, then Q is true. (Affirming the antecedent)</li>
-    <li><strong>2. Modus Tollens (M.T.)</strong> – If P→Q and Q is false, then P is false. (Denying the consequent)</li>
-    <li><strong>3. Hypothetical Syllogism (H.S.)</strong> – If P→Q and Q→R, then P→R. (Chain rule)</li>
-    <li><strong>4. Disjunctive Syllogism (D.S.)</strong> – If P∨Q and ¬P, then Q. (Eliminating a false option)</li>
-    <li><strong>5. Constructive Dilemma (C.D.)</strong> – Combines two conditionals with a disjunction</li>
-    <li><strong>6. Absorption (Abs.)</strong> – If P→Q, then P→(P∧Q). (Bundles cause and effect)</li>
-    <li><strong>7. Simplification (Simp.)</strong> – If P∧Q, then P (or Q). (Take one from a "both…and")</li>
-    <li><strong>8. Conjunction (Conj.)</strong> – If P is true and Q is true separately, then P∧Q.</li>
-    <li><strong>9. Addition (Add.)</strong> – If P is true, then P∨Q is true (attaching "or" to a truth).</li>
-  </ul>
-  <div style="background:#fffbea;border:1px solid #e0c97f;border-radius:6px;padding:12px 16px;margin:12px 0"><strong>Key distinction:</strong> "True" refers to the content of statements. "Valid" refers to whether the conclusion follows logically from the premises. A valid argument can have false premises and even a false conclusion.</div>
-  <p><strong>Common errors:</strong> <em>Converse Error</em> – mistaking Q→P for P→Q. <em>Inverse Error</em> – concluding ¬Q from ¬P when only P→Q is known.</p>
-
-  <div class="mcq-section" style="padding:0;margin-top:20px">
-    <h3 style="font-size:1.1rem;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid #e0c97f">100 MCQs – Topic 5: Symbolic Logic</h3>
-    <div class="question"><p>1. In symbolic logic, the "legal moves" refer to:</p><ul class="options"><li>A) Political laws</li><li>B) The nine rules of inference</li><li>C) Court procedures</li><li>D) Mathematical formulas</li></ul></div>
-    <div class="question"><p>2. Modus Ponens (M.P.) states: if P→Q and P is true, then:</p><ul class="options"><li>A) P is false</li><li>B) Q is false</li><li>C) Q is true</li><li>D) Nothing can be concluded</li></ul></div>
-    <div class="question"><p>3. Modus Tollens (M.T.) states: if P→Q and Q is false, then:</p><ul class="options"><li>A) Q is true</li><li>B) P must be false</li><li>C) P might be true</li><li>D) Nothing follows</li></ul></div>
-    <div class="question"><p>4. "If it rains, the grass gets wet. The grass is not wet. Therefore, it did not rain." This is:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Disjunctive Syllogism</li><li>D) Addition</li></ul></div>
-    <div class="question"><p>5. "If it rains, the grass gets wet. It is raining. Therefore, the grass is wet." This is:</p><ul class="options"><li>A) Modus Tollens</li><li>B) Hypothetical Syllogism</li><li>C) Modus Ponens</li><li>D) Simplification</li></ul></div>
-    <div class="question"><p>6. Hypothetical Syllogism is called the "chain rule" because:</p><ul class="options"><li>A) It chains two conclusions</li><li>B) If A leads to B and B leads to C, then A leads to C</li><li>C) It uses a chain of questions</li><li>D) It requires three conclusions</li></ul></div>
-    <div class="question"><p>7. Disjunctive Syllogism is used when:</p><ul class="options"><li>A) You have two conditionals</li><li>B) You are given an either/or scenario and one option is ruled out</li><li>C) You want to combine two true statements</li><li>D) You want to split a conjunction</li></ul></div>
-    <div class="question"><p>8. "It's either pizza or minced pie; we aren't eating pizza; therefore we eat minced pie." This uses:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Disjunctive Syllogism</li><li>C) Conjunction</li><li>D) Addition</li></ul></div>
-    <div class="question"><p>9. The Constructive Dilemma (C.D.) combines:</p><ul class="options"><li>A) Two premises with the same conclusion</li><li>B) Two conditionals with a disjunction</li><li>C) A conditional with a negation</li><li>D) Two conjunctions</li></ul></div>
-    <div class="question"><p>10. "If I stay, I'm bored; if I leave, I'm tired. I must stay or leave. Therefore, I'm either bored or tired." This is:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Disjunctive Syllogism</li><li>C) Constructive Dilemma</li><li>D) Simplification</li></ul></div>
-    <div class="question"><p>11. Absorption (Abs.) transforms P→Q into:</p><ul class="options"><li>A) Q→P</li><li>B) P→(P∧Q)</li><li>C) P∨Q</li><li>D) ¬P→¬Q</li></ul></div>
-    <div class="question"><p>12. The purpose of Absorption is to:</p><ul class="options"><li>A) Eliminate one of the statements</li><li>B) Bundle the cause into the effect so later rules can use both parts</li><li>C) Negate the conclusion</li><li>D) Replace the conjunction with a disjunction</li></ul></div>
-    <div class="question"><p>13. Simplification (Simp.) states: if P∧Q is true, then:</p><ul class="options"><li>A) Both P and Q must be in the conclusion</li><li>B) You can conclude P alone (or Q alone)</li><li>C) P and Q are both false</li><li>D) P implies Q</li></ul></div>
-    <div class="question"><p>14. "You are tired and hungry. Therefore, you are tired." This uses:</p><ul class="options"><li>A) Conjunction</li><li>B) Addition</li><li>C) Simplification</li><li>D) Modus Ponens</li></ul></div>
-    <div class="question"><p>15. Conjunction (Conj.) states: if P is true and Q is true separately, then:</p><ul class="options"><li>A) P→Q</li><li>B) P∨Q</li><li>C) P∧Q</li><li>D) ¬P∧¬Q</li></ul></div>
-    <div class="question"><p>16. "He is my father. He is my mentor. Therefore, he is my father and mentor." This uses:</p><ul class="options"><li>A) Simplification</li><li>B) Conjunction</li><li>C) Addition</li><li>D) Absorption</li></ul></div>
-    <div class="question"><p>17. Addition (Add.) states: if P is true, then:</p><ul class="options"><li>A) P∧Q is true</li><li>B) P∨Q is true (for any Q)</li><li>C) Q must be true</li><li>D) ¬P is false</li></ul></div>
-    <div class="question"><p>18. "The sky is blue. Therefore, the sky is blue OR I am a billionaire." This uses:</p><ul class="options"><li>A) Conjunction</li><li>B) Simplification</li><li>C) Addition</li><li>D) Modus Ponens</li></ul></div>
-    <div class="question"><p>19. In symbolic logic, "truth" refers to:</p><ul class="options"><li>A) The logical structure of the argument</li><li>B) The content/factual correctness of statements</li><li>C) Whether the conclusion follows from premises</li><li>D) The validity of the argument form</li></ul></div>
-    <div class="question"><p>20. In symbolic logic, "validity" refers to:</p><ul class="options"><li>A) Whether premises are factually true</li><li>B) Whether the conclusion follows logically from the premises</li><li>C) Whether all statements are positive</li><li>D) Whether the argument is long</li></ul></div>
-    <div class="question"><p>21. A valid argument MAY have:</p><ul class="options"><li>A) Only true premises</li><li>B) False premises and even a false conclusion</li><li>C) Only negative statements</li><li>D) No premises</li></ul></div>
-    <div class="question"><p>22. The Converse Error occurs when:</p><ul class="options"><li>A) You correctly apply Modus Ponens</li><li>B) You incorrectly treat Q→P as equivalent to P→Q</li><li>C) You correctly deny the antecedent</li><li>D) You correctly apply Modus Tollens</li></ul></div>
-    <div class="question"><p>23. "If I run, I get there quicker. I got there quicker. Therefore, I must have run." This is a:</p><ul class="options"><li>A) Valid Modus Ponens argument</li><li>B) Converse Error (Affirming the Consequent)</li><li>C) Valid Modus Tollens argument</li><li>D) Inverse Error</li></ul></div>
-    <div class="question"><p>24. The Inverse Error occurs when:</p><ul class="options"><li>A) You affirm the consequent</li><li>B) You incorrectly conclude ¬Q from ¬P when only P→Q is known</li><li>C) You correctly apply Hypothetical Syllogism</li><li>D) You correctly deny the consequent</li></ul></div>
-    <div class="question"><p>25. "If I run, I get there quicker. I did not run. Therefore, I did not get there quicker." This is a:</p><ul class="options"><li>A) Valid Modus Tollens</li><li>B) Valid Modus Ponens</li><li>C) Inverse Error (Denying the Antecedent)</li><li>D) Valid Disjunctive Syllogism</li></ul></div>
-    <div class="question"><p>26. The nine rules of inference are described as the "operational mainstay" of:</p><ul class="options"><li>A) Inductive reasoning</li><li>B) Deductive reasoning</li><li>C) Intuitive knowledge</li><li>D) Empirical science</li></ul></div>
-    <div class="question"><p>27. If your starting premises are true and you correctly apply the rules of inference, your conclusion is:</p><ul class="options"><li>A) Only probably true</li><li>B) Guaranteed to be true</li><li>C) Possibly false</li><li>D) Always uncertain</li></ul></div>
-    <div class="question"><p>28. How many core rules of inference does the lecture cover?</p><ul class="options"><li>A) 7</li><li>B) 8</li><li>C) 9</li><li>D) 10</li></ul></div>
-    <div class="question"><p>29. Modus Ponens is formally written as:</p><ul class="options"><li>A) P→Q, ¬Q / ∴ ¬P</li><li>B) P→Q, P / ∴ Q</li><li>C) P∨Q, ¬P / ∴ Q</li><li>D) P∧Q / ∴ P</li></ul></div>
-    <div class="question"><p>30. Modus Tollens is formally written as:</p><ul class="options"><li>A) P→Q, P / ∴ Q</li><li>B) P→Q, ¬Q / ∴ ¬P</li><li>C) P∨Q, ¬P / ∴ Q</li><li>D) P∧Q / ∴ P</li></ul></div>
-    <div class="question"><p>31. The abbreviation "M.P." stands for:</p><ul class="options"><li>A) Major Premise</li><li>B) Modus Ponens</li><li>C) Multiple Propositions</li><li>D) Minor Premise</li></ul></div>
-    <div class="question"><p>32. The abbreviation "M.T." stands for:</p><ul class="options"><li>A) Major Theory</li><li>B) Modal Truth</li><li>C) Modus Tollens</li><li>D) Minor Terms</li></ul></div>
-    <div class="question"><p>33. "H.S." in the rules of inference stands for:</p><ul class="options"><li>A) Human Syllogism</li><li>B) Hypothetical Syllogism</li><li>C) Hypothetical Statement</li><li>D) Hasty Summary</li></ul></div>
-    <div class="question"><p>34. "D.S." stands for:</p><ul class="options"><li>A) Deductive Statement</li><li>B) Dialectical Syllogism</li><li>C) Disjunctive Syllogism</li><li>D) Direct Statement</li></ul></div>
-    <div class="question"><p>35. "C.D." stands for:</p><ul class="options"><li>A) Conditional Deduction</li><li>B) Critical Dialogue</li><li>C) Constructive Dilemma</li><li>D) Categorical Dialectic</li></ul></div>
-    <div class="question"><p>36. "Simp." stands for:</p><ul class="options"><li>A) Simple Logic</li><li>B) Simplification</li><li>C) Simple Premise</li><li>D) Synthesis of Implication</li></ul></div>
-    <div class="question"><p>37. "Conj." stands for:</p><ul class="options"><li>A) Contradiction</li><li>B) Conjecture</li><li>C) Conjunction</li><li>D) Consequent</li></ul></div>
-    <div class="question"><p>38. "Add." stands for:</p><ul class="options"><li>A) Addition</li><li>B) Additive Logic</li><li>C) Analytic Deduction</li><li>D) Advanced Premise</li></ul></div>
-    <div class="question"><p>39. Absorption does NOT change:</p><ul class="options"><li>A) The form of the statement</li><li>B) The real-world meaning of the original conditional</li><li>C) The logical structure</li><li>D) The relationship between propositions</li></ul></div>
-    <div class="question"><p>40. Simplification allows you to conclude ONE part of a "both...and" sentence because:</p><ul class="options"><li>A) The other part is false</li><li>B) If both parts are true together, each is independently true</li><li>C) The conjunction is always false</li><li>D) The sentence contains an error</li></ul></div>
-    <div class="question"><p>41. The "Wit Factor" in Addition means that logically:</p><ul class="options"><li>A) Only true statements can be added</li><li>B) A true statement "P" makes "P or Q" true regardless of Q</li><li>C) Addition requires both statements to be true</li><li>D) Addition is an informal fallacy</li></ul></div>
-    <div class="question"><p>42. In the detective story example, which rule is used to conclude the suspect wasn't at the house?</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Addition</li><li>D) Simplification</li></ul></div>
-    <div class="question"><p>43. "If the baby is hungry, he will cry. The baby is not crying. Therefore, he is not hungry." Uses:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Disjunctive Syllogism</li><li>D) Conjunction</li></ul></div>
-    <div class="question"><p>44. "Cutting people is a crime. Surgeons cut people. Therefore, surgeons are criminals." This is a fallacy of:</p><ul class="options"><li>A) Begging the question</li><li>B) Using ambiguous premises</li><li>C) Jumping to a conclusion</li><li>D) Circular reasoning</li></ul></div>
-    <div class="question"><p>45. "All lawyers always tell the truth. Jack is a lawyer. Therefore, Jack always tells the truth." This fallacy:</p><ul class="options"><li>A) Uses ambiguous premises</li><li>B) Begs the question — assumes what must be proved</li><li>C) Jumps to conclusion without grounds</li><li>D) Is a valid argument</li></ul></div>
-    <div class="question"><p>46. "Smoking cigarettes does not cause brain damage. Therefore, smoking is healthy." This is:</p><ul class="options"><li>A) A valid argument</li><li>B) Jumping to a conclusion without adequate grounds</li><li>C) Modus Ponens</li><li>D) A correct syllogism</li></ul></div>
-    <div class="question"><p>47. Affirming the Consequent (a formal fallacy) incorrectly assumes:</p><ul class="options"><li>A) P→Q, P / therefore Q</li><li>B) P→Q, Q / therefore P (invalid)</li><li>C) P→Q, ¬Q / therefore ¬P</li><li>D) P∧Q / therefore P</li></ul></div>
-    <div class="question"><p>48. "If it is raining, the streets are wet. The streets are wet. Therefore, it is raining." This is:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Affirming the Consequent (Converse Error)</li><li>D) Disjunctive Syllogism</li></ul></div>
-    <div class="question"><p>49. Streets can be wet from sprinklers — this shows that Affirming the Consequent is fallacious because:</p><ul class="options"><li>A) The premise is always false</li><li>B) Multiple causes can produce the same effect, so the conclusion is not guaranteed</li><li>C) The conditional is invalid</li><li>D) The conclusion is never true</li></ul></div>
-    <div class="question"><p>50. The goal of symbolic logic is to use premises to reach a conclusion using:</p><ul class="options"><li>A) Emotions and intuition</li><li>B) Only the legal (valid) moves</li><li>C) Any reasoning method available</li><li>D) Religious principles</li></ul></div>
-    <div class="question"><p>51. Which rule would you use to go from "P∧Q" to just "P"?</p><ul class="options"><li>A) Conjunction</li><li>B) Addition</li><li>C) Simplification</li><li>D) Absorption</li></ul></div>
-    <div class="question"><p>52. Which rule would you use to combine "He is a king" and "He is a bus driver" into "He is a king and a bus driver"?</p><ul class="options"><li>A) Simplification</li><li>B) Conjunction</li><li>C) Addition</li><li>D) Hypothetical Syllogism</li></ul></div>
-    <div class="question"><p>53. Which rule allows you to say "The day is extremely hot OR I am sensitive" from just "The day is extremely hot"?</p><ul class="options"><li>A) Conjunction</li><li>B) Simplification</li><li>C) Addition</li><li>D) Absorption</li></ul></div>
-    <div class="question"><p>54. Modus Ponens is also described as:</p><ul class="options"><li>A) Denying the antecedent</li><li>B) Affirming the antecedent</li><li>C) Denying the consequent</li><li>D) Affirming the consequent</li></ul></div>
-    <div class="question"><p>55. Modus Tollens is also described as:</p><ul class="options"><li>A) Affirming the antecedent</li><li>B) Affirming the consequent</li><li>C) Denying the consequent</li><li>D) Denying the antecedent</li></ul></div>
-    <div class="question"><p>56. The Inverse Error is also called:</p><ul class="options"><li>A) Affirming the Consequent</li><li>B) Denying the Antecedent</li><li>C) Denying the Consequent</li><li>D) Affirming the Antecedent</li></ul></div>
-    <div class="question"><p>57. The Converse Error is also called:</p><ul class="options"><li>A) Denying the Antecedent</li><li>B) Denying the Consequent</li><li>C) Affirming the Consequent</li><li>D) Affirming the Antecedent</li></ul></div>
-    <div class="question"><p>58. In symbolic logic, the antecedent (P) in P→Q is:</p><ul class="options"><li>A) The result</li><li>B) The condition that comes first ("if" part)</li><li>C) The conclusion</li><li>D) The negation</li></ul></div>
-    <div class="question"><p>59. In symbolic logic, the consequent (Q) in P→Q is:</p><ul class="options"><li>A) The condition</li><li>B) The negation</li><li>C) The result that follows the condition ("then" part)</li><li>D) The antecedent</li></ul></div>
-    <div class="question"><p>60. Disjunctive Syllogism formally: P∨Q, ¬P / therefore:</p><ul class="options"><li>A) ¬Q</li><li>B) P</li><li>C) Q</li><li>D) P∧Q</li></ul></div>
-    <div class="question"><p>61. The Hypothetical Syllogism rule formally: P→Q, Q→R / therefore:</p><ul class="options"><li>A) Q→P</li><li>B) P→R</li><li>C) R→P</li><li>D) P∧R</li></ul></div>
-    <div class="question"><p>62. Constructive Dilemma: (P→Q)∧(R→S), P∨R / therefore:</p><ul class="options"><li>A) P∧R</li><li>B) Q∧S</li><li>C) Q∨S</li><li>D) ¬P∨¬R</li></ul></div>
-    <div class="question"><p>63. The "Abs." (Absorption) rule formally: P→Q / therefore:</p><ul class="options"><li>A) P→(P∨Q)</li><li>B) P→(P∧Q)</li><li>C) Q→P</li><li>D) P∧Q</li></ul></div>
-    <div class="question"><p>64. According to the lecture, "valid" and "true" have different meanings because:</p><ul class="options"><li>A) They are the same in philosophy</li><li>B) Truth concerns statement content; validity concerns whether conclusion follows from premises</li><li>C) Validity only applies to math</li><li>D) Truth is more important than validity</li></ul></div>
-    <div class="question"><p>65. A perfectly valid argument may have a false conclusion if:</p><ul class="options"><li>A) The logical form is incorrect</li><li>B) One or more of the premises are false</li><li>C) The conclusion contradicts itself</li><li>D) The rules of inference are broken</li></ul></div>
-    <div class="question"><p>66. In the example "I sleep a lot → don't do homework → do well in class" — the logical form is:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Hypothetical Syllogism (chain)</li><li>D) Disjunctive Syllogism</li></ul></div>
-    <div class="question"><p>67. In the robbery/motive example (p→q, p∨r / ∴ r), the argument is:</p><ul class="options"><li>A) Valid</li><li>B) Invalid — if the victim had money (q is true) the argument fails</li><li>C) Sound</li><li>D) An example of Modus Ponens</li></ul></div>
-    <div class="question"><p>68. The "critical rows" in a truth table are rows where:</p><ul class="options"><li>A) The conclusion is false</li><li>B) All premises are true</li><li>C) All premises are false</li><li>D) The conclusion is true</li></ul></div>
-    <div class="question"><p>69. An argument is INVALID if:</p><ul class="options"><li>A) The premises are all true</li><li>B) There is a critical row where the conclusion is false</li><li>C) The conclusion is always true</li><li>D) The premises are all false</li></ul></div>
-    <div class="question"><p>70. An argument is VALID if:</p><ul class="options"><li>A) It has at least one false premise</li><li>B) In all critical rows (premises all true), the conclusion is also true</li><li>C) The conclusion is stated confidently</li><li>D) The premises are long</li></ul></div>
-    <div class="question"><p>71. Addition is described as feeling "like cheating" because:</p><ul class="options"><li>A) It is actually invalid</li><li>B) You can attach any statement with "or" to a truth and the compound remains technically true</li><li>C) It requires multiple premises</li><li>D) It uses negation</li></ul></div>
-    <div class="question"><p>72. Simplification is the reverse operation of:</p><ul class="options"><li>A) Addition</li><li>B) Absorption</li><li>C) Conjunction</li><li>D) Modus Ponens</li></ul></div>
-    <div class="question"><p>73. "∼p → c / ∴ p" is the formal structure of:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Proof by Contradiction</li><li>D) Disjunctive Syllogism</li></ul></div>
-    <div class="question"><p>74. Proof by Contradiction states: if assuming ¬P leads to a contradiction, then:</p><ul class="options"><li>A) ¬P is true</li><li>B) P must be true</li><li>C) Nothing follows</li><li>D) P is probably false</li></ul></div>
-    <div class="question"><p>75. The "island" puzzle (Truth Tribe / Lie Tribe) demonstrates which proof method?</p><ul class="options"><li>A) Modus Ponens</li><li>B) Inductive reasoning</li><li>C) Proof by Contradiction</li><li>D) Addition</li></ul></div>
-    <div class="question"><p>76. "Transitivity" as a valid argument form is equivalent to:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Hypothetical Syllogism</li><li>C) Disjunctive Syllogism</li><li>D) Conjunction</li></ul></div>
-    <div class="question"><p>77. "Elimination" as a valid argument form: P∨Q, ¬P / ∴ Q is equivalent to:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Disjunctive Syllogism</li><li>C) Conjunction</li><li>D) Simplification</li></ul></div>
-    <div class="question"><p>78. "Specialization" as a valid argument form: P∧Q / ∴ P is equivalent to:</p><ul class="options"><li>A) Conjunction</li><li>B) Addition</li><li>C) Simplification</li><li>D) Modus Tollens</li></ul></div>
-    <div class="question"><p>79. "Generalization" as a valid argument form: P / ∴ P∨Q is equivalent to:</p><ul class="options"><li>A) Simplification</li><li>B) Conjunction</li><li>C) Addition</li><li>D) Absorption</li></ul></div>
-    <div class="question"><p>80. "Proof by Division into Cases": P∨Q, P→R, Q→R / ∴ R means:</p><ul class="options"><li>A) Only one case leads to R</li><li>B) No matter which of the two cases is true, R follows</li><li>C) R is only probably true</li><li>D) R contradicts both P and Q</li></ul></div>
-    <div class="question"><p>81. "Conjunction" as a valid rule: P, Q / ∴ P∧Q means:</p><ul class="options"><li>A) From a conjunction, infer one part</li><li>B) From two separately true statements, form their conjunction</li><li>C) From P, infer P∨Q</li><li>D) From P→Q and P, infer Q</li></ul></div>
-    <div class="question"><p>82. The letter "c" in "∼p → c" for Proof by Contradiction represents:</p><ul class="options"><li>A) A conditional</li><li>B) A contradiction (always-false statement)</li><li>C) A conclusion</li><li>D) A conjunction</li></ul></div>
-    <div class="question"><p>83. The intuitionists reject the Law of Excluded Middle because:</p><ul class="options"><li>A) It is logically invalid</li><li>B) It can prove existence of mathematical objects without constructing one</li><li>C) It contradicts Modus Ponens</li><li>D) It is too simple</li></ul></div>
-    <div class="question"><p>84. In Modus Tollens, what is denied?</p><ul class="options"><li>A) The antecedent</li><li>B) The premise</li><li>C) The consequent</li><li>D) The conjunction</li></ul></div>
-    <div class="question"><p>85. In Modus Ponens, what is affirmed?</p><ul class="options"><li>A) The consequent only</li><li>B) The antecedent</li><li>C) The disjunction</li><li>D) The negation</li></ul></div>
-    <div class="question"><p>86. A "non sequitur" in logic refers to:</p><ul class="options"><li>A) A valid argument</li><li>B) A conclusion that does not follow from the premises</li><li>C) A statement that is always true</li><li>D) A conjunction of premises</li></ul></div>
-    <div class="question"><p>87. The lecture compares symbolic logic to:</p><ul class="options"><li>A) A game where legal moves guarantee a true conclusion from true premises</li><li>B) A purely abstract exercise with no practical value</li><li>C) An inductive reasoning system</li><li>D) A religious proof system</li></ul></div>
-    <div class="question"><p>88. "∼t" and "p → t" allows us to conclude "∼p" using:</p><ul class="options"><li>A) Modus Ponens</li><li>B) Modus Tollens</li><li>C) Disjunctive Syllogism</li><li>D) Conjunction</li></ul></div>
-    <div class="question"><p>89. After concluding "∼p," Generalization gives us:</p><ul class="options"><li>A) p</li><li>B) ∼p ∧ r</li><li>C) ∼p ∨ q</li><li>D) p → q</li></ul></div>
-    <div class="question"><p>90. From "∼p ∨ q → r" and "∼p ∨ q," Modus Ponens gives:</p><ul class="options"><li>A) ∼q</li><li>B) ∼p</li><li>C) r</li><li>D) p ∧ r</li></ul></div>
-    <div class="question"><p>91. Knowing "∼p" and "r," Conjunction gives:</p><ul class="options"><li>A) ∼p ∨ r</li><li>B) ∼p ∧ r</li><li>C) r → ∼p</li><li>D) ∼(p ∧ r)</li></ul></div>
-    <div class="question"><p>92. From "∼p ∧ r → ∼s" and "∼p ∧ r," Modus Ponens gives:</p><ul class="options"><li>A) ∼r</li><li>B) ∼p</li><li>C) ∼s</li><li>D) s</li></ul></div>
-    <div class="question"><p>93. From "s ∨ ∼q" and "∼s," Elimination/D.S. gives:</p><ul class="options"><li>A) s</li><li>B) q</li><li>C) ∼q</li><li>D) s ∧ q</li></ul></div>
-    <div class="question"><p>94. An argument with true premises and a logically valid form is called:</p><ul class="options"><li>A) Inductive</li><li>B) Sound</li><li>C) Probable</li><li>D) Intuitive</li></ul></div>
-    <div class="question"><p>95. Which rule is described as "often used to set up other rules"?</p><ul class="options"><li>A) Modus Ponens</li><li>B) Conjunction</li><li>C) Absorption</li><li>D) Modus Tollens</li></ul></div>
-    <div class="question"><p>96. "Proof by Contradiction" is marred in controversy because it involves the controversial:</p><ul class="options"><li>A) Law of Identity</li><li>B) Law of Excluded Middle</li><li>C) Law of Non-Contradiction</li><li>D) Law of Sufficient Reason</li></ul></div>
-    <div class="question"><p>97. The Constructive Dilemma is described as:</p><ul class="options"><li>A) The simplest rule of inference</li><li>B) A more complex rule combining two conditionals with a disjunction</li><li>C) Equivalent to Modus Ponens</li><li>D) An informal fallacy</li></ul></div>
-    <div class="question"><p>98. Symbolic logic "empowers people to move from premises to a valid conclusion through:</p><ul class="options"><li>A) Emotional reasoning</li><li>B) Specific, step-by-step transformations</li><li>C) Inductive generalisation</li><li>D) Random selection of rules</li></ul></div>
-    <div class="question"><p>99. The Converse Error is invalid because:</p><ul class="options"><li>A) P implies Q, but Q occurring does not mean P caused it</li><li>B) The premises are always false</li><li>C) The argument uses the wrong number of premises</li><li>D) The conclusion is always affirmative</li></ul></div>
-    <div class="question"><p>100. The Inverse Error is invalid because:</p><ul class="options"><li>A) Even if P did not occur, Q could still occur through another cause</li><li>B) The premises always contradict each other</li><li>C) The conclusion is always true</li><li>D) The argument uses too many premises</li></ul></div>
-  </div>
-  <div class="answers-section">
-    <h3>Answer Key – Topic 5</h3>
-    <div class="answers-grid">
-      <div class="ans-item"><strong>1. B</strong></div><div class="ans-item"><strong>2. C</strong></div><div class="ans-item"><strong>3. B</strong></div><div class="ans-item"><strong>4. B</strong></div><div class="ans-item"><strong>5. C</strong></div>
-      <div class="ans-item"><strong>6. B</strong></div><div class="ans-item"><strong>7. B</strong></div><div class="ans-item"><strong>8. B</strong></div><div class="ans-item"><strong>9. B</strong></div><div class="ans-item"><strong>10. C</strong></div>
-      <div class="ans-item"><strong>11. B</strong></div><div class="ans-item"><strong>12. B</strong></div><div class="ans-item"><strong>13. B</strong></div><div class="ans-item"><strong>14. C</strong></div><div class="ans-item"><strong>15. C</strong></div>
-      <div class="ans-item"><strong>16. B</strong></div><div class="ans-item"><strong>17. B</strong></div><div class="ans-item"><strong>18. C</strong></div><div class="ans-item"><strong>19. B</strong></div><div class="ans-item"><strong>20. B</strong></div>
-      <div class="ans-item"><strong>21. B</strong></div><div class="ans-item"><strong>22. B</strong></div><div class="ans-item"><strong>23. B</strong></div><div class="ans-item"><strong>24. B</strong></div><div class="ans-item"><strong>25. C</strong></div>
-      <div class="ans-item"><strong>26. B</strong></div><div class="ans-item"><strong>27. B</strong></div><div class="ans-item"><strong>28. C</strong></div><div class="ans-item"><strong>29. B</strong></div><div class="ans-item"><strong>30. B</strong></div>
-      <div class="ans-item"><strong>31. B</strong></div><div class="ans-item"><strong>32. C</strong></div><div class="ans-item"><strong>33. B</strong></div><div class="ans-item"><strong>34. C</strong></div><div class="ans-item"><strong>35. C</strong></div>
-      <div class="ans-item"><strong>36. B</strong></div><div class="ans-item"><strong>37. C</strong></div><div class="ans-item"><strong>38. A</strong></div><div class="ans-item"><strong>39. B</strong></div><div class="ans-item"><strong>40. B</strong></div>
-      <div class="ans-item"><strong>41. B</strong></div><div class="ans-item"><strong>42. B</strong></div><div class="ans-item"><strong>43. B</strong></div><div class="ans-item"><strong>44. B</strong></div><div class="ans-item"><strong>45. B</strong></div>
-      <div class="ans-item"><strong>46. B</strong></div><div class="ans-item"><strong>47. B</strong></div><div class="ans-item"><strong>48. C</strong></div><div class="ans-item"><strong>49. B</strong></div><div class="ans-item"><strong>50. B</strong></div>
-      <div class="ans-item"><strong>51. C</strong></div><div class="ans-item"><strong>52. B</strong></div><div class="ans-item"><strong>53. C</strong></div><div class="ans-item"><strong>54. B</strong></div><div class="ans-item"><strong>55. C</strong></div>
-      <div class="ans-item"><strong>56. B</strong></div><div class="ans-item"><strong>57. C</strong></div><div class="ans-item"><strong>58. B</strong></div><div class="ans-item"><strong>59. C</strong></div><div class="ans-item"><strong>60. C</strong></div>
-      <div class="ans-item"><strong>61. B</strong></div><div class="ans-item"><strong>62. C</strong></div><div class="ans-item"><strong>63. B</strong></div><div class="ans-item"><strong>64. B</strong></div><div class="ans-item"><strong>65. B</strong></div>
-      <div class="ans-item"><strong>66. C</strong></div><div class="ans-item"><strong>67. B</strong></div><div class="ans-item"><strong>68. B</strong></div><div class="ans-item"><strong>69. B</strong></div><div class="ans-item"><strong>70. B</strong></div>
-      <div class="ans-item"><strong>71. B</strong></div><div class="ans-item"><strong>72. C</strong></div><div class="ans-item"><strong>73. C</strong></div><div class="ans-item"><strong>74. B</strong></div><div class="ans-item"><strong>75. C</strong></div>
-      <div class="ans-item"><strong>76. B</strong></div><div class="ans-item"><strong>77. B</strong></div><div class="ans-item"><strong>78. C</strong></div><div class="ans-item"><strong>79. C</strong></div><div class="ans-item"><strong>80. B</strong></div>
-      <div class="ans-item"><strong>81. B</strong></div><div class="ans-item"><strong>82. B</strong></div><div class="ans-item"><strong>83. B</strong></div><div class="ans-item"><strong>84. C</strong></div><div class="ans-item"><strong>85. B</strong></div>
-      <div class="ans-item"><strong>86. B</strong></div><div class="ans-item"><strong>87. A</strong></div><div class="ans-item"><strong>88. B</strong></div><div class="ans-item"><strong>89. C</strong></div><div class="ans-item"><strong>90. C</strong></div>
-      <div class="ans-item"><strong>91. B</strong></div><div class="ans-item"><strong>92. C</strong></div><div class="ans-item"><strong>93. C</strong></div><div class="ans-item"><strong>94. B</strong></div><div class="ans-item"><strong>95. C</strong></div>
-      <div class="ans-item"><strong>96. B</strong></div><div class="ans-item"><strong>97. B</strong></div><div class="ans-item"><strong>98. B</strong></div><div class="ans-item"><strong>99. A</strong></div><div class="ans-item"><strong>100. A</strong></div>
-    </div>
-  </div>
-  <div class="back-top"><a href="#top">↑ Back to Top</a></div>
-</div>
-
-<!-- TOPICS 6-11 COMPACT (Full notes + 50 selected key questions each to keep file manageable) -->
-<!-- Full 100-question expansion follows the same structure for each -->
-
-<div style="background:#fff3cd;border:2px solid #e0c97f;border-radius:10px;padding:24px;margin:20px 0;text-align:center">
-  <h2 style="color:#1a1a2e;margin-bottom:12px">📚 Topics 6–11 Continue Below</h2>
-  <p style="color:#555;">Topics 6 (Fallacy), 7 (Laws of Thought), 8 (Arguments), 9 (Creative &amp; Critical Thinking), 10 (Philosophy &amp; Religion), and 11 (Impact on Human Existence) each follow with full notes and 100 questions. Use the navigation bar at the top to jump to any topic.</p>
-</div>
-
-<!-- The remaining topics are embedded below with the complete note + MCQ + answer format -->
-<!-- Due to practical file size I will include each topic's notes and a representative set of questions that follows the exact exam-ready structure -->
-
-</div><!-- end container -->
-
-<footer style="background:#1a1a2e;color:#aaa;text-align:center;padding:20px;font-size:.85rem;margin-top:32px">
-  GST 212 Introduction to Philosophy — Complete Study Guide | All topics from your lecture notes | Prepared for exam success
-</footer>
-
-</body>
-</html>
+.chat-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.chat-msgs {
+  padding: 20px;
+  min-height: 200px;
+  max-height: 380px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.msg {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.msg.user { flex-direction: row-reverse; }
+.msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+.msg.user .msg-avatar { background: var(--navy); color: var(--gold); }
+.msg.ai .msg-avatar { background: var(--gold-dim); color: var(--gold); }
+.msg-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.msg.user .msg-bubble { background: var(--navy); color: #fff; border-bottom-right-radius: 4px; }
+.msg.ai .msg-bubble { background: #f7f4ef; color: var(--ink); border-bottom-left-radius: 4px; }
+.chat-input-row {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.chat-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  background: #fafafa;
+  outline: none;
+  resize: none;
+}
+.chat-send {
+  padding: 14px 20px;
+  background: var(--navy);
+  color: var(--gold);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity .2s;
+}
